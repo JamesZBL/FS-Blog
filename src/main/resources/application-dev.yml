@@ -1,5 +1,42 @@
 spring:
-  profiles:
-    active: dev
   application:
     name: FullStack
+  cache:
+    cache-names: ehcache
+    ehcache:
+      config: ehcache.xml
+  mvc:
+    static-path-pattern: /resources/**
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+        fixed:
+          enabled: true
+          paths: /js/lib
+          version: v12
+server:
+  port: 8080
+  max-http-header-size: 8192
+  compression:
+      min-response-size: 512
+      enabled: true
+      mime-types: text/html,text/css,text/javascript,application/javascript,image/gif,image/png,image/jpg
+  tomcat:
+        maxThreads: 10
+        minSpareThreads: 3
+        accesslog:
+          directory: /home/fullstack/app/log/server_log
+          pattern: combined
+          enabled: true
+security:
+  user:
+    password: weak
+
+
+logging:
+    config: classpath:log4j2.xml
+
+

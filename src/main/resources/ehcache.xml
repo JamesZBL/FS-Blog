@@ -1,0 +1,54 @@
+<ehcache>
+    <!--磁盘存储配置：用来指定缓存在磁盘上的存储位置。
+    可以使用JavaVM环境变量(user.home, user.dir, java.io.tmpdir)-->
+    <diskStore path = "/home/jcala_blog/cache" />
+    <!--<diskStore path = "/home/smart/cache" />-->
+    <!--默认缓存配置，以下属性是必须的：
+    name ：cache的标识符，在一个CacheManager中必须唯一。
+    maxElementsInMemory ： 在内存中缓存的element的最大数目。
+    maxElementsOnDisk ： 在磁盘上缓存的element的最大数目。
+    eternal ： 设定缓存的elements是否有有效期。如果为true，timeouts属性被忽略。
+    overflowToDisk ： 设定当内存缓存溢出的时候是否将过期的element缓存到磁盘上。
+    以下属性是可选的：
+    timeToIdleSeconds ： 缓存element在过期前的空闲时间。
+    timeToLiveSeconds ： 缓存element的有效生命期。
+    diskPersistent ： 在VM重启的时候是否持久化磁盘缓存，默认是false。
+    diskExpiryThreadIntervalSeconds ： 磁盘缓存的清理线程运行间隔，默认是120秒.
+    memoryStoreEvictionPolicy ： 当内存缓存达到最大，有新的element加入的时候，
+    移除缓存中element的策略。默认是LRU，可选的有LFU和FIFO
+    缓存子元素：
+    cacheEventListenerFactory：注册相应的的缓存监听类，用于处理缓存事件，如put,remove,update,和expire
+    bootstrapCacheLoaderFactory:指定相应的BootstrapCacheLoader，用于在初始化缓存，以及自动设置。
+    -->
+    <defaultCache
+            maxElementsInMemory="100"
+            maxElementsOnDisk="1000"
+            timeToLiveSeconds="600"
+            overflowToDisk="false"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="1800"
+            memoryStoreEvictionPolicy="FIFO"
+    />
+    <!--cache配置同defaultCache -->
+    <cache name="profileOfInfo"
+           maxElementsInMemory="1"
+    />
+    <cache name="resumeView"
+           maxElementsInMemory="1"
+    />
+    <cache name="archives"
+           maxElementsInMemory="1"
+    />
+    <cache name="tagList"
+           maxElementsInMemory="1"
+    />
+    <cache name="projects"
+           maxElementsInMemory="1"
+    />
+    <cache name="projectPageNum"
+           maxElementsInMemory="1"
+    />
+    <cache name="archivePageNum"
+           maxElementsInMemory="1"
+    />
+</ehcache>
