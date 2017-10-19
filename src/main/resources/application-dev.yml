@@ -23,10 +23,16 @@ spring:
           paths: /js/lib
           version: v12
   datasource:
-    url: jdbc:mysql://localhost:3306/jBlog
+    type: com.zaxxer.hikari.HikariDataSource
     username: root
     password: root
-    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/jcala_blog?useUnicode:true&amp;characterEncoding:UTF-8
+    driverClassName: com.mysql.jdbc.Driver
+    sql-script-encoding: UTF-8
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 50
+      minimum-idle: 5
 
 
 server:
@@ -37,7 +43,7 @@ server:
       enabled: true
       mime-types: text/html,text/css,text/javascript,application/javascript,image/gif,image/png,image/jpg
   tomcat:
-        maxThreads: 10
+        maxThreads: 12
         minSpareThreads: 3
         accesslog:
           directory: /home/fullstack/app/log/server_log
@@ -52,5 +58,7 @@ security:
 
 logging:
     config: classpath:log4j2.xml
-
-
+mybatis:
+  type-aliases-package: me.zbl.fullstack.mapper
+  type-handlers-package: org.apache.ibatis.type.LocalDateTypeHandler
+  config-location: classpath:mybatis-config.xml

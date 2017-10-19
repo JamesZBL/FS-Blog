@@ -1,4 +1,4 @@
-package me.zbl.fullstack.service;
+package me.zbl.fullstack.service.api;
 
 
 public interface TestService {

@@ -11,6 +11,7 @@ public class FullstackApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
