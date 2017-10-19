@@ -7,6 +7,11 @@ spring:
       config: ehcache.xml
   mvc:
     static-path-pattern: /resources/**
+  freemarker:
+    cache: true
+    charset: utf-8
+    enabled: true
+    view-names: index,error
   resources:
     chain:
       strategy:
@@ -17,6 +22,13 @@ spring:
           enabled: true
           paths: /js/lib
           version: v12
+  datasource:
+    url: jdbc:mysql://localhost:3306/jBlog
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+
 server:
   port: 8080
   max-http-header-size: 8192
@@ -31,6 +43,8 @@ server:
           directory: /home/fullstack/app/log/server_log
           pattern: combined
           enabled: true
+
+
 security:
   user:
     password: weak

@@ -1,14 +1,20 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.8.RELEASE'
-	}
-	repositories {
-		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-		//mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.8.RELEASE'
+        ehcacheVersion = '2.10.4'
+        mysqlConnectorVersion = '5.1.44'
+        lombokVersion = '1.16.18'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        maven { url "http://repo.spring.io/release" }
+        maven { url "http://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -16,22 +22,38 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
+
+
 group = 'me.zbl'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 configurations {
-	providedRuntime
+    providedRuntime
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-security')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.security:spring-security-test')
+    //security
+    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+    //web
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    //模板引擎
+    compile("org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}")
+    //日志
+    compile("org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}")
+    //缓存
+    compile("net.sf.ehcache:ehcache:${ehcacheVersion}")
+    //数据库驱动
+    compile("mysql:mysql-connector-java:${mysqlConnectorVersion}")
+    //lombok插件
+    compile("org.projectlombok:lombok:${lombokVersion}")
+    //运行环境
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+    //测试
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testCompile("org.springframework.security:spring-security-test:${springBootVersion}")
 }
