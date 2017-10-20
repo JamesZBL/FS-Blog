@@ -19,16 +19,20 @@ buildscript {
     }
 }
 
+
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-
-
 group = 'me.zbl'
 version = '1.10.18-SNAPSHOT'
 sourceCompatibility = 1.8
+
+//启用嵌入式servlet容器
+bootRun{
+    addResources = true
+}
 
 repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
@@ -63,8 +67,8 @@ dependencies {
     //lombok插件
     compile("org.projectlombok:lombok:${lombokVersion}")
     compile 'com.lmax:disruptor:3.3.6'
-    //运行环境
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
+    //运行环境(采用 war 部署的方式时需要)
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
     //测试
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     testCompile("org.springframework.security:spring-security-test:${springBootVersion}")
