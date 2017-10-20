@@ -19,7 +19,8 @@ public class FrontController extends BaseController{
      */
     @RequestMapping(value = "/index")
     public String pFrontIndex(Model model) {
-        setPageTitle(model, ViewConsts.INDEX_PAGE_TITLE);
+//        setPageTitle(model, ViewConsts.INDEX_PAGE_TITLE);
+        model.addAttribute("title","title");
         return "index";
     }
 }
