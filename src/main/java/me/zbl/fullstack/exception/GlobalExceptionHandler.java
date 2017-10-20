@@ -14,6 +14,6 @@ public class GlobalExceptionHandler {
         if (null != e) {
             model.addAttribute("msg",e.getLocalizedMessage());
         }
-        return "/error";
+        return "error";
     }
 }

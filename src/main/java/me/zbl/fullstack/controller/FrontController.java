@@ -1,6 +1,9 @@
 package me.zbl.fullstack.controller;
 
+import me.zbl.fullstack.consts.ViewConsts;
+import me.zbl.fullstack.controller.base.BaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -9,23 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping(value = "/", method = RequestMethod.GET)
-public class FrontController {
-
-//    private TestService testService;
-
-//    @Autowired
-//    public void setTestService(TestService testService) {
-//        this.testService = testService;
-//    }
+public class FrontController extends BaseController{
 
     /**
      * 前台首页
      */
     @RequestMapping(value = "/index")
-    public String pFrontIndex() {
-        /**************************************************/
-//        testService.test();
-        /**************************************************/
+    public String pFrontIndex(Model model) {
+        setPageTitle(model, ViewConsts.INDEX_PAGE_TITLE);
         return "index";
     }
 }

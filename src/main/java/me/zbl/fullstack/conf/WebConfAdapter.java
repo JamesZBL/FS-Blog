@@ -10,10 +10,7 @@ import org.springframework.validation.Validator;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 import java.nio.charset.Charset;
 import java.util.Arrays;
@@ -23,6 +20,7 @@ import java.util.List;
  * WEB MVC 配置
  */
 @Configuration
+@EnableWebMvc
 public class WebConfAdapter extends WebMvcConfigurerAdapter{
 
     private UserAuthenticationInterceptor securityInterceptor;
@@ -44,6 +42,12 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter{
         super.addViewControllers(registry);
         //主页
         registry.addViewController("/").setViewName("index");
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //配置静态资源路径
+        registry.addResourceHandler("/**").addResourceLocations("classpath:static/");
     }
 
     @Override

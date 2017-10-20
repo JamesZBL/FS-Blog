@@ -49,7 +49,7 @@ configurations {
 
 dependencies {
     //security
-    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+//    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
     //web
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     //模板引擎
@@ -72,4 +72,6 @@ dependencies {
     //测试
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
     testCompile("org.springframework.security:spring-security-test:${springBootVersion}")
+    //热部署
+    compile("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
 }

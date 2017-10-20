@@ -17,8 +17,10 @@ public class UserAuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object obj = request.getSession().getAttribute(SessionConstants.s_currentUser);
-        return (null == obj || !(obj instanceof User));
+//        return (null == obj || !(obj instanceof User));
+        return true;
     }
+
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {

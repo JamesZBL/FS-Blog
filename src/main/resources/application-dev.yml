@@ -5,13 +5,17 @@ spring:
     cache-names: ehcache
     ehcache:
       config: ehcache.xml
-  mvc:
-    static-path-pattern: /resources/**
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
   freemarker:
     cache: true
     charset: utf-8
     enabled: true
     view-names: index,error
+    template-loader-path: classpath:/templates/
   resources:
     chain:
       strategy:
@@ -22,6 +26,7 @@ spring:
           enabled: true
           paths: /js/lib
           version: v12
+    static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/public/
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     username: root
@@ -49,12 +54,6 @@ server:
           directory: /home/fullstack/app/log/server_log
           pattern: combined
           enabled: true
-
-
-security:
-  user:
-    password: weak
-
 
 logging:
     config: classpath:log4j2.xml
