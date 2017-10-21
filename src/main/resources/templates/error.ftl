@@ -67,7 +67,8 @@
 <#-- e-slide-header-->
 
 <section class="py-3">
-
+    <h2>${(error.msg)!'服务器需要冷静一下'}</h2>
+    <h3>错误代码：${(error.code)!'未知错误'}</h3>
 </section>
 
 <!-- Page Content -->
