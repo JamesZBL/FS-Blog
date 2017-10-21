@@ -49,7 +49,7 @@ spring:
 
 
 server:
-  port: 8080
+  port: 8082
   max-http-header-size: 8192
   compression:
       min-response-size: 512
