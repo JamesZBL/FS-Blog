@@ -11,10 +11,18 @@ spring:
     restart:
       enabled: true
   freemarker:
-    cache: true
-    charset: utf-8
     enabled: true
+    cache: true
+    suffix: .ftl
+    charset: utf-8
     view-names: index,error
+    content-type: text/html
+    allow-request-override: false
+    check-template-location: false
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    request-context-attribute: request
     template-loader-path: classpath:/templates/
   resources:
     chain:
