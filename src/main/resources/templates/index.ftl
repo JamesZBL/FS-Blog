@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><#if title??>${title}<#else>全栈之路</#if></title>
+    <title>${title!'全栈之路'}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
 <#-- s-slide-header-->
 <header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -53,14 +53,14 @@
                 </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        <#--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
+            <#--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+            <#--<span class="sr-only">Previous</span>-->
+        <#--</a>-->
+        <#--<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
+            <#--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+            <#--<span class="sr-only">Next</span>-->
+        <#--</a>-->
     </div>
 </header>
 <#-- e-slide-header-->
