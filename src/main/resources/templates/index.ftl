@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="zh">
 <head>
 
     <meta charset="utf-8">
@@ -35,10 +35,10 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=100&size=b9999_10000&sec=1508523301573&di=079b46b25fc654c281574e60f0e5dd34&imgtype=0&src=http%3A%2F%2Fup.xinyidiandian.com%2F14415308624922.jpg')">
+            <div class="carousel-item active" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508595325008&di=a92fb4ba0eda9f7a993a57137d0b8e9a&imgtype=0&src=http%3A%2F%2Fupload.chinaz.com%2F2013%2F0830%2F1377855974198.jpg')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>1024程序员节</h3>
-                    <p>用代码改变世界！</p>
+                    <h3>Full-Stack</h3>
+                    <p>全栈工程师之路</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=100&size=b9999_10000&sec=1508523675933&di=d6881084c6bbe75d79148e077fa35846&imgtype=0&src=http%3A%2F%2Feasyread.ph.126.net%2FFmn2HmDokqJMIPBSt3pCTw%3D%3D%2F7916757498384216097.jpg')">
+            <div class="carousel-item" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508595894382&di=d57e201a36a9dda9a285821954315a17&imgtype=0&src=http%3A%2F%2Fyzhtml01.book118.com%2F2016%2F12%2F15%2F03%2F51638095%2F1.png')">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Third Slide</h3>
                     <p>This is a description for the third slide.</p>
