@@ -45,11 +45,12 @@ repositories {
 configurations {
     providedRuntime
     compile.exclude group: 'ch.qos.logback'
+    mybatisGenerator
 }
 
 dependencies {
     //security
-//    compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
+    //compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
     //web
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
     //模板引擎
@@ -67,11 +68,17 @@ dependencies {
     //lombok插件
     compile("org.projectlombok:lombok:${lombokVersion}")
     compile 'com.lmax:disruptor:3.3.6'
+    //mybatis-generator-core
+    mybatisGenerator 'org.mybatis.generator:mybatis-generator-core:1.3.5'
+    //mybatis-mapper
+    mybatisGenerator 'tk.mybatis:mapper:3.4.4'
+    //mybatis-mysql驱动
+    mybatisGenerator "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+
     //运行环境(采用 war 部署的方式时需要)
     //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
     //测试
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
-    testCompile("org.springframework.security:spring-security-test:${springBootVersion}")
     //热部署
     compile("org.springframework.boot:spring-boot-devtools:${springBootVersion}")
 }
