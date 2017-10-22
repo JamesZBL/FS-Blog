@@ -9,11 +9,17 @@
 
     <title>出错啦</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<#--<!-- Bootstrap core CSS &ndash;&gt;-->
+<#--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
-    <link href="/css/full-slider/full-slider.css" rel="stylesheet">
+    <link href="css/full-slider/full-slider.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<#-- 自定义 样式 -->
+    <link rel="stylesheet" href="css/public.css">
 
 </head>
 
@@ -23,71 +29,27 @@
 <#include "public/nav.ftl">
 <#-- e-nav -->
 
-<#-- s-slide-header-->
-<#--<header>-->
-    <#--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
-        <#--<ol class="carousel-indicators">-->
-            <#--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
-            <#--<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
-            <#--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
-        <#--</ol>-->
-        <#--<div class="carousel-inner" role="listbox">-->
-            <#--<!-- Slide One - Set the background image for this slide in the line below &ndash;&gt;-->
-            <#--<div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">-->
-                <#--<div class="carousel-caption d-none d-md-block">-->
-                    <#--<h3>First Slide</h3>-->
-                    <#--<p>This is a description for the first slide.</p>-->
-                <#--</div>-->
-            <#--</div>-->
-            <#--<!-- Slide Two - Set the background image for this slide in the line below &ndash;&gt;-->
-            <#--<div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">-->
-                <#--<div class="carousel-caption d-none d-md-block">-->
-                    <#--<h3>Second Slide</h3>-->
-                    <#--<p>This is a description for the second slide.</p>-->
-                <#--</div>-->
-            <#--</div>-->
-            <#--<!-- Slide Three - Set the background image for this slide in the line below &ndash;&gt;-->
-            <#--<div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">-->
-                <#--<div class="carousel-caption d-none d-md-block">-->
-                    <#--<h3>Third Slide</h3>-->
-                    <#--<p>This is a description for the third slide.</p>-->
-                <#--</div>-->
-            <#--</div>-->
-        <#--</div>-->
-        <#--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
-            <#--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-            <#--<span class="sr-only">Previous</span>-->
-        <#--</a>-->
-        <#--<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
-            <#--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-            <#--<span class="sr-only">Next</span>-->
-        <#--</a>-->
-    <#--</div>-->
-<#--</header>-->
-<#-- e-slide-header-->
 
-<section class="py-3">
-    <h2>${(error.msg)!'服务器需要冷静一下'}</h2>
-    <h3>错误代码：${(error.code)!'未知错误'}</h3>
+<section class="py-3 cus_content">
+    <div class="container">
+        <#--<p class="text-center">${(msg)!"服务器需要冷静一下"}</p>-->
+        <#--<p class="text-center">错误代码：${(code)!"未知错误"}</p>-->
+        <h2 class="m-3 text-center">${(msg)!"服务器需要冷静一下"}</h2>
+        <h3 class="text-center">错误代码：${(code)!"未知错误"}</h3>
+    </div>
 </section>
 
-<!-- Page Content -->
-<#--<section class="py-5">-->
-    <#--<div class="container">-->
-        <#--<h1>Full Slider by Start Bootstrap</h1>-->
-        <#--<p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles-->
-            <#--for this template are contained within the-->
-            <#--<code>full-slider.css</code>file.</p>-->
-    <#--</div>-->
-<#--</section>-->
-
 <#-- s-footer -->
-<#include "public/footer.ftl">
+<footer class="py-5 bg-dark fixed-bottom">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; FullStack by James 2016-2017</p>
+    </div>
+</footer>
 <#-- e-footer -->
 
 <!-- Bootstrap core JavaScript -->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
