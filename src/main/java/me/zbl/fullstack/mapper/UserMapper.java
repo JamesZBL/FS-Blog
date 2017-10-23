@@ -34,7 +34,7 @@ public interface UserMapper {
             "#{motto,jdbcType=LONGVARCHAR}, #{mdInfo,jdbcType=LONGVARCHAR})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
-    int insert(me.zbl.fullstack.entity.temp.User record);
+    int insert(User record);
 
     @Select({
             "select",
@@ -62,7 +62,7 @@ public interface UserMapper {
             @Result(column="motto", property="motto", jdbcType=JdbcType.LONGVARCHAR),
             @Result(column="md_info", property="mdInfo", jdbcType=JdbcType.LONGVARCHAR)
     })
-    me.zbl.fullstack.entity.temp.User selectByPrimaryKey(Integer id);
+    User selectByPrimaryKey(Integer id);
 
     @Select({
             "select",
@@ -89,7 +89,7 @@ public interface UserMapper {
             @Result(column="motto", property="motto", jdbcType=JdbcType.LONGVARCHAR),
             @Result(column="md_info", property="mdInfo", jdbcType=JdbcType.LONGVARCHAR)
     })
-    List<me.zbl.fullstack.entity.temp.User> selectAll();
+    List<User> selectAll();
 
     @Update({
             "update user",
@@ -111,7 +111,7 @@ public interface UserMapper {
             "md_info = #{mdInfo,jdbcType=LONGVARCHAR}",
             "where id = #{id,jdbcType=INTEGER}"
     })
-    int updateByPrimaryKey(me.zbl.fullstack.entity.temp.User record);
+    int updateByPrimaryKey(User record);
 
     @Select({
             "select",
