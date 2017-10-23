@@ -3,6 +3,8 @@ package me.zbl.fullstack.entity;
 import java.util.Date;
 
 public class TagArticle {
+    private Integer id;
+
     private Integer tagId;
 
     private Integer articleId;
@@ -10,6 +12,14 @@ public class TagArticle {
     private Date gmtCreate;
 
     private Date gmtModified;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getTagId() {
         return tagId;
