@@ -42,7 +42,7 @@
             <div class="carousel-item active" style="background-image: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508595325008&di=a92fb4ba0eda9f7a993a57137d0b8e9a&imgtype=0&src=http%3A%2F%2Fupload.chinaz.com%2F2013%2F0830%2F1377855974198.jpg')">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Full-Stack</h3>
-                    <p>全栈工程师之路</p>
+                    <p>全栈工程师成长之路</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
