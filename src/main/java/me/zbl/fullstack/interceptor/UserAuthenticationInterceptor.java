@@ -1,7 +1,6 @@
 package me.zbl.fullstack.interceptor;
 
-import me.zbl.fullstack.consts.session.SessionConstants;
-import me.zbl.fullstack.entity.user.User;
+import me.zbl.fullstack.consts.SessionConstants;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

@@ -1,4 +1,4 @@
-package me.zbl.fullstack.consts.session;
+package me.zbl.fullstack.consts;
 
 /**
  * 全局常量

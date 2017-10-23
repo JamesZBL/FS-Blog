@@ -4,7 +4,9 @@ import java.util.List;
 import me.zbl.fullstack.entity.TagArticle;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @Mapper
 public interface TagArticleMapper {
     @Delete({
