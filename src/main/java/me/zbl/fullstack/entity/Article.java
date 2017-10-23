@@ -5,8 +5,6 @@ import java.util.Date;
 public class Article {
     private Integer id;
 
-    private Date createDatetime;
-
     private String title;
 
     private Date gmtCreate;
@@ -23,14 +21,6 @@ public class Article {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Date getCreateDatetime() {
-        return createDatetime;
-    }
-
-    public void setCreateDatetime(Date createDatetime) {
-        this.createDatetime = createDatetime;
     }
 
     public String getTitle() {

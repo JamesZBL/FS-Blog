@@ -19,25 +19,24 @@ public interface ArticleMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into article (create_datetime, title, ",
-        "gmt_create, gmt_modified, ",
-        "introduction, md_material)",
-        "values (#{createDatetime,jdbcType=TIMESTAMP}, #{title,jdbcType=VARCHAR}, ",
-        "#{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, ",
-        "#{introduction,jdbcType=LONGVARCHAR}, #{mdMaterial,jdbcType=LONGVARCHAR})"
+        "insert into article (title, gmt_create, ",
+        "gmt_modified, introduction, ",
+        "md_material)",
+        "values (#{title,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, ",
+        "#{gmtModified,jdbcType=TIMESTAMP}, #{introduction,jdbcType=LONGVARCHAR}, ",
+        "#{mdMaterial,jdbcType=LONGVARCHAR})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(Article record);
 
     @Select({
         "select",
-        "id, create_datetime, title, gmt_create, gmt_modified, introduction, md_material",
+        "id, title, gmt_create, gmt_modified, introduction, md_material",
         "from article",
         "where id = #{id,jdbcType=INTEGER}"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="create_datetime", property="createDatetime", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="title", property="title", jdbcType=JdbcType.VARCHAR),
         @Result(column="gmt_create", property="gmtCreate", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="gmt_modified", property="gmtModified", jdbcType=JdbcType.TIMESTAMP),
@@ -48,12 +47,11 @@ public interface ArticleMapper {
 
     @Select({
         "select",
-        "id, create_datetime, title, gmt_create, gmt_modified, introduction, md_material",
+        "id, title, gmt_create, gmt_modified, introduction, md_material",
         "from article"
     })
     @Results({
         @Result(column="id", property="id", jdbcType=JdbcType.INTEGER, id=true),
-        @Result(column="create_datetime", property="createDatetime", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="title", property="title", jdbcType=JdbcType.VARCHAR),
         @Result(column="gmt_create", property="gmtCreate", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="gmt_modified", property="gmtModified", jdbcType=JdbcType.TIMESTAMP),
@@ -64,8 +62,7 @@ public interface ArticleMapper {
 
     @Update({
         "update article",
-        "set create_datetime = #{createDatetime,jdbcType=TIMESTAMP},",
-          "title = #{title,jdbcType=VARCHAR},",
+        "set title = #{title,jdbcType=VARCHAR},",
           "gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},",
           "gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},",
           "introduction = #{introduction,jdbcType=LONGVARCHAR},",

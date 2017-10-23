@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestServiceImpl implements TestService{
 
-    private UserMapper mapper;
 
-    @Autowired
-    public void setMapper(UserMapper mapper) {
-        this.mapper = mapper;
-    }
 
     @Override
     public void test() {
