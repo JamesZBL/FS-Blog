@@ -30,7 +30,7 @@
 <#-- e-nav -->
 
 
-<section class="py-3 cus_content">
+<section class="py-3">
     <div class="container">
         <#--<p class="text-center">${(msg)!"服务器需要冷静一下"}</p>-->
         <#--<p class="text-center">错误代码：${(code)!"未知错误"}</p>-->
