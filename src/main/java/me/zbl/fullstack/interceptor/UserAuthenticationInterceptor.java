@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class UserAuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        Object obj = request.getSession().getAttribute(SessionConstants.s_currentUser);
+        Object obj = request.getSession().getAttribute(SessionConstants.SESSION_CURRENT_USER);
 //        return (null == obj || !(obj instanceof User));
         return true;
     }

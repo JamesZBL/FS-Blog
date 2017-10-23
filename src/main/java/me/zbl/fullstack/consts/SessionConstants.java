@@ -5,5 +5,5 @@ package me.zbl.fullstack.consts;
  * Session
  */
 public class SessionConstants {
-    public static final String s_currentUser = "session_current_user";
+    public static final String SESSION_CURRENT_USER = "session_current_user";
 }
