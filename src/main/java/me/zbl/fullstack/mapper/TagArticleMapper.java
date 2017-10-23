@@ -2,16 +2,10 @@ package me.zbl.fullstack.mapper;
 
 import java.util.List;
 import me.zbl.fullstack.entity.TagArticle;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectKey;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
+@Mapper
 public interface TagArticleMapper {
     @Delete({
         "delete from tag_article",
