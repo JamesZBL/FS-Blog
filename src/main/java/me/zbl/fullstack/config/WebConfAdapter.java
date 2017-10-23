@@ -1,4 +1,4 @@
-package me.zbl.fullstack.conf;
+package me.zbl.fullstack.config;
 
 import me.zbl.fullstack.interceptor.UserAuthenticationInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
