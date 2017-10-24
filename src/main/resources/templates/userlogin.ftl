@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>${title!'Full-Stack-登录'}</title>
+    <title>${title!'全栈之路-登录'}</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,26 +27,24 @@
                 <div class="form-group">
                     <label for="id_username">用户名</label>
                     <input class="form-control" id="id_username" type="text" aria-describedby="emailHelp"
-                           placeholder="Username">
+                           placeholder="Username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="id_password">密码</label>
-                    <input class="form-control" id="id_password" type="password" placeholder="Password">
+                    <input class="form-control" id="id_password" type="password" placeholder="Password" name="password">
                 </div>
                 <div class="form-group">
                     <div class="form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> 记住密码 </label>
+                            <input class="form-check-input" type="checkbox" name="rememberme"> 记住密码 </label>
                     </div>
                 </div>
                 <a class="btn btn-primary btn-block" href="index.html">Login</a>
             </form>
             <div class="container text-center mt-3">
                 <div class="row">
-                    <!-- <div class="text-center"> -->
                     <a class="d-block small col-sm offset-6" href="register.html">现在注册</a>
                     <a class="d-block small col-sm" href="forgot-password.html">忘记密码</a>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
