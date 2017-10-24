@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.jws.WebParam;
+
 /**
  * 前台页面控制器
  *
@@ -43,5 +45,13 @@ public class FrontController extends BaseController {
     @GetMapping("/userlogin")
     public String pFrontUserLogin(Model model) {
         return "userlogin";
+    }
+
+    /**
+     * 前台用户注册
+     */
+    @GetMapping("/userregister")
+    public String pFrontUserRegister(Model model) {
+        return "register";
     }
 }
