@@ -48,11 +48,11 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="login.html">立即注册</a>
+          <a class="btn btn-primary btn-block" href="userregister">立即注册</a>
         </form>
         <div class="container text-center mt-3">
           <div class="row text-right">
-            <a class="d-block small col-sm" href="register.html">已有账号?立即登录</a>
+            <a class="d-block small col-sm" href="userlogin">已有账号?立即登录</a>
           </div>
         </div>
       </div>
