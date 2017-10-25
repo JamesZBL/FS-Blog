@@ -29,8 +29,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> registerUsernameCheck(UserRegisterForm registerForm) {
-        return mUserMapper.selectByName(registerForm);
+    public boolean registerUsernameCheckExist(UserRegisterForm registerForm) {
+        return mUserMapper.selectByName(registerForm).size() > 0;
     }
 
     @Override

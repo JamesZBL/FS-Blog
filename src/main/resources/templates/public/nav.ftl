@@ -31,7 +31,7 @@
                         <a class="dropdown-item" href="#">消息</a>
                         <a class="dropdown-item" href="#">草稿箱</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">注册</a>
+                        <a class="dropdown-item" href="userregister">注册</a>
                         <a class="dropdown-item" href="#">注销登录</a>
                     </div>
                 </li>

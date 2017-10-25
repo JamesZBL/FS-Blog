@@ -58,7 +58,7 @@ public class UserController extends BaseController {
             return "redirect:/register?msg=" + errors.get(0);
         }
         //再次进行重名校验
-        if (mUserService.registerUsernameCheck(registerForm).size() > 0) {
+        if (mUserService.registerUsernameCheckExist(registerForm)) {
             return "redirect:/register?msg=" + "用户名已存在";
         }
         //再次进行密码一致校验

@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserService {
     User loginAuthentication(UserLoginForm loginForm);
 
-    List<User> registerUsernameCheck(UserRegisterForm registerForm);
+    boolean registerUsernameCheckExist(UserRegisterForm registerForm);
 
     void insertUser(User user);
 
