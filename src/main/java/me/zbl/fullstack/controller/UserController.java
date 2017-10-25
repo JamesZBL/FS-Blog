@@ -55,17 +55,17 @@ public class UserController extends BaseController {
     public String fFrontUserRegister(HttpServletRequest request, Model model, @Valid UserRegisterForm registerForm, User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             List<ObjectError> errors = bindingResult.getAllErrors();
-            return "redirect:/register?msg=" + errors.get(0);
+            return "register" ;
         }
         //再次进行重名校验
         if (mUserService.registerUsernameCheckExist(registerForm)) {
-            return "redirect:/register?msg=" + "用户名已存在";
+            return "register";
         }
         //再次进行密码一致校验
-        if (registerForm.getUsername() != registerForm.getConfirmpassword()) {
-            return "redirect:/register?msg=" + "两次输入的密码不一致";
+        if (!registerForm.getUsername().equals(registerForm.getConfirmpassword())) {
+            return "register";
         }
         mUserService.insertUser(user);
-        return "forward:/userlogin.f";
+        return "userlogin";
     }
 }

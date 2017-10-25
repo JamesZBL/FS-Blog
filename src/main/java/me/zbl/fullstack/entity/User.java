@@ -9,6 +9,8 @@ public class User {
 
     private String password;
 
+    private Date birthDate;
+
     private String nickname;
 
     private String email;
@@ -20,12 +22,6 @@ public class User {
     private String wecaht;
 
     private String avatar;
-
-    private Integer birYear;
-
-    private Integer birMonth;
-
-    private Integer birDay;
 
     private Integer status;
 
@@ -63,6 +59,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getNickname() {
@@ -111,30 +115,6 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar == null ? null : avatar.trim();
-    }
-
-    public Integer getBirYear() {
-        return birYear;
-    }
-
-    public void setBirYear(Integer birYear) {
-        this.birYear = birYear;
-    }
-
-    public Integer getBirMonth() {
-        return birMonth;
-    }
-
-    public void setBirMonth(Integer birMonth) {
-        this.birMonth = birMonth;
-    }
-
-    public Integer getBirDay() {
-        return birDay;
-    }
-
-    public void setBirDay(Integer birDay) {
-        this.birDay = birDay;
     }
 
     public Integer getStatus() {

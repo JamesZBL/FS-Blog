@@ -20,14 +20,12 @@ public interface AdminUserMapper {
             "birth_date, nickname, ",
             "email, github, qq, ",
             "wecaht, avatar, ",
-            "gmt_create, gmt_modified, ",
             "hobby, motto, ",
             "md_info)",
             "values (#{username,jdbcType=VARCHAR}, MD5(#{password,jdbcType=VARCHAR}), ",
             "#{birthDate,jdbcType=DATE}, #{nickname,jdbcType=VARCHAR}, ",
             "#{email,jdbcType=VARCHAR}, #{github,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, ",
             "#{wecaht,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, ",
-            "#{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, ",
             "#{hobby,jdbcType=LONGVARCHAR}, #{motto,jdbcType=LONGVARCHAR}, ",
             "#{mdInfo,jdbcType=LONGVARCHAR})"
     })
@@ -96,8 +94,6 @@ public interface AdminUserMapper {
             "qq = #{qq,jdbcType=VARCHAR},",
             "wecaht = #{wecaht,jdbcType=VARCHAR},",
             "avatar = #{avatar,jdbcType=VARCHAR},",
-            "gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},",
-            "gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},",
             "hobby = #{hobby,jdbcType=LONGVARCHAR},",
             "motto = #{motto,jdbcType=LONGVARCHAR},",
             "md_info = #{mdInfo,jdbcType=LONGVARCHAR}",

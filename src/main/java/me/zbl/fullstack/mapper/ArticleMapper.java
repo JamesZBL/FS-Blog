@@ -14,11 +14,10 @@ public interface ArticleMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into article (title, gmt_create, ",
-        "gmt_modified, introduction, ",
+        "insert into article (title, ",
+        "introduction, ",
         "md_material)",
-        "values (#{title,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, ",
-        "#{gmtModified,jdbcType=TIMESTAMP}, #{introduction,jdbcType=LONGVARCHAR}, ",
+        "values (#{title,jdbcType=VARCHAR},",
         "#{mdMaterial,jdbcType=LONGVARCHAR})"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
@@ -58,8 +57,6 @@ public interface ArticleMapper {
     @Update({
         "update article",
         "set title = #{title,jdbcType=VARCHAR},",
-          "gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},",
-          "gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},",
           "introduction = #{introduction,jdbcType=LONGVARCHAR},",
           "md_material = #{mdMaterial,jdbcType=LONGVARCHAR}",
         "where id = #{id,jdbcType=INTEGER}"

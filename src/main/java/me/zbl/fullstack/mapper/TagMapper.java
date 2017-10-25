@@ -16,10 +16,10 @@ public interface TagMapper {
     int deleteByPrimaryKey(Integer id);
 
     @Insert({
-        "insert into tag (name, gmt_create, ",
-        "gmt_modified)",
-        "values (#{name,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, ",
-        "#{gmtModified,jdbcType=TIMESTAMP})"
+        "insert into tag (name",
+        ")",
+        "values (#{name,jdbcType=VARCHAR} ",
+        ")"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(Tag record);
@@ -54,8 +54,6 @@ public interface TagMapper {
     @Update({
         "update tag",
         "set name = #{name,jdbcType=VARCHAR},",
-          "gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},",
-          "gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}",
         "where id = #{id,jdbcType=INTEGER}"
     })
     int updateByPrimaryKey(Tag record);

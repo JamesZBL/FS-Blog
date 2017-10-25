@@ -23,7 +23,7 @@
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Full-Stack</div>
       <div class="card-body">
-        <form>
+        <form id="id_user_register_form">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-primary btn-block" href="userregister">立即注册</a>
+          <a id="id_user_register_submit" class="btn btn-primary btn-block">立即注册</a>
         </form>
         <div class="container text-center mt-3">
           <div class="row text-right">

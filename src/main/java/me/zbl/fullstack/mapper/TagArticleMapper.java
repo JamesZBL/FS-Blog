@@ -19,9 +19,8 @@ public interface TagArticleMapper {
 
     @Insert({
         "insert into tag_article (tag_id, article_id, ",
-        "gmt_create, gmt_modified)",
         "values (#{tagId,jdbcType=INTEGER}, #{articleId,jdbcType=INTEGER}, ",
-        "#{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})"
+        ")"
     })
     @SelectKey(statement="SELECT LAST_INSERT_ID()", keyProperty="id", before=false, resultType=Integer.class)
     int insert(TagArticle record);
@@ -57,13 +56,4 @@ public interface TagArticleMapper {
     })
     List<TagArticle> selectAll();
 
-    @Update({
-        "update tag_article",
-        "set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},",
-          "gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}",
-        "where id = #{id,jdbcType=INTEGER}",
-          "and tag_id = #{tagId,jdbcType=INTEGER}",
-          "and article_id = #{articleId,jdbcType=INTEGER}"
-    })
-    int updateByPrimaryKey(TagArticle record);
 }

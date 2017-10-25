@@ -1,6 +1,4 @@
-package me.zbl.fullstack.mapper;
-
-import java.util.List;
+package me.zbl.fullstack.mapper.bak;
 
 import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
@@ -8,6 +6,8 @@ import me.zbl.fullstack.entity.vo.UserRegisterForm;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 @Mapper
@@ -23,12 +23,14 @@ public interface UserMapper {
             "birth_date, nickname, ",
             "email, github, qq, ",
             "wecaht, avatar, ",
+            "status, level, ",
             "hobby, ",
             "motto, md_info)",
             "values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, ",
             "#{birthDate,jdbcType=DATE}, #{nickname,jdbcType=VARCHAR}, ",
             "#{email,jdbcType=VARCHAR}, #{github,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, ",
             "#{wecaht,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, ",
+            "#{status,jdbcType=INTEGER}, #{level,jdbcType=INTEGER},  ",
             "#{hobby,jdbcType=LONGVARCHAR}, ",
             "#{motto,jdbcType=LONGVARCHAR}, #{mdInfo,jdbcType=LONGVARCHAR})"
     })

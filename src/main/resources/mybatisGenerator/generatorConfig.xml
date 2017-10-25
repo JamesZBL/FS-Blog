@@ -4,6 +4,11 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- Common Mapper 插件 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
         <commentGenerator>
             <property name="suppressAllComments" value="true"></property>
             <property name="suppressDate" value="true"></property>
@@ -34,8 +39,12 @@
         </javaClientGenerator>
 
         <!-- sql占位符，表示所有的表 -->
-        <table tableName="%">
+        <table tableName="user_copy" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true"
+               enableInsert="true" >
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+        <!--<table tableName="%">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>-->
     </context>
 </generatorConfiguration>
