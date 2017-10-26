@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@Mapper
+//@Repository
+//@Mapper
 public interface UserMapper {
     @Delete({
             "delete from user",
