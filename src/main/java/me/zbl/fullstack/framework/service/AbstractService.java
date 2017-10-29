@@ -2,6 +2,7 @@ package me.zbl.fullstack.framework.service;
 
 import me.zbl.fullstack.framework.mapper.IMyMapper;
 import org.apache.ibatis.exceptions.TooManyResultsException;
+import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
 
 import javax.annotation.Resource;
@@ -23,14 +24,14 @@ public abstract class AbstractService<T> implements IService<T> {
     // 当前泛型真实类型的Class
     private Class<T> modelClass;
 
-    @Override
-    public Condition createCondition() {
-        return new Condition(modelClass);
-    }
-
     public AbstractService() {
         ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
         modelClass = (Class<T>) pt.getActualTypeArguments()[0];
+    }
+
+    @Override
+    public Condition createCondition() {
+        return new Condition(modelClass);
     }
 
     @Override

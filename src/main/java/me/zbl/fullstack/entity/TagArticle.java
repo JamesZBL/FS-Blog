@@ -12,14 +12,12 @@ public class TagArticle {
     /**
      * Tag_ID
      */
-    @Id
     @Column(name = "tag_id")
     private Integer tagId;
 
     /**
      * Article_ID
      */
-    @Id
     @Column(name = "article_id")
     private Integer articleId;
 

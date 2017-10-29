@@ -18,9 +18,6 @@ import javax.jws.WebParam;
 @Controller
 public class FrontController extends BaseController {
 
-    @Autowired
-    private UserService mUserService;
-
     /**
      * 前台首页
      */
