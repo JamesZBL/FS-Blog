@@ -35,7 +35,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
 
     @Override
     public void insertUser(User user) {
-        mapper.insert(user);
+        mapper.insertSelective(user);
     }
 
     @Override

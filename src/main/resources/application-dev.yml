@@ -17,10 +17,10 @@ spring:
     charset: utf-8
     view-names: index,error,userlogin,adminlogin,register
     content-type: text/html
-    allow-request-override: false
-    check-template-location: false
-    expose-request-attributes: false
-    expose-session-attributes: false
+    allow-request-override: true
+    check-template-location: true
+    expose-request-attributes: true
+    expose-session-attributes: true
     expose-spring-macro-helpers: true
     request-context-attribute: request
     template-loader-path: classpath:/templates/

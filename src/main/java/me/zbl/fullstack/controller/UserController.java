@@ -66,6 +66,6 @@ public class UserController extends BaseController {
             return "redirect:register";
         }
         mUserService.insertUser(user);
-        return "redirect:userlogin";
+        return "userlogin";
     }
 }

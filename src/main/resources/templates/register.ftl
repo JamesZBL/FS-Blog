@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <a id="id_user_register_submit" class="btn btn-primary btn-block">立即注册</a>
+          <a id="id_user_register_submit" class="btn btn-primary btn-block" href="javascript:void(0);">立即注册</a>
         </form>
         <div class="container text-center mt-3">
           <div class="row text-right">

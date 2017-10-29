@@ -39,7 +39,7 @@
                             <input class="form-check-input" type="checkbox" name="rememberme"> 记住密码 </label>
                     </div>
                 </div>
-                <a class="btn btn-primary btn-block" href="index.html">Login</a>
+                <a id="id_user_login_submit" class="btn btn-primary btn-block" href="javascript:void(0);">Login</a>
             </form>
             <div class="container text-center mt-3">
                 <div class="row">
@@ -55,6 +55,9 @@
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<#-- 自定义js -->
+<script src="js/f_userlogin.js"></script>
 </body>
 
 </html>
