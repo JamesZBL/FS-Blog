@@ -66,12 +66,12 @@ server:
 logging:
     config: classpath:log4j2.xml
 
-mybatis:
-    type-aliases-package: me.zbl.fullstack.entity
-    mapper-locations: classpath:mapping/*.xml
+#mybatis:
+#    type-aliases-package: me.zbl.fullstack.entity
+#    mapper-locations: classpath:mapping/*.xml
 
-mapper:
-    mappers:
-        - me.zbl.fullstack.framework.mapper.IMyMapper
-    not-empty: false
-    identity: MYSQL
+#mapper:
+#    mappers:
+#        - me.zbl.fullstack.framework.mapper.IMyMapper
+#    not-empty: false
+#    identity: MYSQL

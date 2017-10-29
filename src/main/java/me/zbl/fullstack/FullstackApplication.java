@@ -32,6 +32,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //
 //               佛祖保佑         永无BUG
 
+
+
+
+
+
+
+
+
+
+
+
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching

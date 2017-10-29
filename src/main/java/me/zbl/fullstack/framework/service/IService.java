@@ -43,4 +43,6 @@ public interface IService<T> {
 
     //获取所有
     List<T> findAll();
+
+    Condition createCondition();
 }

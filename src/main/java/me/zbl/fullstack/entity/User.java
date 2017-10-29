@@ -91,8 +91,9 @@ public class User {
      *
      * @param username 用户名
      */
-    public void setUsername(String username) {
+    public User setUsername(String username) {
         this.username = username == null ? null : username.trim();
+        return this;
     }
 
     /**

@@ -9,7 +9,7 @@ import me.zbl.fullstack.framework.service.IService;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public interface UserService<T> extends IService<T> {
+public interface UserService {
     User loginAuthentication(UserLoginForm loginForm);
 
     boolean registerUsernameCheckExist(UserRegisterForm registerForm);
