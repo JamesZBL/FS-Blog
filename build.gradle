@@ -4,6 +4,7 @@ buildscript {
         ehcacheVersion = '2.10.4'
         mysqlConnectorVersion = '5.1.44'
         lombokVersion = '1.16.18'
+        mybatisVersion = '3.4.5'
         mybatisStarterVersion = '1.3.0'
         hikariCPVersion = '2.5.1'
         commonMapperVersion = '3.4.4'
@@ -68,7 +69,10 @@ dependencies {
     //连接池
     compile("com.zaxxer:HikariCP:${hikariCPVersion}")
     //ORM
-    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisStarterVersion}")
+    compile ("org.mybatis:mybatis:${mybatisVersion}")
+    //compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisStarterVersion}")
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.5'
     //lombok插件
     compile("org.projectlombok:lombok:${lombokVersion}")
     //
