@@ -20,11 +20,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                <#--<li class="nav-item">-->
-                    <#--<a class="nav-link" href="#">${(Session.cur_user.username)!'登录'}</a>-->
-                <#--</li>-->
+            <#--<li class="nav-item">-->
+            <#--<a class="nav-link" href="#">${(Session.cur_user.username)!'登录'}</a>-->
+            <#--</li>-->
+            <#if userinfo??>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">${(Session.cur_user.username)!'登录'}</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">${(userinfo.username)!'登录'}</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">我的资料</a>
                         <a class="dropdown-item" href="#">写博客</a>
@@ -35,6 +37,14 @@
                         <a class="dropdown-item" href="#">注销登录</a>
                     </div>
                 </li>
+            <#else>
+                <li class="nav-item">
+                    <a class="nav-link" href="userregister">注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="userlogin">登录</a>
+                </li>
+            </#if>
             </ul>
         </div>
     </div>
