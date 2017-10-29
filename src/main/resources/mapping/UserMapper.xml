@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.zbl.fullstack.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="me.zbl.fullstack.entity.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="birth_date" jdbcType="DATE" property="birthDate" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="github" jdbcType="VARCHAR" property="github" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="wecaht" jdbcType="VARCHAR" property="wecaht" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="hobby" jdbcType="LONGVARCHAR" property="hobby" />
+    <result column="motto" jdbcType="LONGVARCHAR" property="motto" />
+    <result column="md_info" jdbcType="LONGVARCHAR" property="mdInfo" />
+  </resultMap>
+</mapper>

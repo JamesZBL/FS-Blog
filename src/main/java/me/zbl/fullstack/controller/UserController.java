@@ -36,15 +36,15 @@ public class UserController extends BaseController {
     public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             List<ObjectError> errors = bindingResult.getAllErrors();
-            return "redirect:/userlogin?msg=" + errors.get(0).getDefaultMessage();
+            return "redirect:userlogin?msg=" + errors.get(0).getDefaultMessage();
         }
         User user = mUserService.loginAuthentication(loginForm);
         if (null != user) {
             mUserService.joinSession(request, user);
             model.addAttribute(ViewConsts.VIEW_USERINFO, user);
-            return "redirect:/index";
+            return "redirect:index";
         }
-        return "redirect:/userlogin?msg=登录失败";
+        return "redirect:userlogin?msg=登录失败";
     }
 
     /**
@@ -55,17 +55,17 @@ public class UserController extends BaseController {
     public String fFrontUserRegister(HttpServletRequest request, Model model, @Valid UserRegisterForm registerForm, User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             List<ObjectError> errors = bindingResult.getAllErrors();
-            return "register" ;
+            return "redirect:register";
         }
         //再次进行重名校验
         if (mUserService.registerUsernameCheckExist(registerForm)) {
-            return "register";
+            return "redirect:register";
         }
         //再次进行密码一致校验
         if (!registerForm.getUsername().equals(registerForm.getConfirmpassword())) {
-            return "register";
+            return "redirect:register";
         }
         mUserService.insertUser(user);
-        return "userlogin";
+        return "redirect:userlogin";
     }
 }
