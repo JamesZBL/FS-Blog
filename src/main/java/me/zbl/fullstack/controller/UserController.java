@@ -42,7 +42,7 @@ public class UserController extends BaseController {
         if (null != user) {
             mUserService.joinSession(request, user);
             model.addAttribute(ViewConsts.VIEW_USERINFO, user);
-            return "index";
+            return "forward:index";
         }
         return "redirect:userlogin?msg=登录失败";
     }
@@ -66,6 +66,6 @@ public class UserController extends BaseController {
             return "redirect:register";
         }
         mUserService.insertUser(user);
-        return "userlogin";
+        return "redirect:userlogin";
     }
 }

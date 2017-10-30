@@ -20,7 +20,6 @@ import java.util.List;
  * WEB MVC 配置
  */
 @Configuration
-@EnableWebMvc
 public class WebConfAdapter extends WebMvcConfigurerAdapter{
 
     private UserAuthenticationInterceptor securityInterceptor;

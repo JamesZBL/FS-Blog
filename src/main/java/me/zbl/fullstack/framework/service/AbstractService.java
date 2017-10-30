@@ -2,7 +2,6 @@ package me.zbl.fullstack.framework.service;
 
 import me.zbl.fullstack.framework.mapper.IMyMapper;
 import org.apache.ibatis.exceptions.TooManyResultsException;
-import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.entity.Condition;
 
 import javax.annotation.Resource;

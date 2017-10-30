@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.jws.WebParam;
 
@@ -32,6 +33,15 @@ public class FrontController extends BaseController {
      */
     @GetMapping("/index")
     public String pFrontIndex(Model model) {
+        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
+        return "index";
+    }
+
+    /**
+     * 前台首页
+     */
+    @PostMapping("/index")
+    public String pFrontIndexPost(Model model) {
         model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
         return "index";
     }
