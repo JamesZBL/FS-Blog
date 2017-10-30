@@ -1,7 +1,9 @@
 package me.zbl.fullstack.controller;
 
+import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
+import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.service.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.jws.WebParam;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 前台页面控制器
@@ -30,15 +33,23 @@ public class FrontController extends BaseController {
 
     /**
      * 前台首页
+     * GET
      */
     @GetMapping("/index")
-    public String pFrontIndex(Model model) {
+    public String pFrontIndex(HttpServletRequest request, Model model) {
         model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
+        try {
+            User user = (User) getSessionAttr(request, SessionConstants.SESSION_CURRENT_USER);
+            model.addAttribute(ViewConsts.VIEW_USERINFO, user);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
         return "index";
     }
 
     /**
      * 前台首页
+     * POST
      */
     @PostMapping("/index")
     public String pFrontIndexPost(Model model) {

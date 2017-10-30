@@ -41,8 +41,7 @@ public class UserController extends BaseController {
         User user = mUserService.loginAuthentication(loginForm);
         if (null != user) {
             mUserService.joinSession(request, user);
-            model.addAttribute(ViewConsts.VIEW_USERINFO, user);
-            return "forward:index";
+            return "redirect:index";
         }
         return "redirect:userlogin?msg=登录失败";
     }
