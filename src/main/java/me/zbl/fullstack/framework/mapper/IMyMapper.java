@@ -20,5 +20,5 @@ public interface IMyMapper<T> extends Mapper<T>,
         MySqlMapper<T>,
         DeleteByIdsMapper<T>,
         ConditionMapper<T>, ExampleMapper<T>,
-        SelectByIdsMapper {
+        SelectByIdsMapper<T> {
 }
