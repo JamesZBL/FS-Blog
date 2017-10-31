@@ -1,6 +1,5 @@
 package me.zbl.fullstack.controller;
 
-import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
