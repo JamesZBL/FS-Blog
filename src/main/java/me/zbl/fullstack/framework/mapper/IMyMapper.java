@@ -13,12 +13,14 @@ import tk.mybatis.mapper.common.ids.SelectByIdsMapper;
  *
  * @param <T> 实体类型
  * @author James
- * fixme 此接口不能被扫描到，否则出错
+ *         fixme 此接口不能被扫描到，否则出错
  * @since 1.10.29
  */
-public interface IMyMapper<T> extends Mapper<T>,
+public interface IMyMapper<T> extends
+        Mapper<T>,
         MySqlMapper<T>,
         DeleteByIdsMapper<T>,
-        ConditionMapper<T>, ExampleMapper<T>,
+        ConditionMapper<T>,
+        ExampleMapper<T>,
         SelectByIdsMapper<T> {
 }
