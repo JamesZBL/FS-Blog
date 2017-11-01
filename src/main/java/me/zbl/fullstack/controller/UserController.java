@@ -4,12 +4,13 @@ import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.entity.vo.UserRegisterForm;
-import me.zbl.fullstack.service.api.UserService;
+import me.zbl.fullstack.service.api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ import java.util.List;
 public class UserController extends BaseController {
 
     @Autowired
-    private UserService mUserService;
+    private IUserService mUserService;
 
     /**
      * 前台用户登录
@@ -66,5 +67,11 @@ public class UserController extends BaseController {
         mUserService.insertUser(user);
         //直接用当前账号登录
         return "forward:userlogin.f";
+    }
+
+    @GetMapping("/usersignout.c")
+    public String cFrontUserSignout(HttpServletRequest request) {
+        mUserService.destroySession(request);
+        return "redirect:index";
     }
 }

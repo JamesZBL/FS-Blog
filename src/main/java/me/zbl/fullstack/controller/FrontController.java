@@ -4,14 +4,11 @@ import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.User;
-import me.zbl.fullstack.service.api.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 
 /**
