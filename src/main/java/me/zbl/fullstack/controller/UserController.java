@@ -64,6 +64,7 @@ public class UserController extends BaseController {
             return "redirect:register";
         }
         mUserService.insertUser(user);
-        return "redirect:userlogin";
+        //直接用当前账号登录
+        return "forward:userlogin.f";
     }
 }
