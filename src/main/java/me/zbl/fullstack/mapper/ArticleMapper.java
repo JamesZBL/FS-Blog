@@ -1,4 +1,7 @@
 package me.zbl.fullstack.mapper;
 
-public interface ArticleMapper {
+import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.framework.mapper.IMyMapper;
+
+public interface ArticleMapper extends IMyMapper<Article> {
 }

@@ -1,4 +1,7 @@
 package me.zbl.fullstack.mapper;
 
-public interface AdminUserMapper {
+import me.zbl.fullstack.entity.AdminUser;
+import me.zbl.fullstack.framework.mapper.IMyMapper;
+
+public interface AdminUserMapper extends IMyMapper<AdminUser> {
 }
