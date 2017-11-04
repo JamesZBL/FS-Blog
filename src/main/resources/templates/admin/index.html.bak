@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Full-Stack 系统后台管理</a>
+                <a class="navbar-brand" href="index.html.bak">Full-Stack 系统后台管理</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -277,7 +277,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
+                            <a href="index.html.bak"><i class="fa fa-dashboard fa-fw"></i> 控制面板</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 博客管理<span class="fa arrow"></span></a>

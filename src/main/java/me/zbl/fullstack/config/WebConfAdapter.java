@@ -33,7 +33,8 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //后台登录拦截器拦截路径
-        registry.addInterceptor(securityInterceptor).addPathPatterns("/admin/**");
+        // TODO: 17-11-4 删除！ 测试取消拦截器
+//        registry.addInterceptor(securityInterceptor).addPathPatterns("/admin/**");
     }
 
     @Override

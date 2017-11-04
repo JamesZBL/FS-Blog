@@ -13,6 +13,7 @@ public class GlobalExceptionHandler {
     public String handleException(Exception e, Model model) {
         if (null != e) {
             model.addAttribute("msg",e.getLocalizedMessage());
+            e.printStackTrace();
         }
         return "error";
     }
