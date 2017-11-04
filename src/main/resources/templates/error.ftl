@@ -25,9 +25,9 @@
 
 <body>
 
-<#-- s-nav -->
+<#-- s-nav.ftl -->
 <#include "public/nav.ftl">
-<#-- e-nav -->
+<#-- e-nav.ftl -->
 
 
 <section class="py-3">

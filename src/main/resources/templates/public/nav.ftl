@@ -20,8 +20,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-            <#--<li class="nav-item">-->
-            <#--<a class="nav-link" href="#">${(Session.cur_user.username)!'登录'}</a>-->
+            <#--<li class="nav.ftl-item">-->
+            <#--<a class="nav.ftl-link" href="#">${(Session.cur_user.username)!'登录'}</a>-->
             <#--</li>-->
             <#if userinfo??>
                 <li class="nav-item dropdown">

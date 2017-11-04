@@ -3879,7 +3879,7 @@ var Dropdown = function () {
     DATA_TOGGLE: '[data-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
     MENU: '.dropdown-menu',
-    NAVBAR_NAV: '.navbar-nav',
+    NAVBAR_NAV: '.navbar-nav.ftl',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled)'
   };
   var AttachmentMap = {
@@ -5721,9 +5721,9 @@ var ScrollSpy = function () {
   var Selector = {
     DATA_SPY: '[data-spy="scroll"]',
     ACTIVE: '.active',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    NAV_LINKS: '.nav-link',
-    NAV_ITEMS: '.nav-item',
+    NAV_LIST_GROUP: '.nav.ftl, .list-group',
+    NAV_LINKS: '.nav.ftl-link',
+    NAV_ITEMS: '.nav.ftl-item',
     LIST_ITEMS: '.list-group-item',
     DROPDOWN: '.dropdown',
     DROPDOWN_ITEMS: '.dropdown-item',
@@ -5906,9 +5906,9 @@ var ScrollSpy = function () {
       } else {
         // Set triggered link as active
         $link.addClass(ClassName.ACTIVE); // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+        // With both <ul> and <nav.ftl> markup a parent is the previous sibling of any nav.ftl ancestor
 
-        $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+        $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_LINKS + ", " + Selector.LIST_ITEMS).addClass(ClassName.ACTIVE); // Handle special case when .nav.ftl-link is inside .nav.ftl-item
 
         $link.parents(Selector.NAV_LIST_GROUP).prev(Selector.NAV_ITEMS).children(Selector.NAV_LINKS).addClass(ClassName.ACTIVE);
       }
@@ -6026,7 +6026,7 @@ var Tab = function () {
   };
   var Selector = {
     DROPDOWN: '.dropdown',
-    NAV_LIST_GROUP: '.nav, .list-group',
+    NAV_LIST_GROUP: '.nav.ftl, .list-group',
     ACTIVE: '.active',
     ACTIVE_UL: '> li > .active',
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
