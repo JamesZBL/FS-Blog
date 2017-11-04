@@ -15,6 +15,6 @@ public class GlobalExceptionHandler {
             model.addAttribute("msg",e.getLocalizedMessage());
             e.printStackTrace();
         }
-        return "error";
+        return "redirect:error";
     }
 }

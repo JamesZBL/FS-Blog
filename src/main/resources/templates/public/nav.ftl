@@ -33,16 +33,16 @@
                         <a class="dropdown-item" href="#">消息</a>
                         <a class="dropdown-item" href="#">草稿箱</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="userregister">注册</a>
-                        <a class="dropdown-item" href="usersignout.c">注销登录</a>
+                        <a class="dropdown-item" href="/userregister">注册</a>
+                        <a class="dropdown-item" href="/usersignout.c">注销登录</a>
                     </div>
                 </li>
             <#else>
                 <li class="nav-item">
-                    <a class="nav-link" href="userregister">注册</a>
+                    <a class="nav-link" href="/userregister">注册</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="userlogin">登录</a>
+                    <a class="nav-link" href="/userlogin">登录</a>
                 </li>
             </#if>
             </ul>

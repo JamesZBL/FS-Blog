@@ -29,6 +29,14 @@ public class FrontController extends BaseController {
     }
 
     /**
+     * 错误页
+     */
+    @GetMapping("error")
+    public String pErrorPage() {
+        return "error";
+    }
+
+    /**
      * 前台首页
      * GET
      */
