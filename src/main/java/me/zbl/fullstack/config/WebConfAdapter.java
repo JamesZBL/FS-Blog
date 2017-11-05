@@ -20,7 +20,7 @@ import java.util.List;
  * WEB MVC 配置
  */
 @Configuration
-public class WebConfAdapter extends WebMvcConfigurerAdapter{
+public class WebConfAdapter extends WebMvcConfigurerAdapter {
 
     private UserAuthenticationInterceptor securityInterceptor;
 
@@ -33,8 +33,7 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter{
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //后台登录拦截器拦截路径
-        // TODO: 17-11-4 删除！ 测试取消拦截器
-//        registry.addInterceptor(securityInterceptor).addPathPatterns("/admin/**");
+        registry.addInterceptor(securityInterceptor).addPathPatterns("/admin/**");
     }
 
     @Override
