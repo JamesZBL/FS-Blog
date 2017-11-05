@@ -19,7 +19,7 @@ import java.util.List;
  * @author James
  */
 @Service
-public class IUserServiceImpl implements IUserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserMapper mMapper;

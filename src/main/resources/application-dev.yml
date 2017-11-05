@@ -15,7 +15,7 @@ spring:
     cache: true
     suffix: .ftl
     charset: utf-8
-    view-names: index,error,userlogin,adminlogin,register,admin/index
+    view-names: index,error,userlogin,adminlogin,register,admin/index,admin/userlogin
     content-type: text/html
     allow-request-override: true
     check-template-location: true

@@ -1,6 +1,7 @@
 package me.zbl.fullstack.interceptor;
 
 import me.zbl.fullstack.consts.SessionConstants;
+import me.zbl.fullstack.entity.AdminUser;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,7 +17,10 @@ public class UserAuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object obj = request.getSession().getAttribute(SessionConstants.SESSION_CURRENT_USER);
-//        return (null == obj || !(obj instanceof User));
+        if (null == obj || obj instanceof AdminUser) {
+            response.sendRedirect(request.getContextPath() + "/admin/login");
+            return false;
+        }
         return true;
     }
 
