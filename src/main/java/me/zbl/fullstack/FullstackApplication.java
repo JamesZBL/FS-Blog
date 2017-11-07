@@ -46,8 +46,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching
-public class FullstackApplication extends SpringBootServletInitializer implements CommandLineRunner {
-    private Logger mLogger = LoggerFactory.getLogger(this.getClass());
+public class FullstackApplication extends SpringBootServletInitializer{
 
     public static void main(String[] args) {
         SpringApplication.run(FullstackApplication.class, args);
@@ -56,10 +55,5 @@ public class FullstackApplication extends SpringBootServletInitializer implement
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(this.getClass());
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        mLogger.debug("服务成功启动");
     }
 }
