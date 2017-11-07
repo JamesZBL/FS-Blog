@@ -64,7 +64,7 @@ server:
           enabled: true
 
 logging:
-    config: classpath:log4j2.xml
+    config: classpath:log4j2.properties
 
 mybatis:
     type-aliases-package: me.zbl.fullstack.entity
