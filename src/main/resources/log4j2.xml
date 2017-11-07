@@ -59,5 +59,10 @@
             <AppenderRef ref="rollingInfoFile"/>
             <AppenderRef ref="rollingErrorFile"/>
         </AsyncRoot>
+
+        <!-- 将业务dao接口填写进去,并用控制台输出即可 -->
+        <logger name="me.zbl.fullstack.mapper" level="DEBUG" additivity="false">
+        </logger>
+        <appender-ref ref="console"/>
     </Loggers>
 </Configuration>
