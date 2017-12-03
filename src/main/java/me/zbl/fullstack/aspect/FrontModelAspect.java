@@ -4,6 +4,7 @@ import me.zbl.fullstack.annotation.PageTitle;
 import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.entity.User;
+import me.zbl.fullstack.utils.AspectUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
@@ -40,27 +42,13 @@ public class FrontModelAspect {
    */
   @Around("frontView(request,model)")
   public void joinModel(ProceedingJoinPoint jp, HttpServletRequest request, Model model) {
-
     try {
-      // 拦截的对象
-      Object object = jp.getTarget();
-      // 拦截方法名
-      Signature signature = jp.getSignature();
-      String methodName = signature.getName();
-      Class[] parameterTypes = ((MethodSignature) signature).getMethod().getParameterTypes();
-
-      try {
-        // 反射目标方法
-        Method method = object.getClass().getDeclaredMethod(methodName, parameterTypes);
-        // 获取注解
-        PageTitle titleAnno = method.getDeclaredAnnotation(PageTitle.class);
-        if (null != titleAnno) {
-          String titleName = titleAnno.name();
-          // 加入标题
-          model.addAttribute(ViewConsts.VIEW_TITLE, titleName);
-        }
-      } catch (NoSuchMethodException e) {
-        e.printStackTrace();
+      // 加入标题 Model
+      Annotation annotation = AspectUtil.getAnnotation(jp, PageTitle.class);
+      if (null != annotation) {
+        String titleName = ((PageTitle) annotation).name();
+        // 加入标题
+        model.addAttribute(ViewConsts.VIEW_TITLE, titleName);
       }
       // 加入用户信息
       User user = (User) request.getSession().getAttribute(SessionConstants.SESSION_CURRENT_USER);
