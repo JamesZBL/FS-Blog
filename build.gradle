@@ -58,6 +58,8 @@ dependencies {
     //compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
     //web
     compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    //aop
+    compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}")
     //模板引擎
     compile("org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}")
     //日志
