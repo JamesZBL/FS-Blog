@@ -1,9 +1,5 @@
 package me.zbl.fullstack.utils;
 
-import me.zbl.fullstack.annotation.PageTitle;
-import me.zbl.fullstack.consts.SessionConstants;
-import me.zbl.fullstack.consts.ViewConsts;
-import me.zbl.fullstack.entity.User;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.reflect.MethodSignature;
