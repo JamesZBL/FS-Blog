@@ -1,9 +1,6 @@
 package me.zbl.fullstack.controller;
 
-import me.zbl.fullstack.consts.SessionConstants;
-import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
-import me.zbl.fullstack.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +21,7 @@ public class FrontController extends BaseController {
      */
     @GetMapping("/")
     public String pFrontRoot(Model model) {
-        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
+//        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
         return "index";
     }
 
@@ -42,13 +39,13 @@ public class FrontController extends BaseController {
      */
     @GetMapping("/index")
     public String pFrontIndex(HttpServletRequest request, Model model) {
-        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
-        try {
-            User user = (User) getSessionAttr(request, SessionConstants.SESSION_CURRENT_USER);
-            model.addAttribute(ViewConsts.VIEW_USERINFO, user);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
+//        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
+//        try {
+//            User user = (User) getSessionAttr(request, SessionConstants.SESSION_CURRENT_USER);
+//            model.addAttribute(ViewConsts.VIEW_USERINFO, user);
+//        } catch (NullPointerException e) {
+//            e.printStackTrace();
+//        }
         return "index";
     }
 
@@ -58,7 +55,7 @@ public class FrontController extends BaseController {
      */
     @PostMapping("/index")
     public String pFrontIndexPost(Model model) {
-        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
+//        model.addAttribute(ViewConsts.VIEW_TITLE, ViewConsts.INDEX_PAGE_TITLE);
         return "index";
     }
 
