@@ -36,6 +36,5 @@ public class FrontModelAspect {
     } catch (Throwable throwable) {
       throwable.printStackTrace();
     }
-
   }
 }
