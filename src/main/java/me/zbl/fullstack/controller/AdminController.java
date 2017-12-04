@@ -1,7 +1,11 @@
 package me.zbl.fullstack.controller;
 
 import me.zbl.fullstack.controller.base.BaseController;
+import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
+import me.zbl.fullstack.service.api.IAdminBlogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class AdminController extends BaseController {
+
+  @Autowired
+  IAdminBlogService mBlogService;
 
   /**
    * 后台首页
@@ -46,6 +53,13 @@ public class AdminController extends BaseController {
   @PostMapping("/login.f")
   public String fAdminLogin(UserLoginForm userLoginForm) {
 
-    return "redirect:admin/index";
+    return "redirect:/admin/index";
+  }
+
+  @PostMapping("/blogadd.f")
+  public String fAdminBlogAdd(BlogAddForm blogAddForm) {
+    // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
+    mBlogService.blogAdd(blogAddForm);
+    return "redirect:/admin/index";
   }
 }

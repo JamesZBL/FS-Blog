@@ -24,11 +24,9 @@ public class AdminUserService implements IAdminUserService {
   @Autowired
   private AdminUserMapper mAdminUserMapper;
 
-  @Autowired
-  private AdminUser adminUser;
-
   @Override
   public AdminUser checkAdminUserExist(UserLoginForm form) {
+    AdminUser adminUser = new AdminUser();
     adminUser.setUsername(form.getUsername());
     adminUser.setPassword(form.getPassword());
     List<AdminUser> adminUsers = mAdminUserMapper.select(adminUser);

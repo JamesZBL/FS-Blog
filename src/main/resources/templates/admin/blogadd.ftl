@@ -27,7 +27,7 @@
     <link href="../vendor/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <#-- EditorMD -->
-    <link rel="stylesheet" href="../vendor/editor/css/editormd.css" />
+    <link rel="stylesheet" href="../vendor/editor/css/editormd.css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,9 +48,28 @@
 <#-- s 页面内容 -->
     <div id="page-wrapper">
     <#-- s 页面内容 -->
+        <form>
+        <#-- s 隐藏字段 -->
+            <input name="mdMaterial" id="id_input_md" type="hidden">
+        <#-- e 隐藏字段 -->
+        <#-- s 标题、标签等 -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <input name="title" type="text" class="form-control" placeholder="标题">
+                        <span class="input-group-btn">
+                        <button id="id_btn_blog_submit" class="btn btn-secondary" type="button">提交</button>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        <#-- e 标题 -->
+        </form>
         <div class="row">
-            <div id="test-editormd" style="z-index: 1000;">
-                <textarea style="display:none;"></textarea>
+            <div class="col-sm-12">
+                <div id="test-editormd">
+                    <textarea style="display:none;"></textarea>
+                </div>
             </div>
         </div>
     <#-- e 页面内容 -->
