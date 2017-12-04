@@ -26,6 +26,9 @@
     <!-- Custom Fonts -->
     <link href="../vendor/admin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <#-- EditorMD -->
+    <link rel="stylesheet" href="../vendor/editor/css/editormd.css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -46,7 +49,9 @@
     <div id="page-wrapper">
     <#-- s 页面内容 -->
         <div class="row">
-            <h1>写博客</h1>
+            <div id="test-editormd" style="z-index: 1000;">
+                <textarea style="display:none;"></textarea>
+            </div>
         </div>
     <#-- e 页面内容 -->
     </div>
@@ -70,7 +75,10 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/admin/js/sb-admin-2.js"></script>
+<script src="../vendor/editor/editormd.min.js"></script>
 
+<#-- 自定义 js -->
+<script src="../js/b_blogadd.js"></script>
 </body>
 
 </html>
