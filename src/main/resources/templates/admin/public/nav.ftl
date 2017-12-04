@@ -250,7 +250,7 @@
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 博客管理<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html"> 博客发布</a>
+                            <a href="/admin/blogadd"> 博客发布</a>
                         </li>
                         <li>
                             <a href="morris.html"> 博客批量管理</a>

@@ -33,6 +33,14 @@ public class AdminController extends BaseController {
   }
 
   /**
+   * 写博客页面
+   */
+  @GetMapping("/blogadd")
+  public String pAdminBlogAdd() {
+    return "admin/blogadd";
+  }
+
+  /**
    * 后台用户登录验证
    */
   @PostMapping("/login.f")

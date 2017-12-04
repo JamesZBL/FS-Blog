@@ -16,7 +16,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * 后台控制器
+ * 后台登录控制器
  *
  * @author James
  */
