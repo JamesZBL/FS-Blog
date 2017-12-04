@@ -5,6 +5,7 @@ import me.zbl.fullstack.entity.vo.UserLoginForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 后台控制器
@@ -12,30 +13,31 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @author James
  */
 @Controller
+@RequestMapping("/admin")
 public class AdminController extends BaseController {
 
-    /**
-     * 后台首页
-     */
-    @GetMapping("/admin/index")
-    public String pAdminIndex() {
-        return "admin/index";
-    }
+  /**
+   * 后台首页
+   */
+  @GetMapping("/index")
+  public String pAdminIndex() {
+    return "admin/index";
+  }
 
-    /**
-     * 后台用户登录页面
-     */
-    @GetMapping("/admin/login")
-    public String pAdminLogin() {
-        return "admin/userlogin";
-    }
+  /**
+   * 后台用户登录页面
+   */
+  @GetMapping("/login")
+  public String pAdminLogin() {
+    return "admin/userlogin";
+  }
 
-    /**
-     * 后台用户登录验证
-     */
-    @PostMapping("/admin/login.f")
-    public String fAdminLogin(UserLoginForm userLoginForm) {
-        // TODO: 17-11-5 后台用户登录验证
-        return "redirect:admin/index";
-    }
+  /**
+   * 后台用户登录验证
+   */
+  @PostMapping("/login.f")
+  public String fAdminLogin(UserLoginForm userLoginForm) {
+
+    return "redirect:admin/index";
+  }
 }

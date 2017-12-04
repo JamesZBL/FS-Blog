@@ -14,6 +14,14 @@ import java.lang.reflect.Method;
  */
 public class AspectUtil {
 
+  /**
+   * 获取连接点的制定类型的注解
+   *
+   * @param joinPoint 连接点
+   * @param clazz     注解类
+   *
+   * @return 注解
+   */
   public static Annotation getAnnotation(ProceedingJoinPoint joinPoint, Class clazz) {
     try {
       // 拦截的对象
