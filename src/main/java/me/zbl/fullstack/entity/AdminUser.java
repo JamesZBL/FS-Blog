@@ -1,11 +1,13 @@
 package me.zbl.fullstack.entity;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.Date;
 import javax.persistence.*;
 
 @Component
+@SessionScope
 @Table(name = "admin_user")
 public class AdminUser {
 
