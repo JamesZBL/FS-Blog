@@ -26,15 +26,6 @@ public class FrontController extends BaseController {
   private IAdminBlogService mBlogService;
 
   /**
-   * 前台首页
-   */
-  @GetMapping("/")
-  @PageTitle(name = ViewConsts.INDEX_PAGE_TITLE)
-  public String pFrontRoot(HttpServletRequest request, Model model) {
-    return "index";
-  }
-
-  /**
    * 错误页
    */
   @GetMapping("/error")
