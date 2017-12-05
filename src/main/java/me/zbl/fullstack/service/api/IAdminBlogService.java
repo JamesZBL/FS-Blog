@@ -1,5 +1,6 @@
 package me.zbl.fullstack.service.api;
 
+import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 
 /**
@@ -10,4 +11,6 @@ import me.zbl.fullstack.entity.vo.BlogAddForm;
 public interface IAdminBlogService {
 
   void blogAdd(BlogAddForm form);
+
+  Article blogSelectByPrimaryKey(Integer id);
 }

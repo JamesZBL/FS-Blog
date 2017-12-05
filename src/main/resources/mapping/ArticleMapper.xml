@@ -11,5 +11,6 @@
     <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
     <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
     <result column="md_material" jdbcType="LONGVARCHAR" property="mdMaterial" />
+    <result column="html_material" jdbcType="LONGVARCHAR" property="htmlMaterial" />
   </resultMap>
 </mapper>

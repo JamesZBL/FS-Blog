@@ -51,6 +51,7 @@
         <form>
         <#-- s 隐藏字段 -->
             <input name="mdMaterial" id="id_input_md" type="hidden">
+            <input name="htmlMaterial" id="id_input_html" type="hidden">
         <#-- e 隐藏字段 -->
         <#-- s 标题、标签等 -->
             <div class="row">

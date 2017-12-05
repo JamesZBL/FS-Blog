@@ -6,17 +6,14 @@ import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.utils.AspectUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
 
 /**
  * 前台 Controller 通用切面
@@ -33,7 +30,7 @@ public class FrontModelAspect {
   /**
    * 前台控制器切点
    */
-  @Pointcut("execution(String me.zbl.fullstack.controller.FrontController.*(..,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model,..)) && args(request,model)")
+  @Pointcut("execution(String me.zbl.fullstack.controller.FrontController.*(..)) && args(request,model)")
   private void frontView(HttpServletRequest request, Model model) {
   }
 

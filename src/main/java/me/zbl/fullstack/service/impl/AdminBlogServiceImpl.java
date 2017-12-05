@@ -23,6 +23,12 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     Article article = new Article();
     article.setTitle(form.getTitle());
     article.setMdMaterial(form.getMdMaterial());
+    article.setHtmlMaterial(form.getHtmlMaterial());
     mArticleMapper.insertSelective(article);
+  }
+
+  @Override
+  public Article blogSelectByPrimaryKey(Integer id) {
+    return mArticleMapper.selectByPrimaryKey(id);
   }
 }

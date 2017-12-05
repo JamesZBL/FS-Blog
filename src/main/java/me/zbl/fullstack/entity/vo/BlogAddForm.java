@@ -18,5 +18,7 @@ public class BlogAddForm {
   @NotEmpty
   private String title;
 
-  private String mdMaterial;  // markdown 转 html 后的内容
+  private String mdMaterial;  // markdown 内容
+
+  private String htmlMaterial;  // markdown 转 html 后的内容
 }

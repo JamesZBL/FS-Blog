@@ -23,6 +23,8 @@ $(function () {
 
     $("#id_btn_blog_submit").bind("click", function () {
         $("#id_input_md").val(testEditor.getMarkdown());
+        $("#id_input_html").val($(".markdown-body").prop('outerHTML'));
+
         // 提交表单
         var form = document.forms[0];
         form.action = "/admin/blogadd.f";
