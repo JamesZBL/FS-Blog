@@ -7,9 +7,12 @@ import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 后台控制器
@@ -26,8 +29,16 @@ public class AdminController extends BaseController {
   /**
    * 后台首页
    */
+  @GetMapping("")
+  public String pAdminIndex(HttpServletRequest request,Model model) {
+    return "admin/index";
+  }
+
+  /**
+   * 后台首页
+   */
   @GetMapping("/index")
-  public String pAdminIndex() {
+  public String pAdminIndex2(HttpServletRequest request,Model model) {
     return "admin/index";
   }
 
@@ -35,7 +46,7 @@ public class AdminController extends BaseController {
    * 后台用户登录页面
    */
   @GetMapping("/login")
-  public String pAdminLogin() {
+  public String pAdminLogin(HttpServletRequest request,Model model) {
     return "admin/userlogin";
   }
 
@@ -43,7 +54,7 @@ public class AdminController extends BaseController {
    * 写博客页面
    */
   @GetMapping("/blogadd")
-  public String pAdminBlogAdd() {
+  public String pAdminBlogAdd(HttpServletRequest request,Model model) {
     return "admin/blogadd";
   }
 

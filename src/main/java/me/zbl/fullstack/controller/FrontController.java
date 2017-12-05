@@ -30,8 +30,8 @@ public class FrontController extends BaseController {
   /**
    * 错误页
    */
-  @GetMapping("error")
-  public String pErrorPage() {
+  @GetMapping("/error")
+  public String pErrorPage(HttpServletRequest request,Model model) {
     return "error";
   }
 
