@@ -31,7 +31,8 @@
 
 <div class="container-fluid cus_content">
 <#-- 博客标题 -->
-    <div class="row mt-5">
+    <div class="row mt-md-5"></div>
+    <div class="row mt-md-5">
     <#-- 博客内容 -->
         <div class="col-md-8 offset-md-2">
             <h3 class="p-3">${articleTitle!'标题'}</h3>

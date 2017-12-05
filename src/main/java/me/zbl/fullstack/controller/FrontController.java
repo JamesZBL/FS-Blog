@@ -1,6 +1,5 @@
 package me.zbl.fullstack.controller;
 
-import me.zbl.fullstack.annotation.PageTitle;
 import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.Article;
@@ -38,7 +37,6 @@ public class FrontController extends BaseController {
    * GET
    */
   @GetMapping("/index")
-  @PageTitle(name = ViewConsts.INDEX_PAGE_TITLE)
   public String pFrontIndex(HttpServletRequest request, Model model) {
     return "index";
   }
@@ -48,7 +46,6 @@ public class FrontController extends BaseController {
    * POST
    */
   @PostMapping("/index")
-  @PageTitle(name = ViewConsts.INDEX_PAGE_TITLE)
   public String pFrontIndexPost(HttpServletRequest request, Model model) {
     return "index";
   }
@@ -74,6 +71,7 @@ public class FrontController extends BaseController {
     Article article = mBlogService.blogSelectByPrimaryKey(id);
     addModelAtt(model, "articleTitle", article.getTitle());
     addModelAtt(model, "articleMd", article.getHtmlMaterial());
+    addModelAtt(model, ViewConsts.VIEW_TITLE, article.getTitle());
     return "article";
   }
 }

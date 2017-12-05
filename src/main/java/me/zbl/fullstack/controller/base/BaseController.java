@@ -36,11 +36,21 @@ public class BaseController {
     return request.getSession().getAttribute(attrName);
   }
 
+  /**
+   * 向 Model 添加数据
+   */
   public void addModelAtt(Model model, String attribute, Object value) throws Exception {
     if (null != value) {
       model.addAttribute(attribute, value);
     } else {
       throw new Exception();
     }
+  }
+
+  /**
+   * 向 Session 中添加对象
+   */
+  public void addSessionAtrr(HttpServletRequest request, String attribute, Object value) {
+    request.getSession().setAttribute(attribute, value);
   }
 }
