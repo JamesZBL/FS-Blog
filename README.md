@@ -1,2 +1,1 @@
-# FullStack
-The way to be a full-stack software engineer.
+# FullStack —— 基于 SpringBoot 的个人博客系统

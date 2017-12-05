@@ -25,9 +25,9 @@
 
 <body>
 
-<#-- s-nav -->
+<#-- s-nav.ftl -->
 <#include "public/nav.ftl">
-<#-- e-nav -->
+<#-- e-nav.ftl -->
 
 <#-- s-slide-header-->
 <header>

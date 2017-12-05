@@ -1,8 +1,5 @@
 package me.zbl.fullstack;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -46,8 +43,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching
-public class FullstackApplication extends SpringBootServletInitializer implements CommandLineRunner {
-    private Logger mLogger = LoggerFactory.getLogger(this.getClass());
+public class FullstackApplication extends SpringBootServletInitializer{
 
     public static void main(String[] args) {
         SpringApplication.run(FullstackApplication.class, args);
@@ -56,10 +52,5 @@ public class FullstackApplication extends SpringBootServletInitializer implement
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(this.getClass());
-    }
-
-    @Override
-    public void run(String... args) throws Exception {
-        mLogger.debug("服务成功启动");
     }
 }

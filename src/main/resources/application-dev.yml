@@ -12,10 +12,10 @@ spring:
       enabled: true
   freemarker:
     enabled: true
-    cache: true
+    cache: false
     suffix: .ftl
     charset: utf-8
-    view-names: index,error,userlogin,adminlogin,register
+    view-names: index,error,userlogin,adminlogin,register,article,admin/index,admin/userlogin,admin/blogadd
     content-type: text/html
     allow-request-override: true
     check-template-location: true
@@ -68,7 +68,7 @@ logging:
 
 mybatis:
     type-aliases-package: me.zbl.fullstack.entity
-    mapper-locations: classpath:mapping/*.xml
+#    mapper-locations: classpath:mapping/*.xml
 
 #mapper:
 #    mappers:
