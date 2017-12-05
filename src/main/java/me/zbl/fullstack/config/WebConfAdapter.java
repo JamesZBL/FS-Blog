@@ -42,7 +42,7 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter {
   public void addViewControllers(ViewControllerRegistry registry) {
     super.addViewControllers(registry);
     //主页
-    registry.addViewController("/").setViewName("index");
+    registry.addViewController("/").setViewName("forward:/index");
   }
 
   @Override
