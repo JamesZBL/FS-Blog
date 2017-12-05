@@ -30,7 +30,7 @@ public class FrontController extends BaseController {
    */
   @GetMapping("/")
   @PageTitle(name = ViewConsts.INDEX_PAGE_TITLE)
-  public String pFrontRoot(Model model) {
+  public String pFrontRoot(HttpServletRequest request, Model model) {
     return "index";
   }
 
@@ -58,7 +58,7 @@ public class FrontController extends BaseController {
    */
   @PostMapping("/index")
   @PageTitle(name = ViewConsts.INDEX_PAGE_TITLE)
-  public String pFrontIndexPost(Model model) {
+  public String pFrontIndexPost(HttpServletRequest request, Model model) {
     return "index";
   }
 
@@ -83,6 +83,6 @@ public class FrontController extends BaseController {
     Article article = mBlogService.blogSelectByPrimaryKey(id);
     addModelAtt(model, "articleTitle", article.getTitle());
     addModelAtt(model, "articleMd", article.getHtmlMaterial());
-    return"article";
-}
+    return "article";
+  }
 }

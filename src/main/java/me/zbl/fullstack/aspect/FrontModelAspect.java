@@ -30,7 +30,7 @@ public class FrontModelAspect {
   /**
    * 前台控制器切点
    */
-  @Pointcut("execution(String me.zbl.fullstack.controller.FrontController.*(..)) && args(request,model)")
+  @Pointcut("execution(String me.zbl.fullstack.controller.FrontController.*(..,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model,..)) && args(request,model)")
   private void frontView(HttpServletRequest request, Model model) {
   }
 
