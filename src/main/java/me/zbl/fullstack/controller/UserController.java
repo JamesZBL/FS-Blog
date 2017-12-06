@@ -12,13 +12,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.List;
 
-import static me.zbl.fullstack.consts.StatusCode.*;
+import static me.zbl.fullstack.consts.ViewConsts.VIEW_MSG;
 
 /**
  * 用户登录控制器
@@ -36,17 +36,19 @@ public class UserController extends BaseController {
    * 表单提交
    */
   @PostMapping("/userlogin.f")
-  public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) {
+  public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) throws Exception {
     if (bindingResult.hasErrors()) {
       List<ObjectError> errors = bindingResult.getAllErrors();
-      return "redirect:userlogin?msg=" + errors.get(0).getDefaultMessage();
+      addModelAtt(model, VIEW_MSG, errors.get(0).getDefaultMessage());
+      return "userlogin";
     }
     User user = mUserService.loginAuthentication(loginForm);
     if (null != user) {
       mUserService.joinSession(request, user);
       return "redirect:/";
     }
-    return "redirect:/userlogin";
+    addModelAtt(model, VIEW_MSG, "用户名或密码错误");
+    return "userlogin";
   }
 
   /**

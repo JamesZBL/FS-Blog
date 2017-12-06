@@ -19,7 +19,19 @@
 </head>
 
 <body class="bg-dark">
+<script src="vendor/jquery/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript-->
 <div class="container">
+<#if msg??>
+<#-- s 提示消息（用户名或密码错误） -->
+    <div class="alert alert-danger alert-dismissible fade show card-login mt-5 mx-auto" role="alert">
+        ${msg!""}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</#if>
+<#-- e 提示消息（用户名或密码错误） -->
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Full-Stack</div>
         <div class="card-body">
@@ -50,8 +62,6 @@
         </div>
     </div>
 </div>
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
