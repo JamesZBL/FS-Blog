@@ -1,6 +1,6 @@
 package me.zbl.fullstack.controller.base;
 
-import me.zbl.fullstack.entity.response.factory.JsonFactory;
+import me.zbl.fullstack.entity.response.factory.GeneralJsonFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 public class BaseController {
 
   @Autowired
-  protected JsonFactory mJsonFactory;
+  protected GeneralJsonFactory mJsonFactory;
 
   /**
    * Controller 中方法异常处理器

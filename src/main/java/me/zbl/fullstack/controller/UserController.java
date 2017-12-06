@@ -36,20 +36,17 @@ public class UserController extends BaseController {
    * 表单提交
    */
   @PostMapping("/userlogin.f")
-  @ResponseBody
-  public Object fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) {
+  public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) {
     if (bindingResult.hasErrors()) {
       List<ObjectError> errors = bindingResult.getAllErrors();
-      // TODO: 17-12-6 换成 json
       return "redirect:userlogin?msg=" + errors.get(0).getDefaultMessage();
     }
     User user = mUserService.loginAuthentication(loginForm);
     if (null != user) {
       mUserService.joinSession(request, user);
-      // TODO: 17-12-6 换成 json
-      return "redirect:index";
+      return "redirect:/";
     }
-    return mJsonFactory.getLoginResponse(AUTH_PASS, NO_ERROR, "/");
+    return "redirect:/userlogin";
   }
 
   /**

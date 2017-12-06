@@ -23,7 +23,7 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Full-Stack</div>
         <div class="card-body">
-            <form>
+            <form id="id_form_login">
                 <div class="form-group">
                     <label for="id_username">用户名</label>
                     <input class="form-control" id="id_username" type="text" aria-describedby="emailHelp"

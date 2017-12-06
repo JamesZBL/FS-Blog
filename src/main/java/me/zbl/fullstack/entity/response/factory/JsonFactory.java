@@ -1,6 +1,6 @@
 package me.zbl.fullstack.entity.response.factory;
 
-import me.zbl.fullstack.entity.response.LoginResponse;
+import me.zbl.fullstack.entity.response.RedirectResponse;
 import me.zbl.fullstack.entity.response.SimpleResponse;
 
 
@@ -15,5 +15,5 @@ public interface JsonFactory {
 
   SimpleResponse getSimpleResponse(int resultCode, boolean hasError);
 
-  LoginResponse getLoginResponse(int resultCode, boolean hasError, String redirectURL);
+  RedirectResponse getRedirectResponse(int resultCode, boolean hasError, String redirectURL);
 }

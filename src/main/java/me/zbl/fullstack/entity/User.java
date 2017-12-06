@@ -106,8 +106,9 @@ public class User {
     /**
      * @param password
      */
-    public void setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password == null ? null : password.trim();
+        return this;
     }
 
     /**

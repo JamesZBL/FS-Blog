@@ -1,6 +1,6 @@
 package me.zbl.fullstack.entity.response.factory;
 
-import me.zbl.fullstack.entity.response.LoginResponse;
+import me.zbl.fullstack.entity.response.RedirectResponse;
 import me.zbl.fullstack.entity.response.SimpleResponse;
 import org.springframework.stereotype.Component;
 
@@ -33,7 +33,7 @@ public class GeneralJsonFactory implements JsonFactory {
   }
 
   @Override
-  public LoginResponse getLoginResponse(int resultCode, boolean hasError, String redirectURL) {
-    return new LoginResponse(resultCode, hasError, redirectURL);
+  public RedirectResponse getRedirectResponse(int resultCode, boolean hasError, String redirectURL) {
+    return new RedirectResponse(resultCode, hasError, redirectURL);
   }
 }
