@@ -41,7 +41,7 @@
 </section>
 
 <#-- s-footer -->
-<#include "public/footer.ftl">
+<#--<#include "public/footer.ftl">-->
 <#-- e-footer -->
 
 <!-- Bootstrap core JavaScript -->
