@@ -41,11 +41,7 @@
 </section>
 
 <#-- s-footer -->
-<footer class="py-5 bg-dark fixed-bottom">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; FullStack by James 2016-2017</p>
-    </div>
-</footer>
+<#include "public/footer.ftl">
 <#-- e-footer -->
 
 <!-- Bootstrap core JavaScript -->
