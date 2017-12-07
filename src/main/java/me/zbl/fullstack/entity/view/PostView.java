@@ -15,6 +15,7 @@ import me.zbl.fullstack.entity.Article;
 @AllArgsConstructor
 public class PostView {
 
+  private Integer id;
   private String title;
   private String description;
   private String dateTime;
@@ -25,6 +26,7 @@ public class PostView {
    * @param article 文章
    */
   public PostView(Article article) {
+    id = article.getId();
     title = article.getTitle();
     description = article.getIntroduction();
     // TODO: 17-12-7 修改过时方法

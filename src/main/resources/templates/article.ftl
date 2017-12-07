@@ -29,7 +29,7 @@
 <#include "public/nav.ftl">
 <#-- e-nav.ftl -->
 
-<div class="container-fluid cus_content">
+<div class="container container-fluid cus_content">
 <#-- 博客标题 -->
     <div class="row mt-md-5"></div>
     <div class="row mt-md-5">

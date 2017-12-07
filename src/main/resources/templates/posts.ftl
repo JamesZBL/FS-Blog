@@ -29,12 +29,28 @@
 <#include "public/nav.ftl">
 <#-- e-nav.ftl -->
 
-<div class="container-fluid cus_content">
-<#if postlist??>
-    <#list postlist as post>
-        ${post.title}
-    </#list>
-</#if>
+<div class="container container-fluid cus_content">
+    <div class="row">
+        <div class="col-8">
+            <ul class="list-unstyled">
+            <#if postlist??>
+                <#list postlist as post>
+                    <div class="card mt-3">
+                        <img class="card-img-top img-fluid"
+                             src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1512641621739&di=ddd78d52299e55fe65761839018105d1&imgtype=0&src=http%3A%2F%2Fp5.qhimg.com%2Ft0138c3eacb74c59dac.png"
+                             alt="Card image cap" style="">
+                        <div class="card-body">
+                            <a href="/blog/${post.id!""}" class="text-dark"><h4 class="card-title">${post.title!""}</h4></a>
+                            <p class="card-text text-secondary">Freemarker中list的用法 - 秦营的博客 - ITeye博客
+                                2012年7月30日 - freemarker 使用list进行遍历基本遍历:其中sequence是变量名,它代表一个list。item是我起的...</p>
+                            <p class="text-right text-secondary">${post.dateTime!""}</p>
+                        </div>
+                    </div>
+                </#list>
+            </#if>
+            </ul>
+        </div>
+    </div>
 </div>
 
 
