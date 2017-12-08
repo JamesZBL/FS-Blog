@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="zh">
 <#-- 博客列表页 -->
 <head>
 
@@ -9,19 +9,17 @@
 
     <title>${articleTitle!'全栈博客'}</title>
 
-<#--<!-- Bootstrap core CSS &ndash;&gt;-->
-<#--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-
 <#-- EditorMD -->
     <link href="/vendor/editor/css/editormd.css" rel="stylesheet">
 
-<#-- 自定义 样式 -->
-    <link rel="stylesheet" href="/css/public.css">
 <#-- landing-page -->
     <link rel="stylesheet" href="/vendor/landing-page/landing-page.min.css">
+
+<#-- 自定义 样式 -->
+<#include "public/front_custom_css.ftl">
+
+<#-- CSS -->
+<#include "public/front_css.ftl">
 </head>
 
 <body>
@@ -51,9 +49,9 @@
                 <#list postlist as post>
                     <div class="card mt-3">
                         <div class="card-body">
-                            <a href="/blog/${post.id!""}" class="text-dark"><h4 class="card-title">${post.title!""}</h4>
+                            <a href="/blog/${post.id!""}" class="text-dark"><h4 class="card-title font-weight-bold">${post.title!""}</h4>
                             </a>
-                            <p class="card-text text-secondary">Freemarker中list的用法 - 秦营的博客 - ITeye博客
+                            <p class="card-text">Freemarker中list的用法 - 秦营的博客 - ITeye博客
                                 2012年7月30日 - freemarker 使用list进行遍历基本遍历:其中sequence是变量名,它代表一个list。item是我起的...</p>
                             <p class="text-right text-secondary">${post.dateTime!""}</p>
                         </div>
@@ -70,12 +68,7 @@
 <#include "public/footer.ftl">
 <#-- e-footer -->
 
-
-
-
-<!-- Bootstrap core JavaScript -->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<#-- JS -->
+<#include "public/front_js.ftl">
 </body>
 </html>

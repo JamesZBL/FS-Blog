@@ -8,19 +8,14 @@
 
     <title>${title!'全栈之路'}</title>
 
-    <#--<!-- Bootstrap core CSS &ndash;&gt;-->
-    <#--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-
     <!-- Custom styles for this template -->
-    <link href="css/full-slider/full-slider.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" ></script>
-
+    <link href="/css/full-slider/full-slider.css" rel="stylesheet">
 
     <#-- 自定义 样式 -->
-    <link rel="stylesheet" href="css/public.css">
+    <#include "public/front_custom_css.ftl">
 
+    <#-- CSS -->
+    <#include "public/front_css.ftl">
 </head>
 
 <body>
@@ -74,7 +69,7 @@
 
 <!-- Page Content -->
 <section class="py-5">
-    <div class="container">
+    <div class="container container-fluid">
         <h1>Full Slider by Start Bootstrap</h1>
         <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles
             for this template are contained within the
@@ -86,9 +81,7 @@
 <#include "public/footer.ftl">
 <#-- e-footer -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<#-- JS -->
+<#include "public/front_js.ftl">
 </body>
 </html>

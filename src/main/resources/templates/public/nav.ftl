@@ -22,7 +22,7 @@
                     <a class="nav-link" href="/">首页</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">博客</a>
+                    <a class="nav-link" href="/post">博客</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">论坛</a>

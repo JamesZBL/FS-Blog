@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="zh">
 
 <head>
 
@@ -9,18 +9,11 @@
 
     <title>出错啦</title>
 
-<#--<!-- Bootstrap core CSS &ndash;&gt;-->
-<#--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- Custom styles for this template -->
-    <link href="css/full-slider/full-slider.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-
 <#-- 自定义 样式 -->
-    <link rel="stylesheet" href="css/public.css">
+<#include "public/front_custom_css.ftl">
 
+<#-- CSS -->
+<#include "public/front_css.ftl">
 </head>
 
 <body>
@@ -44,9 +37,8 @@
 <#--<#include "public/footer.ftl">-->
 <#-- e-footer -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<#-- JS -->
+<#include "public/front_js.ftl">
 
 </body>
 </html>
