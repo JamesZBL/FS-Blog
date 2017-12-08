@@ -10,6 +10,7 @@ buildscript {
         commonMapperVersion = '3.4.4'
         commonsIOVersion = '2.4'
         commonsLangversion = '3.7'
+        commonsCodecVersion = '1.11'
     }
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
@@ -102,6 +103,8 @@ dependencies {
     compile("commons-io:commons-io:${commonsIOVersion}")
     //commons-lang3
     compile("org.apache.commons:commons-lang3:${commonsLangversion}")
+    //commons-codec
+    compile("commons-codec:commons-codec:${commonsCodecVersion}")
 
 }
 

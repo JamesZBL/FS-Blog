@@ -6,6 +6,7 @@ import me.zbl.fullstack.entity.User;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.mapper.AdminUserMapper;
 import me.zbl.fullstack.service.api.IAdminUserService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class AdminUserService implements IAdminUserService {
   public AdminUser checkAdminUserExist(UserLoginForm form) {
     AdminUser adminUser = new AdminUser();
     adminUser.setUsername(form.getUsername());
-    adminUser.setPassword(form.getPassword());
+    adminUser.setPassword(DigestUtils.md5Hex(form.getPassword()));
     List<AdminUser> adminUsers = mAdminUserMapper.select(adminUser);
     if (null != adminUsers && adminUsers.size() > 0) {
       return adminUsers.get(0);

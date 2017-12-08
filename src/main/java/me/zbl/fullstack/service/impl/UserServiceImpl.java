@@ -6,6 +6,7 @@ import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.entity.vo.UserRegisterForm;
 import me.zbl.fullstack.mapper.UserMapper;
 import me.zbl.fullstack.service.api.IUserService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +27,7 @@ public class UserServiceImpl implements IUserService {
 
   @Override
   public User loginAuthentication(UserLoginForm loginForm) {
-    List<User> userList = mMapper.select(new User().setUsername(loginForm.getUsername()).setPassword(loginForm.getPassword()));
+    List<User> userList = mMapper.select(new User().setUsername(loginForm.getUsername()).setPassword(DigestUtils.md5Hex(loginForm.getPassword())));
     if (null != userList && userList.size() == 1) {
       return userList.get(0);
     }
@@ -40,6 +41,8 @@ public class UserServiceImpl implements IUserService {
 
   @Override
   public void insertUser(User user) {
+    String pwdStr = user.getPassword();
+    user.setPassword(DigestUtils.md5Hex(pwdStr));
     mMapper.insertSelective(user);
   }
 
