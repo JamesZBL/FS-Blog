@@ -19,6 +19,7 @@ public class PostView {
   private String title;
   private String description;
   private String dateTime;
+  private String htmlMaterial;
 
   /**
    * 拷贝构造方法
@@ -31,5 +32,6 @@ public class PostView {
     description = article.getIntroduction();
     // TODO: 17-12-7 修改过时方法
     dateTime = article.getGmtCreate().toLocaleString();
+    htmlMaterial = article.getHtmlMaterial();
   }
 }

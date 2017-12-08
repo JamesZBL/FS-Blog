@@ -31,14 +31,14 @@
     <div class="row mt-md-5">
     <#-- 博客内容 -->
         <div class="col-md-8 offset-md-2">
-            <h3 class="p-3 font-weight-bold">${articleTitle!'标题'}</h3>
+            <h3 class="p-3 font-weight-bold">${article.title!'标题'}</h3>
             <div class="row pl-3 pr-3">
                 <div class="col-md-6"></div>
                 <div class="col-md-6 text-md-right">
-                    <p class="small text-secondary">${articleDate!""}</p>
+                    <p class="small text-secondary">${article.dateTime!""}</p>
                 </div>
             </div>
-        ${articleMd!'文章内容'}
+        ${article.htmlMaterial!'文章内容'}
         </div>
     </div>
     <div class="row mb-md-5"></div>
