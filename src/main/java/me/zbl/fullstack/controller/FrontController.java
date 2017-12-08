@@ -71,6 +71,7 @@ public class FrontController extends BaseController {
     Article article = mBlogService.blogSelectByPrimaryKey(id);
     addModelAtt(model, "articleTitle", article.getTitle());
     addModelAtt(model, "articleMd", article.getHtmlMaterial());
+    addModelAtt(model, "articleDate", article.getGmtCreate().toLocaleString());
     addModelAtt(model, ViewConsts.VIEW_TITLE, article.getTitle());
     return "article";
   }

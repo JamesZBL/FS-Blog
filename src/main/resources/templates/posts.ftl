@@ -43,7 +43,7 @@
 <div class="container container-fluid cus_content">
 <#--<img src="http://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg" alt="">-->
     <div class="row">
-        <div class="col-8">
+        <div class="col-md-8">
             <ul class="list-unstyled">
             <#if postlist??>
                 <#list postlist as post>
