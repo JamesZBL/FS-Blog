@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import me.zbl.fullstack.entity.Article;
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.TimeZone;
 
 /**
  * 博客列表视图
@@ -30,8 +34,7 @@ public class PostView {
     id = article.getId();
     title = article.getTitle();
     description = article.getIntroduction();
-    // TODO: 17-12-7 修改过时方法
-    dateTime = article.getGmtCreate().toLocaleString();
+    dateTime = DateFormatUtils.format(article.getGmtCreate(), "yyyy-MM-dd HH:mm");
     htmlMaterial = article.getHtmlMaterial();
   }
 }
