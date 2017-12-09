@@ -11,16 +11,4 @@
         <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
     </resultMap>
 
-    <select id="selectArticleByTagId" parameterType="Integer" resultType="me.zbl.fullstack.entity.Article">
-        SELECT
-        article.id,article.title,article.introduction,article.md_material,article.html_material,article.gmt_create,article.gmt_modified
-        FROM
-        article,tag,tag_article
-        WHERE
-        tag.id = #{id}
-        AND
-        tag_article.tag_id = tag.id
-        AND
-        tag_article.article_id = article.id
-    </select>
 </mapper>

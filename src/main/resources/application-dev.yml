@@ -68,7 +68,7 @@ logging:
 
 mybatis:
     type-aliases-package: me.zbl.fullstack.entity
-#    mapper-locations: classpath:mapping/*.xml
+    mapper-locations: classpath:mapping/*.xml
 
 #mapper:
 #    mappers:
