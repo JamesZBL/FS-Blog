@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="me.zbl.fullstack.mapper.TagMapper">
-  <resultMap id="BaseResultMap" type="me.zbl.fullstack.entity.Tag">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
-    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="me.zbl.fullstack.entity.Tag">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"/>
+    </resultMap>
+
+    <select id="selectArticleByTagId" parameterType="Integer" resultType="me.zbl.fullstack.entity.Article">
+        SELECT
+        article.id,article.title,article.introduction,article.md_material,article.html_material,article.gmt_create,article.gmt_modified
+        FROM
+        article,tag,tag_article
+        WHERE
+        tag.id = #{id}
+        AND
+        tag_article.tag_id = tag.id
+        AND
+        tag_article.article_id = article.id
+    </select>
 </mapper>

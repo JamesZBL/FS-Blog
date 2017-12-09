@@ -30,6 +30,11 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   @Autowired
   private TagArticleMapper mTagArticleMapper;
 
+  /**
+   * 后台添加文章
+   *
+   * @param form 文章表单
+   */
   @Override
   @Transactional
   public void blogAdd(BlogAddForm form) {
@@ -62,5 +67,10 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   @Override
   public Article blogSelectByPrimaryKey(Integer id) {
     return mArticleMapper.selectByPrimaryKey(id);
+  }
+
+  @Override
+  public List<Article> getArticleList() {
+    return mArticleMapper.selectAll();
   }
 }

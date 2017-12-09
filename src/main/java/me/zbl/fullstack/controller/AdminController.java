@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 后台控制器
@@ -30,7 +32,7 @@ public class AdminController extends BaseController {
    * 后台首页
    */
   @GetMapping("")
-  public String pAdminIndex(HttpServletRequest request,Model model) {
+  public String pAdminIndex(HttpServletRequest request, Model model) {
     return "admin/index";
   }
 
@@ -38,7 +40,7 @@ public class AdminController extends BaseController {
    * 后台首页
    */
   @GetMapping("/index")
-  public String pAdminIndex2(HttpServletRequest request,Model model) {
+  public String pAdminIndex2(HttpServletRequest request, Model model) {
     return "admin/index";
   }
 
@@ -46,7 +48,7 @@ public class AdminController extends BaseController {
    * 后台用户登录页面
    */
   @GetMapping("/login")
-  public String pAdminLogin(HttpServletRequest request,Model model) {
+  public String pAdminLogin(HttpServletRequest request, Model model) {
     return "admin/userlogin";
   }
 
@@ -54,8 +56,16 @@ public class AdminController extends BaseController {
    * 写博客页面
    */
   @GetMapping("/blogadd")
-  public String pAdminBlogAdd(HttpServletRequest request,Model model) {
+  public String pAdminBlogAdd(HttpServletRequest request, Model model) {
     return "admin/blogadd";
+  }
+
+  /**
+   * 博客管理页面
+   */
+  @GetMapping("/blogmanage")
+  public String pAdminBlogManage(HttpServletRequest request, Model model) {
+    return "admin/blog_manage";
   }
 
   /**
@@ -67,10 +77,22 @@ public class AdminController extends BaseController {
     return "redirect:/admin/index";
   }
 
+  /**
+   * 发布文章
+   *
+   * @param blogAddForm 表单
+   */
   @PostMapping("/blogadd.f")
   public String fAdminBlogAdd(BlogAddForm blogAddForm) {
     // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
     mBlogService.blogAdd(blogAddForm);
     return "redirect:/admin/index";
+  }
+
+
+  @GetMapping("/blog_list.j")
+  @ResponseBody
+  public Object jAdminBlogList() {
+    return mBlogService.getArticleList();
   }
 }

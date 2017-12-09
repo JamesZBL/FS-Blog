@@ -3,6 +3,7 @@ package me.zbl.fullstack.service.impl;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.view.PostView;
 import me.zbl.fullstack.mapper.ArticleMapper;
+import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.IPostsService;
 import me.zbl.fullstack.service.base.ViewTransableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ public class PostServiceImpl extends ViewTransableService<Article, PostView> imp
 
   @Autowired
   ArticleMapper mPostMapper;
+  @Autowired
+  TagMapper mTagMapper;
 
   @Override
   public List<PostView> getPostList() {

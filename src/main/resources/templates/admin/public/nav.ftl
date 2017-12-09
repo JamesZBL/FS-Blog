@@ -253,7 +253,7 @@
                             <a href="/admin/blogadd"> 博客发布</a>
                         </li>
                         <li>
-                            <a href="morris.html"> 博客批量管理</a>
+                            <a href="/admin/blogmanage"> 博客批量管理</a>
                         </li>
                     </ul>
                     <!-nav.ftl.nav-second-level -->
