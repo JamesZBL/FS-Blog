@@ -1,11 +1,19 @@
 package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.Tag;
+import me.zbl.fullstack.entity.TagArticle;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
+import me.zbl.fullstack.mapper.TagArticleMapper;
+import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 后台博客服务实现类
@@ -16,15 +24,39 @@ import org.springframework.stereotype.Service;
 public class AdminBlogServiceImpl implements IAdminBlogService {
 
   @Autowired
-  ArticleMapper mArticleMapper;
+  private ArticleMapper mArticleMapper;
+  @Autowired
+  private TagMapper mTagMapper;
+  @Autowired
+  private TagArticleMapper mTagArticleMapper;
 
   @Override
+  @Transactional
   public void blogAdd(BlogAddForm form) {
     Article article = new Article();
     article.setTitle(form.getTitle());
     article.setMdMaterial(form.getMdMaterial());
     article.setHtmlMaterial(form.getHtmlMaterial());
+    article.setIntroduction(form.getDescription());
+
     mArticleMapper.insertSelective(article);
+    Integer article_id = article.getId();
+    // 处理 tags
+    String[] tags = form.getRawTags().split(",");
+    List<Integer> tagIds = new ArrayList<>();
+    for (int i = 0; i < tags.length; i++) {
+      Tag tag = new Tag();
+      tag.setName(tags[i]);
+      mTagMapper.insertSelective(tag);
+      Integer tagId = tag.getId();
+      tagIds.add(tagId);
+    }
+    for (Integer tagId : tagIds) {
+      TagArticle tagArticle = new TagArticle();
+      tagArticle.setTagId(tagId);
+      tagArticle.setArticleId(article_id);
+      mTagArticleMapper.insertSelective(tagArticle);
+    }
   }
 
   @Override

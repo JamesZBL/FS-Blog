@@ -21,4 +21,8 @@ public class BlogAddForm {
   private String mdMaterial;  // markdown 内容
 
   private String htmlMaterial;  // markdown 转 html 后的内容
+
+  private String description;   // 文章内容描述
+
+  private String rawTags;       // 原始 tags
 }
