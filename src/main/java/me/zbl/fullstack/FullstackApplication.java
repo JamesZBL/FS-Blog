@@ -235,11 +235,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Full-Stack Blog
+ * FS-Blog
  * 全栈博客
+ * <p>
+ * 本项目受 Apache 2.0 开源协议保护
  *
  * @author JamesZBL 郑保乐
  * @QQ 1146556298
- * @nickname 摆码王子
+ * @nickName 摆码王子
  * @E-mail zhengbaole_1996@163.com
  * @Github http://github.com/JamesZBL
  * @CSDN_Blog http://blog.csdn.net/zbl1146556298

@@ -49,16 +49,23 @@
                 <#list postlist as post>
                     <div class="card mt-3">
                         <div class="card-body">
-                            <a href="/blog/${post.id!""}" class="text-dark"><h4 class="card-title font-weight-bold">${post.title!""}</h4>
+                            <a href="/blog/${post.id!""}" class="text-dark"><h4
+                                    class="card-title font-weight-bold">${post.title!""}</h4>
                             </a>
-                            <p class="card-text">Freemarker中list的用法 - 秦营的博客 - ITeye博客
-                                2012年7月30日 - freemarker 使用list进行遍历基本遍历:其中sequence是变量名,它代表一个list。item是我起的...</p>
+                            <p class="card-text">${post.description}</p>
                             <p class="text-right text-secondary">${post.dateTime!""}</p>
                         </div>
                     </div>
                 </#list>
             </#if>
             </ul>
+        </div>
+        <div class="col-md-4">
+        <#if taglist??>
+            <#list taglist as tag>
+                <span class="badge badge-light">${tag.tagName}</span>
+            </#list>
+        </#if>
         </div>
     </div>
 </div>
