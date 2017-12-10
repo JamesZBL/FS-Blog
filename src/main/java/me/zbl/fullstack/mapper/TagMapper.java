@@ -10,13 +10,16 @@ import java.util.List;
 
 public interface TagMapper extends IMyMapper<Tag> {
 
+  String columnList = "article.id,article.title,article.introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified";
+
   /**
    * 根据 tag 的 id 获取文章
    *
    * @param id tag id
    */
   @Select({
-                  "SELECT article.id,article.title,article.introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified",
+                  "SELECT",
+                  columnList,
                   "FROM article,tag,tag_article",
                   "WHERE article.id = tag_article.article_id AND tag.id = tag_article.tag_id",
                   "AND tag.id = #{id}"

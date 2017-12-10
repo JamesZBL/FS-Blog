@@ -40,7 +40,7 @@
         </div>
     </div>
 </header>
-<div class="container container-fluid cus_content">
+<div class="container container-fluid mt-5 mb-5">
 <#--<img src="http://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg" alt="">-->
     <div class="row">
         <div class="col-md-8">
@@ -61,15 +61,30 @@
             </ul>
         </div>
         <div class="col-md-4 mt-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    搜索文章
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="输入你想查找的题目..." aria-label="输入你想查找的题目...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button">搜索</button>
+                    </span>
+                    </div>
+                </div>
+            </div>
         <#if taglist??>
             <div class="card mb-3">
+                <div class="card-header">
+                    热门标签
+                </div>
                 <div class="card-body">
-                    <h4 class="card-title">热门标签</h4>
                     <#list taglist as tag>
                         <!-- tag -->
                         <a href="/post?tagId=${tag.tagId!''}">
-                            <button type="button" class="btn btn-dark mb-3">
-                            ${tag.tagName!""} <span class="badge badge-light">${tag.articleCount!""}</span>
+                            <button type="button" class="btn btn-outline-primary mb-3">
+                            ${tag.tagName!""} <span class="badge badge-primary">${tag.articleCount!""}</span>
                             </button>
                         </a>
                     </#list>
