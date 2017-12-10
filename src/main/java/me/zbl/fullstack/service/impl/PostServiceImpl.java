@@ -1,9 +1,8 @@
 package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.view.PostView;
+import me.zbl.fullstack.entity.dto.PostView;
 import me.zbl.fullstack.mapper.ArticleMapper;
-import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.IPostsService;
 import me.zbl.fullstack.service.base.ViewTransableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +23,11 @@ public class PostServiceImpl extends ViewTransableService<Article, PostView> imp
 
   @Autowired
   ArticleMapper mPostMapper;
-  @Autowired
-  TagMapper mTagMapper;
 
   @Override
   public List<PostView> getPostList() {
     List<Article> articles = mPostMapper.selectAll();
-    List<PostView> postViewList = transEntitytoView(articles);
+    List<PostView> postViewList = transEntityToView(articles);
     return postViewList;
   }
 
@@ -40,13 +37,20 @@ public class PostServiceImpl extends ViewTransableService<Article, PostView> imp
     return null;
   }
 
+  @Override
+  public List<PostView> getPostListByTagId(Integer tagId) {
+    List<Article> articlelist = mPostMapper.getArticleListByTagId(tagId);
+    List<PostView> postViewList = transEntityToView(articlelist);
+    return postViewList;
+  }
+
   /**
    * 将查询结果转换为视图需要内容
    *
    * @param entityList 数据库查询结果
    */
   @Override
-  protected List<PostView> transEntitytoView(List<Article> entityList) {
+  protected List<PostView> transEntityToView(List<Article> entityList) {
     List<PostView> postViewsList = new ArrayList<>();
     Iterator it = entityList.iterator();
     while (it.hasNext()) {

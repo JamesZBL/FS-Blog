@@ -10,5 +10,5 @@ import java.util.List;
  */
 public abstract class ViewTransableService<E, V> {
 
-  protected abstract List<V> transEntitytoView(List<E> entityList);
+  protected abstract List<V> transEntityToView(List<E> entityList);
 }

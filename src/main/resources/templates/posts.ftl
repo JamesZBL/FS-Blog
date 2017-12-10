@@ -33,7 +33,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col mx-auto text-left">
+            <div class="col mx-auto text-left pl-5">
                 <h1>FS-Blog</h1>
                 <h3>记录技术成长点滴</h3>
             </div>
@@ -60,11 +60,21 @@
             </#if>
             </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 mt-3">
         <#if taglist??>
-            <#list taglist as tag>
-                <span class="badge badge-light">${tag.tagName}</span>
-            </#list>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">热门标签</h4>
+                    <#list taglist as tag>
+                        <!-- tag -->
+                        <a href="/post?tagId=${tag.tagId!''}">
+                            <button type="button" class="btn btn-dark mb-3">
+                            ${tag.tagName!""} <span class="badge badge-light">${tag.articleCount!""}</span>
+                            </button>
+                        </a>
+                    </#list>
+                </div>
+            </div>
         </#if>
         </div>
     </div>

@@ -1,6 +1,6 @@
 package me.zbl.fullstack.service.api;
 
-import me.zbl.fullstack.entity.view.PostView;
+import me.zbl.fullstack.entity.dto.PostView;
 
 import java.util.Date;
 import java.util.List;
@@ -24,4 +24,6 @@ public interface IPostsService {
    * @param end   结束时间
    */
   List<PostView> getPostListByDate(Date start, Date end);
+
+  List<PostView> getPostListByTagId(Integer tagId);
 }
