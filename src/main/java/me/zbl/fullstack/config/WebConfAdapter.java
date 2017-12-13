@@ -83,8 +83,7 @@ public class WebConfAdapter extends WebMvcConfigurerAdapter {
   @Bean
   public HttpMessageConverter<String> responseBodyConverter() {
     //编码
-    StringHttpMessageConverter converter = new StringHttpMessageConverter(
-            Charset.forName("UTF-8"));
-    return converter;
+    return new StringHttpMessageConverter(Charset.forName("UTF-8"));
   }
+
 }

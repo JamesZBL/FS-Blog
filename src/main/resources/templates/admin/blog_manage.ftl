@@ -39,6 +39,9 @@
 
     <!-- 自定义样式 -->
     <link rel="stylesheet" href="/css/public.css">
+
+    <!-- 后台通用 css -->
+<#include "public/public_css.ftl">
 </head>
 
 <body>
@@ -53,13 +56,13 @@
     <#-- s 页面内容 -->
         <!-- 按钮组 -->
         <div id="toolbar" class="btn-group">
-            <button id="btn_add" type="button" class="btn btn-default">
+            <button id="id_btn_add" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> 新增
             </button>
-            <button id="btn_edit" type="button" class="btn btn-default">
+            <button id="id_btn_edit" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 修改
             </button>
-            <button id="btn_delete" type="button" class="btn btn-default">
+            <button id="id_btn_delete" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除
             </button>
         </div>
@@ -95,6 +98,10 @@
 
 <#-- 自定义 js -->
 <script src="../js/b_blog_manage.js"></script>
+<script src="../js/public.js"></script>
+
+<#-- 后台通用 js -->
+<#include "public/public_js.ftl">
 </body>
 
 </html>

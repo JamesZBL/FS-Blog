@@ -11,6 +11,7 @@ buildscript {
         commonsIOVersion = '2.4'
         commonsLangversion = '3.7'
         commonsCodecVersion = '1.11'
+        fastJsonVersion = '1.2.41'
     }
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
@@ -105,6 +106,8 @@ dependencies {
     compile("org.apache.commons:commons-lang3:${commonsLangversion}")
     //commons-codec
     compile("commons-codec:commons-codec:${commonsCodecVersion}")
+    //fast-json
+    compile("com.alibaba:fastjson:$fastJsonVersion")
 
 }
 

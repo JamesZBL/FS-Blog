@@ -1,6 +1,7 @@
 package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 
 import java.util.List;
@@ -12,14 +13,23 @@ import java.util.List;
  */
 public interface IAdminBlogService {
 
+  /**
+   * 添加 文章
+   */
   void blogAdd(BlogAddForm form);
 
+  /**
+   * 根据 id 获取文章
+   */
   Article blogSelectByPrimaryKey(Integer id);
-
-  /* 后台 */
 
   /**
    * 获取所有文章列表
    */
   List<Article> getArticleList();
+
+  /**
+   * 根据 id 删除文章
+   */
+  void blogDelete(ArticleDeleteModel model);
 }

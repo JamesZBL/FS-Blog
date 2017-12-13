@@ -1,20 +1,16 @@
 package me.zbl.fullstack.controller;
 
 import me.zbl.fullstack.controller.base.BaseController;
-import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * 后台控制器
@@ -73,14 +69,11 @@ public class AdminController extends BaseController {
    */
   @PostMapping("/login.f")
   public String fAdminLogin(UserLoginForm userLoginForm) {
-
     return "redirect:/admin/index";
   }
 
   /**
    * 发布文章
-   *
-   * @param blogAddForm 表单
    */
   @PostMapping("/blogadd.f")
   public String fAdminBlogAdd(BlogAddForm blogAddForm) {
@@ -90,9 +83,22 @@ public class AdminController extends BaseController {
   }
 
 
+  /**
+   * 获取博客详情列表
+   */
   @GetMapping("/blog_list.j")
   @ResponseBody
   public Object jAdminBlogList() {
     return mBlogService.getArticleList();
+  }
+
+  /**
+   * 批量删除博客
+   */
+  @DeleteMapping("/blog_delete.j")
+  @ResponseBody
+  public Object jAdminBlogDelete(@RequestBody ArticleDeleteModel model) {
+    mBlogService.blogDelete(model);
+    return mJsonFactory.getSimpleResponse();
   }
 }

@@ -13,6 +13,8 @@ public interface JsonFactory {
 
   SimpleResponse getSimpleResponse();
 
+  SimpleResponse getSimpleErrorResponse();
+
   SimpleResponse getSimpleResponse(int resultCode, boolean hasError);
 
   RedirectResponse getRedirectResponse(int resultCode, boolean hasError, String redirectURL);

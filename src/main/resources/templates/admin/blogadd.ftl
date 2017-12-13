@@ -141,6 +141,7 @@
 
 <#-- 自定义 js -->
 <script src="../js/b_blogadd.js"></script>
+<script src="../js/public.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,11 @@ public class GeneralJsonFactory implements JsonFactory {
     return new SimpleResponse(RESPONSE_OK, NO_ERROR);
   }
 
+  @Override
+  public SimpleResponse getSimpleErrorResponse() {
+    return new SimpleResponse(RESPONSE_OK, WITH_ERROR);
+  }
+
   /**
    * 带参数的统一响应
    * param resultCode 状态码

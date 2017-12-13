@@ -7,6 +7,10 @@ $(function () {
     //2.初始化Button的点击事件
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
+
+    //3.初始化表格事件
+    var oEventInit = new EventInit();
+    oEventInit.Init();
 });
 
 
@@ -28,7 +32,7 @@ var TableInit = function () {
             pageNumber: 1,                      //初始化加载第一页，默认第一页
             pageSize: 10,                       //每页的记录行数（*）
             pageList: [10, 25, 50, 100, 200, 500],  //可供选择的每页的行数（*）
-            search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            search: true,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端
             strictSearch: false,                //是否进行完全匹配
             showColumns: true,                  //是否显示所有的列
             showRefresh: true,                  //是否显示刷新按钮
@@ -39,6 +43,7 @@ var TableInit = function () {
             showToggle: true,                   //是否显示详细视图和列表视图的切换按钮
             cardView: false,                    //是否显示详细视图
             detailView: false,                  //是否显示父子表
+            showHeader: true,
             columns: [{
                 checkbox: true
             }, {
@@ -53,6 +58,7 @@ var TableInit = function () {
             }, {
                 field: 'introduction',
                 title: '内容简介',
+                formatter: formatStrLength,
                 align: 'center'
             }, {
                 field: 'gmtCreate',
@@ -72,7 +78,8 @@ var TableInit = function () {
 
     //得到查询的参数
     oTableInit.queryParams = function (params) {
-        var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+        var temp = {
+            //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
             // limit: params.limit,   //页面大小
             // offset: params.offset,  //页码
             // title: $("#txt_search_departmentname").val(),
@@ -83,32 +90,78 @@ var TableInit = function () {
     return oTableInit;
 };
 
+/**
+ * 重新加载表格
+ */
+function flushTable() {
+    $('#id_table_blog').bootstrapTable('refresh');
+}
+
+/**
+ * 按钮点击事件
+ */
 var ButtonInit = function () {
     var oInit = new Object();
     var postdata = {};
 
     oInit.Init = function () {
         //初始化页面上面的按钮事件
+        $('#id_btn_delete').on('click', function () {
+            c_confirm("确实要删除选中的所有文章吗？删除后不可恢复！", deleteArticleInBulk);
+        });
+
+        $('#id_btn_add').on('click', function () {
+            c_confirm("即将跳转到博客发布页面，确定继续吗？", addBlog);
+        });
     };
 
     return oInit;
 };
 
 /**
- * 时间戳转日期字符串
+ * 表格事件
  */
-function formatDateTime(val, row, index) {
-    var date = new Date(val);
-    var y = date.getFullYear();
-    var m = date.getMonth() + 1;
-    m = m < 10 ? ('0' + m) : m;
-    var d = date.getDate();
-    d = d < 10 ? ('0' + d) : d;
-    var h = date.getHours();
-    h = h < 10 ? ('0' + h) : h;
-    var minute = date.getMinutes();
-    var second = date.getSeconds();
-    minute = minute < 10 ? ('0' + minute) : minute;
-    second = second < 10 ? ('0' + second) : second;
-    return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
+var EventInit = function () {
+    var oInit = new Object();
+
+    oInit.Init = function () {
+        $('#id_table_blog').bootstrapTable({
+            onAll: function (name, args) {
+
+            }
+        });
+    };
+    return oInit;
+};
+
+/**
+ * 批量删除
+ */
+function deleteArticleInBulk() {
+    idsArr = [];
+    dataSel = $('#id_table_blog').bootstrapTable('getSelections');
+    for (i = 0; i < dataSel.length; i++) {
+        var tmp = dataSel[i];
+        var id = tmp.id;
+        idsArr.push(id);
+    }
+
+    var dataObj = new Object();
+    dataObj.ids = idsArr;
+
+    // 注意：必须加 contentType: 'application/json'，否则 controller 中无法讲 json 直接转换成对象
+    $.ajax({
+        type: "DELETE",
+        url: "/admin/blog_delete.j",
+        contentType: 'application/json',
+        data: JSON.stringify(dataObj),
+        success: function (result) {
+            msg("完成删除，刚才的文章永远的离你而去了");
+            flushTable();
+        }
+    });
+}
+
+function addBlog() {
+    c_location("/admin/blogadd");
 }

@@ -3,6 +3,7 @@ package me.zbl.fullstack.service.impl;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.Tag;
 import me.zbl.fullstack.entity.TagArticle;
+import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
 import me.zbl.fullstack.mapper.TagArticleMapper;
@@ -27,8 +28,6 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   private ArticleMapper mArticleMapper;
   @Autowired
   private TagMapper mTagMapper;
-  @Autowired
-  private TagArticleMapper mTagArticleMapper;
 
   /**
    * 后台添加文章
@@ -43,7 +42,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     article.setMdMaterial(form.getMdMaterial());
     article.setHtmlMaterial(form.getHtmlMaterial());
     article.setIntroduction(form.getDescription());
-
+    // 处理 article
     mArticleMapper.insertSelective(article);
     Integer article_id = article.getId();
     // 处理 tags
@@ -64,6 +63,9 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     }
   }
 
+  @Autowired
+  private TagArticleMapper mTagArticleMapper;
+
   @Override
   public Article blogSelectByPrimaryKey(Integer id) {
     return mArticleMapper.selectByPrimaryKey(id);
@@ -72,5 +74,14 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   @Override
   public List<Article> getArticleList() {
     return mArticleMapper.selectAll();
+  }
+
+  @Override
+  @Transactional
+  public void blogDelete(ArticleDeleteModel model) {
+    List<Integer> idList = model.getIds();
+    for (Integer id : idList) {
+      mArticleMapper.deleteByPrimaryKey(id);
+    }
   }
 }
