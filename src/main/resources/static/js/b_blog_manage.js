@@ -113,6 +113,10 @@ var ButtonInit = function () {
         $('#id_btn_add').on('click', function () {
             c_confirm("即将跳转到博客发布页面，确定继续吗？", addBlog);
         });
+
+        $('#id_btn_edit').on('click', function () {
+            c_confirm("即将跳转到博客编辑页面，确定继续吗？", modifyBlog);
+        });
     };
 
     return oInit;
@@ -162,6 +166,26 @@ function deleteArticleInBulk() {
     });
 }
 
+/**
+ * 添加文章
+ */
 function addBlog() {
     c_location("/admin/blogadd");
+}
+
+/**
+ * 修改文章
+ */
+function modifyBlog() {
+    dataSel = $('#id_table_blog').bootstrapTable('getSelections');
+    if (dataSel.length < 1) {
+        msg("你还没告诉我要编辑哪一篇呢");
+        return;
+    }
+    if (dataSel.length > 1) {
+        msg("一篇还不够你改的吗？选多啦");
+    } else {
+        id = dataSel[0].id;
+        c_location("/admin/blogmodify/" + id);
+    }
 }
