@@ -3,6 +3,7 @@ package me.zbl.fullstack.service.api;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
+import me.zbl.fullstack.entity.vo.BlogModifyForm;
 
 import java.util.List;
 
@@ -32,4 +33,9 @@ public interface IAdminBlogService {
    * 根据 id 删除文章
    */
   void blogDelete(ArticleDeleteModel model);
+
+  /**
+   * 修改已发布文章
+   */
+  void blogModify(BlogModifyForm form);
 }

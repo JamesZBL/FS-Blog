@@ -29,7 +29,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+//apply plugin: 'war'
 
 group = 'me.zbl'
 version = '1.10.18-SNAPSHOT'
@@ -38,6 +38,11 @@ sourceCompatibility = 1.8
 //启用嵌入式servlet容器
 bootRun {
     addResources = true
+}
+
+jar {
+    baseName = 'FS-Blog'
+    version = '1.10.18'
 }
 
 repositories {
@@ -50,8 +55,8 @@ repositories {
 
 configurations {
     //jar方式启动需开启
-    //providedRuntime
-    war
+    providedRuntime
+    //war
     compile.exclude group: 'ch.qos.logback'
     mybatisGenerator
 }
@@ -94,7 +99,7 @@ dependencies {
     //mybatis-mysql驱动
     mybatisGenerator "mysql:mysql-connector-java:${mysqlConnectorVersion}"
 
-    //运行环境(采用 war 部署的方式时需要)
+    //运行环境(采用 jar 部署的方式时需要)
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}")
     //测试
     testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

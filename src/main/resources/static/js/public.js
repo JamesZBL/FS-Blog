@@ -59,7 +59,7 @@ function formatDateTime(val, row, index) {
  * 在末尾添加 “...”
  */
 function formatStrLength(val, row, index) {
-    val.substring(0, 20);
+    val = val.substring(0,20);
     val += "...";
     return val;
 }

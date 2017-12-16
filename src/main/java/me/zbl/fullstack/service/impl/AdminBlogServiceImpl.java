@@ -5,6 +5,7 @@ import me.zbl.fullstack.entity.Tag;
 import me.zbl.fullstack.entity.TagArticle;
 import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
+import me.zbl.fullstack.entity.vo.BlogModifyForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
 import me.zbl.fullstack.mapper.TagArticleMapper;
 import me.zbl.fullstack.mapper.TagMapper;
@@ -29,11 +30,6 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   @Autowired
   private TagMapper mTagMapper;
 
-  /**
-   * 后台添加文章
-   *
-   * @param form 文章表单
-   */
   @Override
   @Transactional
   public void blogAdd(BlogAddForm form) {
@@ -83,5 +79,17 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     for (Integer id : idList) {
       mArticleMapper.deleteByPrimaryKey(id);
     }
+  }
+
+  @Override
+  public void blogModify(BlogModifyForm form) {
+    Article article = new Article();
+    article.setId(form.getId());
+    article.setIntroduction(form.getDescription());
+    article.setHtmlMaterial(form.getHtmlMaterial());
+    article.setMdMaterial(form.getMdMaterial());
+    article.setTitle(form.getTitle());
+    // 更新数据库中的信息
+    mArticleMapper.updateByPrimaryKeySelective(article);
   }
 }

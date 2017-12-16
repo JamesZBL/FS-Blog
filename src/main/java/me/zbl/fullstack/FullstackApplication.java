@@ -252,14 +252,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching
-public class FullstackApplication extends SpringBootServletInitializer {
+public class FullstackApplication {
 
   public static void main(String[] args) {
     SpringApplication.run(FullstackApplication.class, args);
-  }
-
-  @Override
-  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-    return application.sources(this.getClass());
   }
 }

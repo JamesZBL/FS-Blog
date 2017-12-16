@@ -1,8 +1,11 @@
 package me.zbl.fullstack.controller;
 
 import me.zbl.fullstack.controller.base.BaseController;
+import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
+import me.zbl.fullstack.entity.dto.BlogModifyModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
+import me.zbl.fullstack.entity.vo.BlogModifyForm;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+
+import static me.zbl.fullstack.consts.ViewConsts.*;
 
 /**
  * 后台控制器
@@ -57,6 +62,17 @@ public class AdminController extends BaseController {
   }
 
   /**
+   * 编辑博客页面
+   */
+  @GetMapping("/blogmodify/{id}")
+  public String pAdminBlogModify(HttpServletRequest request, Model model, @PathVariable Integer id) throws Exception {
+    Article article = mBlogService.blogSelectByPrimaryKey(id);
+    BlogModifyModel modifyModel = new BlogModifyModel(article);
+    addModelAtt(model, VIEW_ARTICLE, modifyModel);
+    return "admin/blog_modify";
+  }
+
+  /**
    * 博客管理页面
    */
   @GetMapping("/blogmanage")
@@ -79,6 +95,16 @@ public class AdminController extends BaseController {
   public String fAdminBlogAdd(BlogAddForm blogAddForm) {
     // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
     mBlogService.blogAdd(blogAddForm);
+    return "redirect:/admin/index";
+  }
+
+  /**
+   * 修改文章
+   */
+  @PostMapping("blog_modify.f")
+  public String fAdminBlogModify(BlogModifyForm modifyForm) {
+    // TODO: 17-12-4 返回 json ，成功则重定向到博客列表
+    mBlogService.blogModify(modifyForm);
     return "redirect:/admin/index";
   }
 
