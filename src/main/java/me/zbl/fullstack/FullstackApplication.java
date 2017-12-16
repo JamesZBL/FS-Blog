@@ -239,6 +239,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 全栈博客
  * <p>
  * 本项目受 Apache 开源协议 2.0 保护
+ * 本项目由 JamesZBL 个人完成
  *
  * @author JamesZBL 郑保乐
  * @QQ 1146556298
