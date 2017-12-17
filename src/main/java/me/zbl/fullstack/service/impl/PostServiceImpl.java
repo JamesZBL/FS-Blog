@@ -2,6 +2,7 @@ package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.dto.PostView;
+import me.zbl.fullstack.entity.vo.ArticleSearchForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
 import me.zbl.fullstack.service.api.IPostsService;
 import me.zbl.fullstack.service.base.ViewTransableService;
@@ -44,11 +45,14 @@ public class PostServiceImpl extends ViewTransableService<Article, PostView> imp
     return postViewList;
   }
 
-  /**
-   * 将查询结果转换为视图需要内容
-   *
-   * @param entityList 数据库查询结果
-   */
+  @Override
+  public List<PostView> getPostListByArticleCondition(ArticleSearchForm form) {
+    Article article = new Article();
+    article.setTitle(form.getName());
+    List<Article> articleList = mPostMapper.getArticleListByCondition(form);
+    return transEntityToView(articleList);
+  }
+
   @Override
   protected List<PostView> transEntityToView(List<Article> entityList) {
     List<PostView> postViewsList = new ArrayList<>();

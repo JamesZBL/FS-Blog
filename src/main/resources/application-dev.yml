@@ -62,6 +62,9 @@ server:
           directory: /home/fullstack/app/fullstack
           pattern: combined
           enabled: true
+  session:
+    cookie:
+      max-age: 1800
 
 logging:
     config: classpath:log4j2.xml

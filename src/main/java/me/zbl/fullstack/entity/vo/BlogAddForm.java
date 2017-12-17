@@ -1,5 +1,6 @@
 package me.zbl.fullstack.entity.vo;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,10 +14,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Setter
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class BlogAddForm {
 
   @NotEmpty
-  private String title;
+  private String title;       // 文章标题
 
   private String mdMaterial;  // markdown 内容
 

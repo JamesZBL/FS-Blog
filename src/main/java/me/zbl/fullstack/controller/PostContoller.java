@@ -4,6 +4,7 @@ import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.dto.PostView;
 import me.zbl.fullstack.entity.dto.TagView;
+import me.zbl.fullstack.entity.vo.ArticleSearchForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import me.zbl.fullstack.service.api.IPostsService;
 import me.zbl.fullstack.service.api.ITagService;
@@ -37,7 +38,8 @@ public class PostContoller extends BaseController {
 
   /**
    * 博客列表页
-   * 涉及的视图：
+   * <p>
+   * 视图模型：
    * 1.博客列表（文章标题/内容简介/发布时间）
    * 2.标签（tagId/文章总数）
    */
@@ -67,5 +69,22 @@ public class PostContoller extends BaseController {
     addModelAtt(model, VIEW_ARTICLE, postView);
     addModelAtt(model, VIEW_TITLE, article.getTitle());
     return "article";
+  }
+
+  /**
+   * 文章搜索结果页
+   * <p>
+   * 根据指定条件查找文章
+   * <p>
+   * 视图模型：
+   * 博客列表（文章标题/内容简介/发布时间）
+   */
+  @GetMapping("/postsearch")
+  public String pPostSearch(HttpServletRequest request, Model model, ArticleSearchForm form) throws Exception {
+    List<PostView> postViewList = mPostService.getPostListByArticleCondition(form);
+    addModelAtt(model, VIEW_POSTLIST, postViewList);
+    List<TagView> tagViewList = mTagService.getAllTagView();
+    addModelAtt(model, VIEW_TAGLIST, tagViewList);
+    return "posts";
   }
 }

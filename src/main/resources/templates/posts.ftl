@@ -66,33 +66,36 @@
                     搜索文章
                 </div>
                 <div class="card-body">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="输入你想查找的题目..." aria-label="输入你想查找的题目...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">搜索</button>
+                    <form action="/postsearch">
+                        <div class="input-group">
+                            <input name="name" type="text" class="form-control" placeholder="输入你想查找的题目..."
+                                   aria-label="输入你想查找的题目...">
+                            <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">搜索</button>
                     </span>
-                    </div>
+                    </form>
                 </div>
             </div>
-        <#if taglist??>
-            <div class="card mb-3">
-                <div class="card-header">
-                    热门标签
-                </div>
-                <div class="card-body">
-                    <#list taglist as tag>
-                        <!-- tag -->
-                        <a href="/post?tagId=${tag.tagId!''}">
-                            <button type="button" class="btn btn-outline-primary mb-3">
-                            ${tag.tagName!""} <span class="badge badge-primary">${tag.articleCount!""}</span>
-                            </button>
-                        </a>
-                    </#list>
-                </div>
-            </div>
-        </#if>
         </div>
+    <#if taglist??>
+        <div class="card mb-3">
+            <div class="card-header">
+                热门标签
+            </div>
+            <div class="card-body">
+                <#list taglist as tag>
+                    <!-- tag -->
+                    <a href="/post?tagId=${tag.tagId!''}">
+                        <button type="button" class="btn btn-outline-primary mb-3">
+                        ${tag.tagName!""} <span class="badge badge-primary">${tag.articleCount!""}</span>
+                        </button>
+                    </a>
+                </#list>
+            </div>
+        </div>
+    </#if>
     </div>
+</div>
 </div>
 
 

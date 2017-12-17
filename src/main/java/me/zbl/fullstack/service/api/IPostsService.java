@@ -1,6 +1,7 @@
 package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.dto.PostView;
+import me.zbl.fullstack.entity.vo.ArticleSearchForm;
 
 import java.util.Date;
 import java.util.List;
@@ -25,5 +26,19 @@ public interface IPostsService {
    */
   List<PostView> getPostListByDate(Date start, Date end);
 
+  /**
+   * 根据 Tag ID 查找文章
+   *
+   * @param tagId tag ID
+   *
+   * @return 文章
+   */
   List<PostView> getPostListByTagId(Integer tagId);
+
+  /**
+   * 根据 具体条件筛选文章
+   * @param form 条件表单
+   * @return 文章
+   */
+  List<PostView> getPostListByArticleCondition(ArticleSearchForm form);
 }
