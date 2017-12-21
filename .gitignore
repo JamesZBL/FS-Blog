@@ -1,5 +1,5 @@
 ### PRODUCE ###
-*-prod.yml
+
 
 ### GRADLE ###
 !gradle/wrapper/gradle-wrapper.jar
