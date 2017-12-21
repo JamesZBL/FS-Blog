@@ -5,8 +5,6 @@ spring:
     cache-names: ehcache
     ehcache:
       config: ehcache.xml
-  thymeleaf:
-    cache: false
   devtools:
     restart:
       enabled: true
