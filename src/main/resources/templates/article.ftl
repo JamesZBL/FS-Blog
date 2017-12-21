@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="zh">
 
 <head>
 
@@ -9,18 +9,14 @@
 
     <title>${articleTitle!'全栈博客'}</title>
 
-<#--<!-- Bootstrap core CSS &ndash;&gt;-->
-<#--<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-
 <#-- EditorMD -->
     <link href="/vendor/editor/css/editormd.css" rel="stylesheet">
 
 <#-- 自定义 样式 -->
-    <link rel="stylesheet" href="/css/public.css">
+<#include "public/front_custom_css.ftl">
 
+<#-- CSS -->
+<#include "public/front_css.ftl">
 </head>
 
 <body>
@@ -29,31 +25,31 @@
 <#include "public/nav.ftl">
 <#-- e-nav.ftl -->
 
-<div class="container-fluid cus_content">
+<div class="container container-fluid cus_content">
 <#-- 博客标题 -->
     <div class="row mt-md-5"></div>
     <div class="row mt-md-5">
     <#-- 博客内容 -->
         <div class="col-md-8 offset-md-2">
-            <h3 class="p-3">${articleTitle!'标题'}</h3>
-        ${articleMd!'文章内容'}
+            <h3 class="p-3 font-weight-bold">${article.title!'标题'}</h3>
+            <div class="row pl-3 pr-3">
+                <div class="col-md-6"></div>
+                <div class="col-md-6 text-md-right">
+                    <p class="small text-secondary">${article.dateTime!""}</p>
+                </div>
+            </div>
+        ${article.htmlMaterial!'文章内容'}
         </div>
     </div>
-
+    <div class="row mb-md-5"></div>
 </div>
 
 
 <#-- s-footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; FullStack by James 2016-2017</p>
-    </div>
-</footer>
+<#include "public/footer.ftl">
 <#-- e-footer -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<#-- JS -->
+<#include "public/front_js.ftl">
 </body>
 </html>

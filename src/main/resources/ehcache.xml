@@ -1,7 +1,7 @@
 <ehcache>
     <!--磁盘存储配置：用来指定缓存在磁盘上的存储位置。
     可以使用JavaVM环境变量(user.home, user.dir, java.io.tmpdir)-->
-    <diskStore path = "/home/jcala_blog/cache" />
+    <diskStore path = "/home/fullstack/ehcache" />
     <!--<diskStore path = "/home/smart/cache" />-->
     <!--默认缓存配置，以下属性是必须的：
     name ：cache的标识符，在一个CacheManager中必须唯一。

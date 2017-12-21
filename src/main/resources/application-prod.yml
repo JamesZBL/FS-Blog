@@ -1,0 +1,76 @@
+##### 生产环境 #####
+
+spring:
+  application:
+    name: FullStack
+  cache:
+    cache-names: ehcache
+    ehcache:
+      config: ehcache.xml
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+  freemarker:
+    enabled: true
+    cache: false
+    suffix: .ftl
+    charset: utf-8
+    view-names: index,error,userlogin,adminlogin,register,article,posts,admin/index,admin/userlogin,admin/blogadd,admin/blog_manage,admin/blog_modify
+    content-type: text/html
+    allow-request-override: true
+    check-template-location: true
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    request-context-attribute: request
+    template-loader-path: classpath:/templates/
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+        fixed:
+          enabled: true
+          paths: /js/lib
+          version: v12
+    static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/public/
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/fullstack?useUnicode:true&amp;characterEncoding:UTF-8
+    driverClassName: com.mysql.jdbc.Driver
+    sql-script-encoding: UTF-8
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 50
+      minimum-idle: 5
+
+
+server:
+  port: 8083
+  max-http-header-size: 8192
+  compression:
+      min-response-size: 512
+      enabled: true
+      mime-types: text/html,text/css,text/javascript,application/javascript,image/gif,image/png,image/jpg
+  tomcat:
+        maxThreads: 12
+        minSpareThreads: 3
+        accesslog:
+          directory: /home/fullstack/app/fullstack
+          pattern: combined
+          enabled: true
+  session:
+    cookie:
+      max-age: 1800
+
+logging:
+    config: classpath:log4j2.xml
+
+mybatis:
+    type-aliases-package: me.zbl.fullstack.entity
+    mapper-locations: classpath:mapping/*.xml

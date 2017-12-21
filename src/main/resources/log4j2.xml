@@ -2,8 +2,8 @@
 <Configuration status="off">
     <!-- 日志文件目录和压缩文件 -->
     <Properties>
-        <Property name="fileName">/home/logs/fullstack/app/spring_log</Property>
-        <Property name="fileGz">/home/logs/fullstack/app/log/spring_log/7z</Property>
+        <Property name="fileName">/home/fullstack/log/spring_log</Property>
+        <Property name="fileGz">/home/fullstack/log/spring_log/7z</Property>
     </Properties>
     <Appenders>
         <!--这个输出控制台的配置 -->

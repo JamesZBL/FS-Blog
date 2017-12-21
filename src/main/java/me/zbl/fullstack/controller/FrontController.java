@@ -66,12 +66,4 @@ public class FrontController extends BaseController {
     return "register";
   }
 
-  @GetMapping("/blog/{id}")
-  public String pFrontBlogView(HttpServletRequest request, Model model, @PathVariable Integer id) throws Exception {
-    Article article = mBlogService.blogSelectByPrimaryKey(id);
-    addModelAtt(model, "articleTitle", article.getTitle());
-    addModelAtt(model, "articleMd", article.getHtmlMaterial());
-    addModelAtt(model, ViewConsts.VIEW_TITLE, article.getTitle());
-    return "article";
-  }
 }

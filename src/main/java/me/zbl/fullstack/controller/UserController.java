@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
 
+import static me.zbl.fullstack.consts.ViewConsts.VIEW_MSG;
+
 /**
  * 用户登录控制器
  *
@@ -33,17 +35,19 @@ public class UserController extends BaseController {
    * 表单提交
    */
   @PostMapping("/userlogin.f")
-  public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) {
+  public String fFrontUserLogin(HttpServletRequest request, Model model, @Valid UserLoginForm loginForm, BindingResult bindingResult) throws Exception {
     if (bindingResult.hasErrors()) {
       List<ObjectError> errors = bindingResult.getAllErrors();
-      return "redirect:userlogin?msg=" + errors.get(0).getDefaultMessage();
+      addModelAtt(model, VIEW_MSG, errors.get(0).getDefaultMessage());
+      return "userlogin";
     }
     User user = mUserService.loginAuthentication(loginForm);
     if (null != user) {
       mUserService.joinSession(request, user);
-      return "redirect:index";
+      return "redirect:/";
     }
-    return "redirect:userlogin?msg=登录失败";
+    addModelAtt(model, VIEW_MSG, "用户名或密码错误");
+    return "userlogin";
   }
 
   /**
@@ -54,19 +58,19 @@ public class UserController extends BaseController {
   public String fFrontUserRegister(@Valid UserRegisterForm registerForm, BindingResult bindingResult, HttpServletRequest request, Model model, User user) {
     if (bindingResult.hasErrors()) {
       List<ObjectError> errors = bindingResult.getAllErrors();
-      return "redirect:userregister";
+      return "redirect:/userregister";
     }
     //再次进行重名校验
     if (mUserService.registerUsernameCheckExist(registerForm)) {
-      return "redirect:userregister";
+      return "redirect:/userregister";
     }
     //再次进行密码一致校验
     if (!registerForm.getUsername().equals(registerForm.getConfirmpassword())) {
-      return "redirect:userregister";
+      return "redirect:/userregister";
     }
     mUserService.insertUser(user);
-    //直接用当前账号登录
-    return "forward:userlogin.f";
+    //跳转登录
+    return "redirect:/userlogin";
   }
 
   @GetMapping("/usersignout.c")

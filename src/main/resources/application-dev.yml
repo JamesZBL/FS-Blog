@@ -5,8 +5,6 @@ spring:
     cache-names: ehcache
     ehcache:
       config: ehcache.xml
-  thymeleaf:
-    cache: false
   devtools:
     restart:
       enabled: true
@@ -15,7 +13,7 @@ spring:
     cache: false
     suffix: .ftl
     charset: utf-8
-    view-names: index,error,userlogin,adminlogin,register,article,admin/index,admin/userlogin,admin/blogadd
+    view-names: index,error,userlogin,adminlogin,register,article,posts,admin/index,admin/userlogin,admin/blogadd,admin/blog_manage,admin/blog_modify
     content-type: text/html
     allow-request-override: true
     check-template-location: true
@@ -49,7 +47,7 @@ spring:
 
 
 server:
-  port: 8082
+  port: 8083
   max-http-header-size: 8192
   compression:
       min-response-size: 512
@@ -59,19 +57,16 @@ server:
         maxThreads: 12
         minSpareThreads: 3
         accesslog:
-          directory: /home/fullstack/app/log/server_log
+          directory: /home/fullstack/app/fullstack
           pattern: combined
           enabled: true
+  session:
+    cookie:
+      max-age: 1800
 
 logging:
     config: classpath:log4j2.xml
 
 mybatis:
     type-aliases-package: me.zbl.fullstack.entity
-#    mapper-locations: classpath:mapping/*.xml
-
-#mapper:
-#    mappers:
-#        - me.zbl.fullstack.framework.mapper.IMyMapper
-#    not-empty: false
-#    identity: MYSQL
+    mapper-locations: classpath:mapping/*.xml

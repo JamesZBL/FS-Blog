@@ -14,7 +14,9 @@
         <!-- 允许使用列标签代替列名 -->
         <!--<setting name="useColumnLabel" value="true"/>-->
         <!-- 允许使用自定义的主键值(比如由程序生成的UUID 32位编码作为键值)，数据表的PK生成策略将被覆盖 -->
-        <!--<setting name="useGeneratedKeys" value="true"/>-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 开启驼峰列名转换_例如：gmt_create = > gmtCreate -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!-- 给予被嵌套的resultMap以字段-属性的映射支持 -->
         <!--<setting name="autoMappingBehavior" value="FULL"/>-->
         <!-- 对于批量更新操作缓存SQL以提高性能  -->
@@ -22,6 +24,7 @@
         <!-- 数据库超过25000秒仍未响应则超时 -->
         <!--<setting name="defaultStatementTimeout" value="25000"/>-->
         <!--<setting name="logImpl" value="SLF4J"/>-->
+        <!-- 日志记录 -->
         <setting name="logImpl" value="LOG4J2"/>
     </settings>
 </configuration>

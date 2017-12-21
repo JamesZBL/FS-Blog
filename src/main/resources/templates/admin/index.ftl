@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
 
@@ -642,6 +642,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="../dist/admin/js/sb-admin-2.js"></script>
+<script src="../js/public.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ch">
+<html lang="zh">
 <#-- 后台用户登录 -->
 <head>
     <meta charset="utf-8">
