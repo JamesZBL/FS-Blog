@@ -1,13 +1,5 @@
 ### PRODUCE ###
 
-
-### GRADLE ###
-!gradle/wrapper/gradle-wrapper.jar
-.gradle
-/build/
-/gradlew
-/gradlew.bat
-
 ### STS ###
 .apt_generated
 .classpath
@@ -50,3 +42,10 @@ nbdist/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+### GRADLE ###
+!gradle/wrapper/gradle-wrapper.jar
+.gradle
+/build/
+/gradlew
+/gradlew.bat
