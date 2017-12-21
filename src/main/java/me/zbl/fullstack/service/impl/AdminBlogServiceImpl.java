@@ -3,6 +3,7 @@ package me.zbl.fullstack.service.impl;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.Tag;
 import me.zbl.fullstack.entity.TagArticle;
+import me.zbl.fullstack.entity.dto.ArticleDataGridView;
 import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.BlogModifyForm;
@@ -68,8 +69,14 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   }
 
   @Override
-  public List<Article> getArticleList() {
-    return mArticleMapper.selectAll();
+  public List<ArticleDataGridView> getArticleList() {
+    List<Article> articleList = mArticleMapper.selectAll();
+    List<ArticleDataGridView> viewList = new ArrayList<>();
+    for (Article article : articleList) {
+      ArticleDataGridView view = new ArticleDataGridView(article);
+      viewList.add(view);
+    }
+    return viewList;
   }
 
   @Override

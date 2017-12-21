@@ -1,6 +1,7 @@
 package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.dto.ArticleDataGridView;
 import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.BlogModifyForm;
@@ -27,7 +28,7 @@ public interface IAdminBlogService {
   /**
    * 获取所有文章列表
    */
-  List<Article> getArticleList();
+  List<ArticleDataGridView> getArticleList();
 
   /**
    * 根据 id 删除文章
