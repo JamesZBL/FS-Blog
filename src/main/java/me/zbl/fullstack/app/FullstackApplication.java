@@ -200,12 +200,10 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
-package me.zbl.fullstack;
+package me.zbl.fullstack.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
