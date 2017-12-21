@@ -65,7 +65,7 @@ public class UserController extends BaseController {
       return "redirect:/userregister";
     }
     //再次进行密码一致校验
-    if (!registerForm.getUsername().equals(registerForm.getConfirmpassword())) {
+    if (!(registerForm.getPassword().equals(registerForm.getConfirmpassword()))) {
       return "redirect:/userregister";
     }
     mUserService.insertUser(user);
