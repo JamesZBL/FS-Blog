@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: me.zbl.fullstack.app.FullstackApplication
+Main-Class: me.zbl.fullstack.FullstackApplication
 
