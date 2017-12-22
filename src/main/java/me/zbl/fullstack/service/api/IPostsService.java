@@ -8,8 +8,8 @@ import java.util.List;
 
 /**
  * 博客服务接口
- * <p>
- * Created by James on 17-12-7.
+ *
+ * @author James
  */
 public interface IPostsService {
 

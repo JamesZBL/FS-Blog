@@ -5,10 +5,10 @@ import org.apache.ibatis.jdbc.SQL;
 
 /**
  * Article 动态 SQL 提供者
- * <p>
- * Created by James on 17-12-17.
+ *
+ * @author James
  */
-public class ArticleSQLProvider {
+public class ArticleSqlProvider {
 
   public String getArticleByCondition(ArticleSearchForm form) {
     return new SQL() {{

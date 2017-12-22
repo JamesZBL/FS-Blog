@@ -13,84 +13,86 @@ import java.util.List;
  * Service 层的基础接口
  *
  * @param <T>
+ *
+ * @author James
  */
 
 public abstract class AbstractService<T> implements IService<T> {
 
-    @Resource
-    protected IMyMapper<T> mapper;
+  @Resource
+  protected IMyMapper<T> mapper;
 
-    /**
-     * 泛型 T 的类型
-     */
-    private Class<T> modelClass;
+  /**
+   * 泛型 T 的类型
+   */
+  private Class<T> modelClass;
 
-    public AbstractService() {
-        ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
-        modelClass = (Class<T>) pt.getActualTypeArguments()[0];
+  public AbstractService() {
+    ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+    modelClass = (Class<T>) pt.getActualTypeArguments()[0];
+  }
+
+  @Override
+  public Condition createCondition() {
+    return new Condition(modelClass);
+  }
+
+  @Override
+  public void save(T model) {
+    mapper.insertSelective(model);
+  }
+
+  @Override
+  public void save(List<T> models) {
+    mapper.insertList(models);
+  }
+
+  @Override
+  public void deleteById(Integer id) {
+    mapper.deleteByPrimaryKey(id);
+  }
+
+  @Override
+  public void deleteByIds(String ids) {
+    mapper.deleteByIds(ids);
+  }
+
+  @Override
+  public void update(T model) {
+    mapper.updateByPrimaryKeySelective(model);
+  }
+
+  @Override
+  public T findById(Integer id) {
+    return mapper.selectByPrimaryKey(id);
+  }
+
+  @Override
+  public T findBy(String property, Object value) throws TooManyResultsException {
+    try {
+      T model = modelClass.newInstance();
+      Field field = modelClass.getDeclaredField(property);
+      field.setAccessible(true);
+      field.set(model, value);
+      return mapper.selectOne(model);
+    } catch (ReflectiveOperationException e) {
+      // TODO: 17-10-29 更换为一个自定义异常
+      throw new RuntimeException(e.getMessage(), e);
     }
+  }
 
-    @Override
-    public Condition createCondition() {
-        return new Condition(modelClass);
-    }
+  @Override
+  public List<T> findByIds(String ids) {
+    return mapper.selectByIds(ids);
+  }
 
-    @Override
-    public void save(T model) {
-        mapper.insertSelective(model);
-    }
+  @Override
+  public List<T> findByCondition(Condition condition) {
+    return mapper.selectByCondition(condition);
+  }
 
-    @Override
-    public void save(List<T> models) {
-        mapper.insertList(models);
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-        mapper.deleteByPrimaryKey(id);
-    }
-
-    @Override
-    public void deleteByIds(String ids) {
-        mapper.deleteByIds(ids);
-    }
-
-    @Override
-    public void update(T model) {
-        mapper.updateByPrimaryKeySelective(model);
-    }
-
-    @Override
-    public T findById(Integer id) {
-        return mapper.selectByPrimaryKey(id);
-    }
-
-    @Override
-    public T findBy(String property, Object value) throws TooManyResultsException {
-        try {
-            T model = modelClass.newInstance();
-            Field field = modelClass.getDeclaredField(property);
-            field.setAccessible(true);
-            field.set(model, value);
-            return mapper.selectOne(model);
-        } catch (ReflectiveOperationException e) {
-            // TODO: 17-10-29 更换为一个自定义异常
-            throw new RuntimeException(e.getMessage(), e);
-        }
-    }
-
-    @Override
-    public List<T> findByIds(String ids) {
-        return mapper.selectByIds(ids);
-    }
-
-    @Override
-    public List<T> findByCondition(Condition condition) {
-        return mapper.selectByCondition(condition);
-    }
-
-    @Override
-    public List<T> findAll() {
-        return mapper.selectAll();
-    }
+  @Override
+  public List<T> findAll() {
+    return mapper.selectAll();
+  }
 }

@@ -41,7 +41,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     article.setIntroduction(form.getDescription());
     // 处理 article
     mArticleMapper.insertSelective(article);
-    Integer article_id = article.getId();
+    Integer articleId = article.getId();
     // 处理 tags
     String[] tags = form.getRawTags().split(",");
     List<Integer> tagIds = new ArrayList<>();
@@ -55,7 +55,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     for (Integer tagId : tagIds) {
       TagArticle tagArticle = new TagArticle();
       tagArticle.setTagId(tagId);
-      tagArticle.setArticleId(article_id);
+      tagArticle.setArticleId(articleId);
       mTagArticleMapper.insertSelective(tagArticle);
     }
   }

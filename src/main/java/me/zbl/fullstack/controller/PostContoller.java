@@ -21,8 +21,8 @@ import static me.zbl.fullstack.consts.ViewConsts.*;
 
 /**
  * 博客控制器
- * <p>
- * Created by James on 17-12-7.
+ *
+ * @author James
  */
 @Controller
 public class PostContoller extends BaseController {
@@ -38,7 +38,6 @@ public class PostContoller extends BaseController {
 
   /**
    * 博客列表页
-   * <p>
    * 视图模型：
    * 1.博客列表（文章标题/内容简介/发布时间）
    * 2.标签（tagId/文章总数）

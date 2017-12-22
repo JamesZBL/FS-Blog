@@ -3,7 +3,7 @@ package me.zbl.fullstack.mapper;
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.vo.ArticleSearchForm;
 import me.zbl.fullstack.framework.mapper.IMyMapper;
-import me.zbl.fullstack.mapper.provider.ArticleSQLProvider;
+import me.zbl.fullstack.mapper.provider.ArticleSqlProvider;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectProvider;
 
@@ -41,6 +41,6 @@ public interface ArticleMapper extends IMyMapper<Article> {
    *
    * @return 符合条件的文章
    */
-  @SelectProvider(type = ArticleSQLProvider.class, method = "getArticleByCondition")
+  @SelectProvider(type = ArticleSqlProvider.class, method = "getArticleByCondition")
   List<Article> getArticleListByCondition(ArticleSearchForm form);
 }

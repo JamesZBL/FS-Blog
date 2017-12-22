@@ -5,7 +5,7 @@ package me.zbl.fullstack.consts;
  *
  * @author James
  */
-public class URLConsts {
+public class UrlConsts {
 
   static final String IMG_LOCAL_PATH = "";
 }
