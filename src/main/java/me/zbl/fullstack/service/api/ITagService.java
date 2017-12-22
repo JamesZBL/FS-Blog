@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * 文章标签相关业务接口
- * <p>
- * Created by James on 17-12-9.
+ *
+ * @author James
  */
 public interface ITagService {
 

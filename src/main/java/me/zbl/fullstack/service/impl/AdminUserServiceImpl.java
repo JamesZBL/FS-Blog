@@ -16,11 +16,12 @@ import java.util.List;
 
 /**
  * 后台用户服务实现类
+ * @author James
  * <p>
  * Created by James on 17-12-2.
  */
 @Service
-public class AdminUserService implements IAdminUserService {
+public class AdminUserServiceImpl implements IAdminUserService {
 
   @Autowired
   private AdminUserMapper mAdminUserMapper;

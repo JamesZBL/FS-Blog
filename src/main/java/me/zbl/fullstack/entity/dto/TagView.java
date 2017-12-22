@@ -8,7 +8,8 @@ import me.zbl.fullstack.entity.Tag;
 
 /**
  * 文章标签视图
- * Created by James on 17-12-9.
+ *
+ * @author James
  */
 @Getter
 @Setter

@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 后台用户服务
- * <p>
- * Created by James on 17-12-2.
+ *
+ * @author James
  */
 public interface IAdminUserService {
 
@@ -24,12 +24,15 @@ public interface IAdminUserService {
   /**
    * 将用户信息加入会话
    *
-   * @param user 当前用户的信息
+   * @param request 用户请求
+   * @param user    当前用户的信息
    */
   void joinSession(HttpServletRequest request, AdminUser user);
 
   /**
    * 从会话中销毁用户信息
+   *
+   * @param request 用户请求
    */
   void destroySession(HttpServletRequest request);
 }

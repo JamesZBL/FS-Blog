@@ -8,8 +8,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 修改博客表单
- * <p>
- * Created by James on 17-12-4.
+ *
+ * @author James
  */
 @Setter
 @Getter
@@ -17,17 +17,32 @@ import org.hibernate.validator.constraints.NotEmpty;
 @AllArgsConstructor
 public class BlogModifyForm {
 
+  /**
+   * 所修改博客的 id
+   */
   @NotEmpty
-  private Integer id;          // 所修改博客的 id
+  private Integer id;
 
+  /**
+   * 文章标题
+   */
   @NotEmpty
-  private String title;        // 文章标题
+  private String title;
+  /**
+   * markdown 内容
+   */
+  private String mdMaterial;
+  /**
+   * markdown 转 html 后的内容
+   */
+  private String htmlMaterial;
+  /**
+   * 文章内容描述
+   */
+  private String description;
 
-  private String mdMaterial;  // markdown 内容
-
-  private String htmlMaterial;  // markdown 转 html 后的内容
-
-  private String description;   // 文章内容描述
-
-  private String rawTags;       // 原始 tags
+  /**
+   * 原始 tags
+   */
+  private String rawTags;
 }

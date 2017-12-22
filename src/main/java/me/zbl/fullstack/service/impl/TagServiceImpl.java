@@ -4,7 +4,7 @@ import me.zbl.fullstack.entity.Tag;
 import me.zbl.fullstack.entity.dto.TagView;
 import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.ITagService;
-import me.zbl.fullstack.service.base.ViewTransableService;
+import me.zbl.fullstack.service.base.BaseViewTransableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,11 @@ import java.util.List;
 
 /**
  * 文章标签相关业务实现类
- * Created by James on 17-12-9.
+ *
+ * @author James
  */
 @Service
-public class TagServiceImpl extends ViewTransableService<Tag, TagView> implements ITagService {
+public class TagServiceImpl extends BaseViewTransableService<Tag, TagView> implements ITagService {
 
   @Autowired
   TagMapper mTagMapper;

@@ -2,6 +2,8 @@ package me.zbl.fullstack.consts;
 
 /**
  * 视图中用到的模型名常量
+ *
+ * @author James
  */
 public class ViewConsts {
 

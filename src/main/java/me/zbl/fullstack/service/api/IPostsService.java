@@ -15,6 +15,8 @@ public interface IPostsService {
 
   /**
    * 获取所有博客
+   *
+   * @return 博客视图实体集合
    */
   List<PostView> getPostList();
 
@@ -23,6 +25,8 @@ public interface IPostsService {
    *
    * @param start 起始时间
    * @param end   结束时间
+   *
+   * @return 博客视图集合
    */
   List<PostView> getPostListByDate(Date start, Date end);
 
@@ -37,7 +41,9 @@ public interface IPostsService {
 
   /**
    * 根据 具体条件筛选文章
+   *
    * @param form 条件表单
+   *
    * @return 文章
    */
   List<PostView> getPostListByArticleCondition(ArticleSearchForm form);

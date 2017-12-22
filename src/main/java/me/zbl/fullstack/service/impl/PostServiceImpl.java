@@ -5,7 +5,7 @@ import me.zbl.fullstack.entity.dto.PostView;
 import me.zbl.fullstack.entity.vo.ArticleSearchForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
 import me.zbl.fullstack.service.api.IPostsService;
-import me.zbl.fullstack.service.base.ViewTransableService;
+import me.zbl.fullstack.service.base.BaseViewTransableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +16,11 @@ import java.util.List;
 
 /**
  * 博客业务实现类
- * <p>
- * Created by James on 17-12-7.
+ *
+ * @author James
  */
 @Service
-public class PostServiceImpl extends ViewTransableService<Article, PostView> implements IPostsService {
+public class PostServiceImpl extends BaseViewTransableService<Article, PostView> implements IPostsService {
 
   @Autowired
   ArticleMapper mPostMapper;

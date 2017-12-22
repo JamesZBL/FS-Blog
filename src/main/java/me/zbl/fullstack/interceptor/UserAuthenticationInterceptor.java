@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 用户权限验证的拦截器
+ *
+ * @author James
  */
 @Component
 public class UserAuthenticationInterceptor implements HandlerInterceptor {

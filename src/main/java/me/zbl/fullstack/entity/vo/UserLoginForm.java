@@ -8,8 +8,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 用户登录表单
- * <p>
- * Created by James on 17-12-4.
+ *
+ * @author James
  */
 @Getter
 @Setter
@@ -17,11 +17,20 @@ import org.hibernate.validator.constraints.NotEmpty;
 @AllArgsConstructor
 public class UserLoginForm {
 
+  /**
+   * 用户名
+   */
   @NotEmpty(message = "用户名不能为空")
-  private String username;  // 用户名
+  private String username;
 
+  /**
+   * 密码
+   */
   @NotEmpty(message = "密码不能为空")
-  private String password;  // 密码
+  private String password;
 
-  private Integer rememberme; // 记住登录
+  /**
+   * 记住登录
+   */
+  private Integer rememberme;
 }

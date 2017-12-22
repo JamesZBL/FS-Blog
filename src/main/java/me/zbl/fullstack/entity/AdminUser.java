@@ -8,6 +8,11 @@ import org.springframework.web.context.annotation.SessionScope;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * 管理员用户类
+ *
+ * @author James
+ */
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Table(name = "admin_user")

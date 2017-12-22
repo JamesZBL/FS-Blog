@@ -1,14 +1,11 @@
 package me.zbl.fullstack.controller;
 
-import me.zbl.fullstack.consts.ViewConsts;
 import me.zbl.fullstack.controller.base.BaseController;
-import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;

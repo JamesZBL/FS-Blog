@@ -5,7 +5,8 @@ import lombok.Setter;
 
 /**
  * 登录返回 Json
- * Created by James on 17-12-6.
+ *
+ * @author James
  */
 @Setter
 @Getter

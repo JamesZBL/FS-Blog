@@ -8,8 +8,8 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 
 /**
  * 博客列表视图
- * <p>
- * Created by James on 17-12-7.
+ *
+ * @author James
  */
 @Getter
 @Setter

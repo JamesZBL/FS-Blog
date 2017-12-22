@@ -10,11 +10,13 @@ import org.springframework.context.annotation.Configuration;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 
 /**
- * MyBatis扫描接口，使用的tk.mybatis.spring.mapper.MapperScannerConfigurer <br/>
+ * MyBatis扫描接口，使用的tk.mybatis.spring.mapper.MapperScannerConfigurer
  * 如果你不使用通用Mapper，可以改为org.xxx...
+ * 由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解 @AutoConfigureAfter
+ *
+ * @author James
  */
 @Configuration
-//由于MapperScannerConfigurer执行的比较早，所以必须有下面的注解
 @AutoConfigureAfter(MybatisAutoConfiguration.class)
 public class MyBatisMapperScannerConfig {
 

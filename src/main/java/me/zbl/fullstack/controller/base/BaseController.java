@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 控制器基类
+ * @author James
  */
 public class BaseController {
 

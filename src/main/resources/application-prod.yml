@@ -40,7 +40,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     username: root
-    password: root
+    password: 19961120zheng
     url: jdbc:mysql://127.0.0.1:3306/fullstack?useUnicode:true&amp;characterEncoding:UTF-8
     driverClassName: com.mysql.jdbc.Driver
     sql-script-encoding: UTF-8
@@ -51,7 +51,7 @@ spring:
 
 
 server:
-  port: 8083
+  port: 8091
   max-http-header-size: 8192
   compression:
       min-response-size: 512

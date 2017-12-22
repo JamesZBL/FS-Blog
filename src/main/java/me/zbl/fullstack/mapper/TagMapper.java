@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+/**
+ * @author James
+ */
 public interface TagMapper extends IMyMapper<Tag> {
 
   String columnList = "article.id,article.title,article.introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified";
@@ -16,6 +19,8 @@ public interface TagMapper extends IMyMapper<Tag> {
    * 根据 tag 的 id 获取文章
    *
    * @param id tag id
+   *
+   * @return 文章集合
    */
   @Select({
                   "SELECT",
@@ -29,6 +34,8 @@ public interface TagMapper extends IMyMapper<Tag> {
   /**
    * 获取所有 TagView
    * TagView 包括 tag 的名字/id 以及该 tag 对应的文章总数
+   *
+   * @return 文章集合
    */
   @Select({
                   "SELECT tag.id AS tagId,",

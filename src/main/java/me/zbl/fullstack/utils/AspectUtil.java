@@ -8,9 +8,9 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 /**
- * 切面工具
- * <p>
- * Created by James on 17-12-3.
+ * 切面操作工具
+ *
+ * @author James
  */
 public class AspectUtil {
 

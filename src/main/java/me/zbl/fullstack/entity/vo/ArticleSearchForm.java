@@ -8,8 +8,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 查找文章表单
- * <p>
- * Created by James on 17-12-17.
+ *
+ * @author James
  */
 @Getter
 @Setter
@@ -17,6 +17,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 @AllArgsConstructor
 public class ArticleSearchForm {
 
+  /**
+   * 文章标题
+   */
   @NotEmpty
-  private String name;          // 文章标题
+  private String name;
 }

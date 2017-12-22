@@ -9,7 +9,8 @@ import java.util.List;
 
 /**
  * 批量操作对主键的封装
- * Created by James on 17-12-11.
+ *
+ * @author James
  */
 @Getter
 @Setter

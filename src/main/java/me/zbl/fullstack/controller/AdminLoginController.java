@@ -5,13 +5,11 @@ import me.zbl.fullstack.entity.AdminUser;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.context.annotation.SessionScope;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;

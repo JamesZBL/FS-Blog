@@ -9,13 +9,23 @@ import org.apache.ibatis.annotations.SelectProvider;
 
 import java.util.List;
 
+/**
+ * @author James
+ */
 public interface ArticleMapper extends IMyMapper<Article> {
 
-  String columnList = "article.id,title,introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified";
+  String COLUMN_LIST = "article.id,title,introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified";
 
+  /**
+   * 通过 tag id 查找文章
+   *
+   * @param id tag id
+   *
+   * @return 符合条件的文章
+   */
   @Select({
                   "SELECT",
-                  columnList,
+                  COLUMN_LIST,
                   "FROM article",
                   "INNER JOIN tag_article",
                   "ON tag_article.article_id = article.id",
@@ -24,6 +34,13 @@ public interface ArticleMapper extends IMyMapper<Article> {
           })
   List<Article> getArticleListByTagId(Integer id);
 
+  /**
+   * 通过条件查找文章
+   *
+   * @param form 条件表单
+   *
+   * @return 符合条件的文章
+   */
   @SelectProvider(type = ArticleSQLProvider.class, method = "getArticleByCondition")
   List<Article> getArticleListByCondition(ArticleSearchForm form);
 }

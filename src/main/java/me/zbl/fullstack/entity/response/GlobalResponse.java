@@ -5,8 +5,8 @@ import lombok.Setter;
 
 /**
  * 统一 Json 范围实体类
- * <p>
- * Created by James on 17-12-6.
+ *
+ * @author James
  */
 @Getter
 @Setter

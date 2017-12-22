@@ -3,72 +3,78 @@ package me.zbl.fullstack.entity;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * 文章标签类
+ *
+ * @author James
+ */
 public class Tag {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
 
-    @Column(name = "gmt_create")
-    private Date gmtCreate;
+  private String name;
 
-    @Column(name = "gmt_modified")
-    private Date gmtModified;
+  @Column(name = "gmt_create")
+  private Date gmtCreate;
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
+  @Column(name = "gmt_modified")
+  private Date gmtModified;
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  /**
+   * @return id
+   */
+  public Integer getId() {
+    return id;
+  }
 
-    /**
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
+  /**
+   * @param id
+   */
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+  /**
+   * @return name
+   */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * @return gmt_create
-     */
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
+  /**
+   * @param name
+   */
+  public void setName(String name) {
+    this.name = name == null ? null : name.trim();
+  }
 
-    /**
-     * @param gmtCreate
-     */
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
+  /**
+   * @return gmt_create
+   */
+  public Date getGmtCreate() {
+    return gmtCreate;
+  }
 
-    /**
-     * @return gmt_modified
-     */
-    public Date getGmtModified() {
-        return gmtModified;
-    }
+  /**
+   * @param gmtCreate
+   */
+  public void setGmtCreate(Date gmtCreate) {
+    this.gmtCreate = gmtCreate;
+  }
 
-    /**
-     * @param gmtModified
-     */
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
+  /**
+   * @return gmt_modified
+   */
+  public Date getGmtModified() {
+    return gmtModified;
+  }
+
+  /**
+   * @param gmtModified
+   */
+  public void setGmtModified(Date gmtModified) {
+    this.gmtModified = gmtModified;
+  }
 }

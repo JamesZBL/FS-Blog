@@ -2,8 +2,8 @@ package me.zbl.fullstack.entity.response;
 
 /**
  * 简单 Json 响应类
- * <p>
- * Created by James on 17-12-6.
+ *
+ * @author James
  */
 public class SimpleResponse extends GlobalResponse {
 

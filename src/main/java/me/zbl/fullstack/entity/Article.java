@@ -3,6 +3,11 @@ package me.zbl.fullstack.entity;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * 文章类
+ *
+ * @author James
+ */
 public class Article {
 
   /**

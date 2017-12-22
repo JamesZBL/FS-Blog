@@ -18,6 +18,8 @@ import java.util.List;
 
 /**
  * WEB MVC 配置
+ *
+ * @author James
  */
 @Configuration
 public class WebConfAdapter extends WebMvcConfigurerAdapter {

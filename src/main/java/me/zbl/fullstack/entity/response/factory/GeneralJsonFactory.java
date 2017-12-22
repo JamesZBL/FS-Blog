@@ -8,7 +8,8 @@ import static me.zbl.fullstack.consts.StatusCode.*;
 
 /**
  * 通用 Json 工厂类
- * Created by James on 17-12-6.
+ *
+ * @author James
  */
 @Component(value = "generalJsonFactory")
 public class GeneralJsonFactory implements JsonFactory {

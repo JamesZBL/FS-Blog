@@ -34,18 +34,23 @@ public interface IUserService {
 
   /**
    * 保存用户
+   *
+   * @param user 用户
    */
   void insertUser(User user);
 
   /**
    * 将用户信息加入会话
    *
-   * @param user 当前用户的信息
+   * @param request 用户请求
+   * @param user    当前用户的信息
    */
   void joinSession(HttpServletRequest request, User user);
 
   /**
    * 从会话中销毁用户信息
+   *
+   * @param request 用户请求
    */
   void destroySession(HttpServletRequest request);
 }

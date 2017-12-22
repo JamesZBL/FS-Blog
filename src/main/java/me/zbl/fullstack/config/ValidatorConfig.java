@@ -7,7 +7,8 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
  * 配置 Hibernate Validator
- * Created by James on 17-12-2.
+ *
+ * @author James
  */
 @Configuration
 public class ValidatorConfig {

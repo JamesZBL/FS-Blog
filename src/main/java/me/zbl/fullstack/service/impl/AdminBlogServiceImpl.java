@@ -20,8 +20,8 @@ import java.util.List;
 
 /**
  * 后台博客服务实现类
- * <p>
- * Created by James on 17-12-4.
+ *
+ * @author James
  */
 @Service
 public class AdminBlogServiceImpl implements IAdminBlogService {
@@ -32,7 +32,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   private TagMapper mTagMapper;
 
   @Override
-  @Transactional
+  @Transactional(rollbackFor = Exception.class)
   public void blogAdd(BlogAddForm form) {
     Article article = new Article();
     article.setTitle(form.getTitle());
@@ -80,7 +80,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
   }
 
   @Override
-  @Transactional
+  @Transactional(rollbackFor = Exception.class)
   public void blogDelete(ArticleDeleteModel model) {
     List<Integer> idList = model.getIds();
     for (Integer id : idList) {

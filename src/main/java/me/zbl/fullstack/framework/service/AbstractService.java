@@ -20,7 +20,9 @@ public abstract class AbstractService<T> implements IService<T> {
     @Resource
     protected IMyMapper<T> mapper;
 
-    // 当前泛型真实类型的Class
+    /**
+     * 泛型 T 的类型
+     */
     private Class<T> modelClass;
 
     public AbstractService() {
@@ -73,7 +75,6 @@ public abstract class AbstractService<T> implements IService<T> {
             return mapper.selectOne(model);
         } catch (ReflectiveOperationException e) {
             // TODO: 17-10-29 更换为一个自定义异常
-            //throw new ServiceException(e.getMessage(), e);
             throw new RuntimeException(e.getMessage(), e);
         }
     }

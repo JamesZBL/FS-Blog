@@ -10,8 +10,8 @@ import java.util.Date;
 
 /**
  * 博客批量管理列表视图
- * <p>
- * Created by James on 17-12-7.
+ *
+ * @author James
  */
 @Getter
 @Setter

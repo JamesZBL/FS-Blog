@@ -2,8 +2,8 @@ package me.zbl.fullstack.consts;
 
 /**
  * 响应状态常量类
- * <p>
- * Created by James on 17-12-6.
+ *
+ * @author James
  */
 public class StatusCode {
 
