@@ -1,5 +1,6 @@
 ### PRODUCE ###
 Dockerfile
+*-prod.yml
 
 ### STS ###
 .apt_generated
