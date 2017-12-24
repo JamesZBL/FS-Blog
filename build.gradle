@@ -1,5 +1,6 @@
 buildscript {
     ext {
+        gradleDockerVersion = '1.2'
         springBootVersion = '1.5.8.RELEASE'
         ehcacheVersion = '2.10.4'
         mysqlConnectorVersion = '5.1.44'
@@ -22,12 +23,16 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        // Gradle-docker 插件
+        classpath("se.transmode.gradle:gradle-docker:${gradleDockerVersion}")
     }
 }
 
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'docker' // end::plugin[] // This is used as the docker image prefix (org) group = 'gregturn'
 
 group = 'me.zbl'
 version = '1.10.18-SNAPSHOT'
@@ -38,8 +43,7 @@ bootRun {
 }
 
 jar {
-    baseName = 'FS-Blog'
-    version = '1.10.18'
+    baseName = 'fsblog'
 }
 
 repositories {
@@ -57,6 +61,7 @@ configurations {
 }
 
 dependencies {
+
     //security
     //compile("org.springframework.boot:spring-boot-starter-security:${springBootVersion}")
 
@@ -170,3 +175,17 @@ task mybatisGenerate << {
         }
     }
 }
+
+// tag::task[]
+task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    applicationName = jar.baseName
+    dockerfile = file('Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+    }
+}
+// end::task[]
