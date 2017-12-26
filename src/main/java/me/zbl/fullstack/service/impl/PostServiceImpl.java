@@ -27,7 +27,7 @@ public class PostServiceImpl extends BaseViewTransableService<Article, PostView>
 
   @Override
   public List<PostView> getPostList() {
-    List<Article> articles = mPostMapper.selectAll();
+    List<Article> articles = mPostMapper.getPostViewAllArticles();
     List<PostView> postViewList = transEntityToView(articles);
     return postViewList;
   }

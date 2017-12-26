@@ -16,6 +16,15 @@ public interface ArticleMapper extends IMyMapper<Article> {
 
   String COLUMN_LIST = "article.id,title,introduction,article.gmt_create AS gmtCreate,article.gmt_modified AS gmtModified";
 
+  @Select({
+                  "SELECT",
+                  COLUMN_LIST,
+                  "FROM",
+                  "article",
+                  "ORDER BY article.gmt_create DESC"
+          })
+  List<Article> getPostViewAllArticles();
+
   /**
    * 通过 tag id 查找文章
    *
