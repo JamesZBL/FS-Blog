@@ -21,7 +21,7 @@
                     </li>
                     <li class="list-inline-item">&sdot;</li>
                     <li class="list-inline-item">
-                        <a href="http://github.com/JamesZBL/FS-Blog" class="text-white">Github 项目</a>
+                        <a href="http://github.com/JamesZBL/FS-Blog" target="_blank" class="text-white">Github 项目</a>
                     </li>
                 </ul>
                 <p class="text-muted small mb-4 mb-lg-0">&copy; JamesZBL 2017. All Rights Reserved. </p>

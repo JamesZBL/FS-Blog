@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+<#assign page_index = 0>
 <#-- s-nav.ftl -->
 <#include "public/nav.ftl">
 <#-- e-nav.ftl -->

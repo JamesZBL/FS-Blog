@@ -18,10 +18,10 @@
                 <li class="nav-item">
                     <a class="nav-link"><#-- 占位 --></a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item <#if page_index?? && page_index == 0>active</#if>">
                     <a class="nav-link" href="/">首页</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item <#if page_index?? && page_index == 1>active</#if>">
                     <a class="nav-link" href="/post">博客</a>
                 </li>
                 <li class="nav-item">
