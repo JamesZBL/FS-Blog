@@ -29,3 +29,7 @@ textarea {
 .qr_code{
     box-shadow: 0px 0px 7px #333333;
 }
+
+.txt_shadow{
+    text-shadow:0px 0px 7px #2f2f2f;
+}
