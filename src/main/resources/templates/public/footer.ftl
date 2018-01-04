@@ -31,7 +31,7 @@
                 <ul class="list-inline mb-0">
                     <#-- github -->
                     <li class="list-inline-item mr-3">
-                        <a href="http://github.com/JamesZBL" class="text-white">
+                        <a href="http://github.com/JamesZBL" target="_blank" class="text-white">
                             <i class="fa fa-github fa-2x fa-fw"></i>
                         </a>
                     </li>
