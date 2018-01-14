@@ -42,7 +42,7 @@
                         </a>
                     </li>
                     <#-- wechat -->
-                        <img id="id_img_wechat_qrcode" src="/img/wechat_qr.png" alt="Wechat" class="qr_code" style="display:none;width: 200px;position: absolute;bottom: 50px;right: 0;">
+                        <img id="id_img_wechat_qrcode" src="/img/wechat_qr.png" alt="Wechat" class="img_shadow" style="display:none;width: 200px;position: absolute;bottom: 50px;right: 0;">
                     <li class="list-inline-item">
                         <a class="text-white" id="id_a_wechat">
                             <i class="fa fa-wechat fa-2x fa-fw"></i>
