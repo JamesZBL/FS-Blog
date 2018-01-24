@@ -44,27 +44,34 @@
 
 <#-- s 页面内容 -->
     <div id="page-wrapper">
-        <form>
-            <div class="form-group row">
-                <label for="id_ori_pwd" class="col-sm-2 col-form-label">原密码</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="id_ori_pwd">
+        <div class=".container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <form>
+                        <div class="form-group row">
+                            <label for="id_ori_pwd" class="col-sm-2 col-form-label">原密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="id_ori_pwd">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="id_new_pwd" class="col-sm-2 col-form-label">新密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="id_new_pwd">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="id_confirm_pwd" class="col-sm-2 col-form-label">确认密码</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="id_confirm_pwd">
+                            </div>
+                        </div>
+                        <button id="id_btn_submit" class="btn btn-default">确认修改</button>
+                    </form>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="id_new_pwd" class="col-sm-2 col-form-label">新密码</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="id_new_pwd">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="id_confirm_pwd" class="col-sm-2 col-form-label">确认密码</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="id_confirm_pwd">
-                </div>
-            </div>
-            <button id="id_btn_submit" class="btn btn-default">确认修改</button>
-        </form>
+        </div>
+
     </div>
 <#-- e 页面内容 -->
 
@@ -91,3 +98,9 @@
 </body>
 
 </html>
+
+<style>
+    #page-wrapper {
+        padding: 15px 15px;
+    }
+</style>
