@@ -1,13 +1,15 @@
 package me.zbl.fullstack.controller;
 
+import javafx.beans.binding.ObjectExpression;
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
+import me.zbl.fullstack.entity.dto.TableKeyModel;
 import me.zbl.fullstack.entity.dto.BlogModifyModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.BlogModifyForm;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
+import me.zbl.fullstack.service.api.IAdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,8 @@ public class AdminController extends BaseController {
 
   @Autowired
   IAdminBlogService mBlogService;
+  @Autowired
+  IAdminUserService mAdminUserService;
 
   /**
    * 后台首页
@@ -123,8 +127,35 @@ public class AdminController extends BaseController {
    */
   @DeleteMapping("/blog_delete.j")
   @ResponseBody
-  public Object jAdminBlogDelete(@RequestBody ArticleDeleteModel model) {
+  public Object jAdminBlogDelete(@RequestBody TableKeyModel model) {
     mBlogService.blogDelete(model);
+    return mJsonFactory.getSimpleResponse();
+  }
+
+  /**
+   * 后台用户管理页面
+   */
+  @GetMapping("/admin_user_manage")
+  public String pAdminUserManage() {
+    return "admin/admin_user_manage";
+  }
+
+  /**
+   * 后台用户管理 json
+   */
+  @GetMapping("/admin_user.j")
+  @ResponseBody
+  public Object jAdminUserList() {
+    return mAdminUserService.getAdminUserJson();
+  }
+
+  /**
+   * 后台用户批量删除
+   */
+  @DeleteMapping("/admin_use_delete.j")
+  @ResponseBody
+  public Object jAdminUserDelete(@RequestBody TableKeyModel model) {
+    mAdminUserService.deleteAdminUser(model);
     return mJsonFactory.getSimpleResponse();
   }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @ToString
-public class ArticleDeleteModel {
+public class TableKeyModel {
 
   private List<Integer> ids;
 }

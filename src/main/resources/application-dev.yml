@@ -13,7 +13,21 @@ spring:
     cache: false
     suffix: .ftl
     charset: utf-8
-    view-names: index,error,userlogin,adminlogin,register,article,posts,admin/index,admin/userlogin,admin/blogadd,admin/blog_manage,admin/blog_modify
+    ######## todo 发布版本时修改 ########
+    view-names: index,
+                error,
+                userlogin,
+                adminlogin,
+                register,
+                article,
+                posts,
+                admin/index,
+                admin/userlogin,
+                admin/blogadd,
+                admin/blog_manage,
+                admin/blog_modify,
+                admin/admin_user_manage
+    #####################################
     content-type: text/html
     allow-request-override: true
     check-template-location: true

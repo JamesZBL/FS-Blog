@@ -2,7 +2,7 @@ package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.dto.ArticleDataGridView;
-import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
+import me.zbl.fullstack.entity.dto.TableKeyModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.BlogModifyForm;
 
@@ -43,7 +43,7 @@ public interface IAdminBlogService {
    *
    * @param model 数据模型
    */
-  void blogDelete(ArticleDeleteModel model);
+  void blogDelete(TableKeyModel model);
 
   /**
    * 修改已发布文章

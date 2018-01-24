@@ -4,7 +4,7 @@ import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.Tag;
 import me.zbl.fullstack.entity.TagArticle;
 import me.zbl.fullstack.entity.dto.ArticleDataGridView;
-import me.zbl.fullstack.entity.dto.ArticleDeleteModel;
+import me.zbl.fullstack.entity.dto.TableKeyModel;
 import me.zbl.fullstack.entity.vo.BlogAddForm;
 import me.zbl.fullstack.entity.vo.BlogModifyForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
@@ -81,7 +81,7 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
 
   @Override
   @Transactional(rollbackFor = Exception.class)
-  public void blogDelete(ArticleDeleteModel model) {
+  public void blogDelete(TableKeyModel model) {
     List<Integer> idList = model.getIds();
     for (Integer id : idList) {
       mArticleMapper.deleteByPrimaryKey(id);

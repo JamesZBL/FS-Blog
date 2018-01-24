@@ -2,7 +2,7 @@ package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.entity.AdminUser;
-import me.zbl.fullstack.entity.User;
+import me.zbl.fullstack.entity.dto.TableKeyModel;
 import me.zbl.fullstack.entity.vo.UserLoginForm;
 import me.zbl.fullstack.mapper.AdminUserMapper;
 import me.zbl.fullstack.service.api.IAdminUserService;
@@ -16,9 +16,10 @@ import java.util.List;
 
 /**
  * 后台用户服务实现类
+ *
  * @author James
- * <p>
- * Created by James on 17-12-2.
+ *         <p>
+ *         Created by James on 17-12-2.
  */
 @Service
 public class AdminUserServiceImpl implements IAdminUserService {
@@ -48,5 +49,17 @@ public class AdminUserServiceImpl implements IAdminUserService {
   public void destroySession(HttpServletRequest request) {
     HttpSession requestSession = request.getSession(true);
     requestSession.removeAttribute(SessionConstants.SESSION_ADMIN_CURRENT_USER);
+  }
+
+  @Override
+  public List<AdminUser> getAdminUserJson() {
+    return mAdminUserMapper.selectAll();
+  }
+
+  @Override
+  public void deleteAdminUser(TableKeyModel model) {
+    for (Integer id : model.getIds()) {
+      mAdminUserMapper.deleteByPrimaryKey(id);
+    }
   }
 }

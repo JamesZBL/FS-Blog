@@ -1,4 +1,4 @@
-/* 博客管理 */
+/* 后台用户管理 */
 $(function () {
     //1.初始化Table
     var oTable = new TableInit();
@@ -18,9 +18,9 @@ var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table
     oTableInit.Init = function () {
-        // 加载博客列表
+        // 加载后台用户列表
         $('#id_table_blog').bootstrapTable({
-            url: '/admin/blog_list.j',          //请求后台的URL（*）
+            url: '/admin/admin_user.j',          //请求后台的URL（*）
             method: 'get',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
@@ -52,23 +52,22 @@ var TableInit = function () {
                 align: 'center',
                 sortable: true
             }, {
-                field: 'title',
-                title: '标题',
+                field: 'username',
+                title: '用户名',
                 align: 'center'
             }, {
-                field: 'introduction',
-                title: '内容简介',
-                formatter: formatStrLength,
+                field: 'nickname',
+                title: '昵称',
                 align: 'center'
             }, {
                 field: 'gmtCreate',
-                title: '发布时间',
+                title: '创建时间',
                 align: 'center',
                 formatter: formatDateTime,
                 sortable: true
             }, {
                 field: 'gmtModified',
-                title: '最后编辑时间',
+                title: '最后修改时间',
                 align: 'center',
                 formatter: formatDateTime,
                 sortable: true
@@ -107,15 +106,15 @@ var ButtonInit = function () {
     oInit.Init = function () {
         //初始化页面上面的按钮事件
         $('#id_btn_delete').on('click', function () {
-            c_confirm("确实要删除选中的所有文章吗？删除后不可恢复！", deleteArticleInBulk);
+            c_confirm("确实要删除选中的所有用户吗？删除后不可恢复！", deleteAdminUserInBulk);
         });
 
         $('#id_btn_add').on('click', function () {
-            c_confirm("即将跳转到博客发布页面，确定继续吗？", addBlog);
+            addAdminUser();
         });
 
         $('#id_btn_edit').on('click', function () {
-            c_confirm("即将跳转到博客编辑页面，确定继续吗？", modifyBlog);
+            modifyAdminUser();
         });
     };
 
@@ -141,11 +140,12 @@ var EventInit = function () {
 /**
  * 批量删除
  */
-function deleteArticleInBulk() {
+function deleteAdminUserInBulk() {
     idsArr = [];
     dataSel = $('#id_table_blog').bootstrapTable('getSelections');
     if(dataSel.length<1){
         msg("至少得选一行吧");
+        return;
     }
     for (i = 0; i < dataSel.length; i++) {
         var tmp = dataSel[i];
@@ -156,14 +156,14 @@ function deleteArticleInBulk() {
     var dataObj = new Object();
     dataObj.ids = idsArr;
 
-    // 注意：必须加 contentType: 'application/json'，否则 controller 中无法讲 json 直接转换成对象
+    // 注意：必须加 contentType: 'application/json'，否则 controller 中无法将 json 直接转换成对象
     $.ajax({
         type: "DELETE",
-        url: "/admin/blog_delete.j",
+        url: "/admin/admin_use_delete.j",
         contentType: 'application/json',
         data: JSON.stringify(dataObj),
         success: function (result) {
-            msg("完成删除，刚才的文章永远的离你而去了");
+            msg("完成删除，刚才的用户永远的离你而去了");
             flushTable();
         },
         error:function () {
@@ -173,23 +173,23 @@ function deleteArticleInBulk() {
 }
 
 /**
- * 添加文章
+ * 添加用户
  */
-function addBlog() {
+function addAdminUser() {
     c_location("/admin/blogadd");
 }
 
 /**
- * 修改文章
+ * 修改用户
  */
-function modifyBlog() {
+function modifyAdminUser() {
     dataSel = $('#id_table_blog').bootstrapTable('getSelections');
     if (dataSel.length < 1) {
-        msg("你还没告诉我要编辑哪一篇呢");
+        msg("你还没告诉我要修改谁呢");
         return;
     }
     if (dataSel.length > 1) {
-        msg("一篇还不够你改的吗？选多啦");
+        msg("一个还不够你改的吗？选多啦");
     } else {
         id = dataSel[0].id;
         c_location("/admin/blogmodify/" + id);
