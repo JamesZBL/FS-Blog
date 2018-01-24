@@ -27,6 +27,7 @@ spring:
                 admin/blog_manage,
                 admin/blog_modify,
                 admin/admin_user_manage
+                admin/admin_user_pwd_modify
     #####################################
     content-type: text/html
     allow-request-override: true
