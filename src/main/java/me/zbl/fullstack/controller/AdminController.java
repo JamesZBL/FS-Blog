@@ -163,7 +163,7 @@ public class AdminController extends BaseController {
    * 后台用户密码修改页面
    */
   @GetMapping("/admin/admin_user_pwd_modify")
-  public Object pAdminUserPwdModify() {
+  public String pAdminUserPwdModify() {
     return "admin/admin_user_pwd_modify";
   }
 }
