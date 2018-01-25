@@ -33,6 +33,10 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="/css/public.css">
+    <!-- 后台通用 css -->
+    <#include "public/public_css.ftl">
 </head>
 
 <body>
@@ -47,27 +51,27 @@
         <div class=".container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <form>
+                    <form id="id_form">
                         <div class="form-group row">
                             <label for="id_ori_pwd" class="col-sm-2 col-form-label">原密码</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="id_ori_pwd">
+                                <input name="oriPwd" type="password" class="form-control" id="id_ori_pwd">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="id_new_pwd" class="col-sm-2 col-form-label">新密码</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="id_new_pwd">
+                                <input name="newPwd" type="password" class="form-control" id="id_new_pwd">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="id_confirm_pwd" class="col-sm-2 col-form-label">确认密码</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="id_confirm_pwd">
+                                <input name="confirmPwd" type="password" class="form-control" id="id_confirm_pwd">
                             </div>
                         </div>
-                        <button id="id_btn_submit" class="btn btn-default">确认修改</button>
                     </form>
+                    <button id="id_btn_submit" class="btn btn-default">确认修改</button>
                 </div>
             </div>
         </div>
@@ -94,7 +98,9 @@
 <!-- Custom Theme JavaScript -->
 <script src="../dist/admin/js/sb-admin-2.js"></script>
 <script src="../js/public.js"></script>
-
+<script src="/js/b_admin_user_pwd_modify.js"></script>
+<#-- 后台通用 js -->
+<#include "public/public_js.ftl">
 </body>
 
 </html>

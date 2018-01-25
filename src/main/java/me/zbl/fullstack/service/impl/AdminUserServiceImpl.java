@@ -11,6 +11,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Condition;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -73,9 +74,15 @@ public class AdminUserServiceImpl implements IAdminUserService {
       return ModifyPwdResult.NOT_EQUAL;
     }
     AdminUser user = (AdminUser) request.getSession().getAttribute(SessionConstants.SESSION_ADMIN_CURRENT_USER);
-    user.setPassword(DigestUtils.md5Hex(newPwd));
-    // 更新密码
-    mAdminUserMapper.updateByPrimaryKeySelective(user);
-    return ModifyPwdResult.SUCCESS;
+    // 密码是否正确
+    if (StringUtils.equals(DigestUtils.md5Hex(oriPwd), user.getPassword())) {
+      user.setPassword(DigestUtils.md5Hex(newPwd));
+      // 更新密码
+      mAdminUserMapper.updateByPrimaryKeySelective(user);
+      return ModifyPwdResult.SUCCESS;
+    } else {
+      // 原密码错误
+      return ModifyPwdResult.ORI_PWD_ERROR;
+    }
   }
 }

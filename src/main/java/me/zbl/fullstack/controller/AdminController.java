@@ -10,6 +10,7 @@ import me.zbl.fullstack.entity.dto.form.BlogModifyForm;
 import me.zbl.fullstack.entity.dto.form.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import me.zbl.fullstack.service.api.IAdminUserService;
+import me.zbl.fullstack.service.api.IAdminUserService.ModifyPwdResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -172,18 +173,23 @@ public class AdminController extends BaseController {
   /**
    * 后台用户密码修改
    */
-  @GetMapping("/admin_user_pwd_modify.f")
+  @PostMapping("/admin_user_pwd_modify.f")
   @ResponseBody
-  public Object fAdminUserPwdModify(@Valid @RequestBody AdminUserPwdModifyForm form, BindingResult result, HttpServletRequest request) {
+  public Object fAdminUserPwdModify(@Valid AdminUserPwdModifyForm form, BindingResult result, HttpServletRequest request) {
     if (result.hasErrors()) {
       return responseSimpleError();
     }
+    ModifyPwdResult result1;
     try {
-      mAdminUserService.modifyUserPwd(form, request);
+      result1 = mAdminUserService.modifyUserPwd(form, request);
     } catch (Exception e) {
       e.printStackTrace();
       return responseSimpleError();
     }
-    return responseSimpleOK();
+    if (result1 == ModifyPwdResult.SUCCESS) {
+      return responseSimpleOK();
+    } else {
+      return responseSimpleError();
+    }
   }
 }

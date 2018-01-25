@@ -80,7 +80,10 @@ public interface IAdminUserService {
   /**
    * 后台用户密码修改
    *
-   * @param form 修改密码表单
+   * @param form    修改密码表单
+   * @param request 请求，用于获取当前用户
+   *
+   * @return 修改结果
    */
   ModifyPwdResult modifyUserPwd(AdminUserPwdModifyForm form, HttpServletRequest request);
 }
