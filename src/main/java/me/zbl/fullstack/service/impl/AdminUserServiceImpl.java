@@ -3,11 +3,12 @@ package me.zbl.fullstack.service.impl;
 import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.entity.AdminUser;
 import me.zbl.fullstack.entity.dto.form.AdminUserPwdModifyForm;
-import me.zbl.fullstack.entity.dto.request.TableKeyModel;
 import me.zbl.fullstack.entity.dto.form.UserLoginForm;
+import me.zbl.fullstack.entity.dto.request.TableKeyModel;
 import me.zbl.fullstack.mapper.AdminUserMapper;
 import me.zbl.fullstack.service.api.IAdminUserService;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,8 @@ import java.util.List;
 
 /**
  * 后台用户服务实现类
- * <p>
- * Created by James on 17-12-2.
+ *
+ * @author James
  */
 @Service
 public class AdminUserServiceImpl implements IAdminUserService {
@@ -63,7 +64,18 @@ public class AdminUserServiceImpl implements IAdminUserService {
   }
 
   @Override
-  public void modifyUserPwd(AdminUserPwdModifyForm form) {
-
+  public ModifyPwdResult modifyUserPwd(AdminUserPwdModifyForm form, HttpServletRequest request) {
+    String oriPwd = form.getOriPwd();
+    String newPwd = form.getNewPwd();
+    String confirmPwd = form.getConfirmPwd();
+    if (!StringUtils.equals(newPwd, confirmPwd)) {
+      // 两次密码不相同
+      return ModifyPwdResult.NOT_EQUAL;
+    }
+    AdminUser user = (AdminUser) request.getSession().getAttribute(SessionConstants.SESSION_ADMIN_CURRENT_USER);
+    user.setPassword(DigestUtils.md5Hex(newPwd));
+    // 更新密码
+    mAdminUserMapper.updateByPrimaryKeySelective(user);
+    return ModifyPwdResult.SUCCESS;
   }
 }

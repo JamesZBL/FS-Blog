@@ -16,6 +16,30 @@ import java.util.List;
 public interface IAdminUserService {
 
   /**
+   * 修改密码结果
+   */
+  enum ModifyPwdResult {
+    /**
+     * 两次密码不同
+     */
+    NOT_EQUAL("两次输入的密码不相同"),
+    /**
+     * 原密码错误
+     */
+    ORI_PWD_ERROR("原密码输入错误"),
+    /**
+     * 修改成功
+     */
+    SUCCESS("修改成功");
+
+    String name;
+
+    ModifyPwdResult(String name) {
+      this.name = name;
+    }
+  }
+
+  /**
    * 验证用户是否存在
    *
    * @param form 用户信息
@@ -58,5 +82,5 @@ public interface IAdminUserService {
    *
    * @param form 修改密码表单
    */
-  void modifyUserPwd(AdminUserPwdModifyForm form);
+  ModifyPwdResult modifyUserPwd(AdminUserPwdModifyForm form, HttpServletRequest request);
 }

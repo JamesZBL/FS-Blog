@@ -179,7 +179,7 @@ public class AdminController extends BaseController {
       return responseSimpleError();
     }
     try {
-
+      mAdminUserService.modifyUserPwd(form, request);
     } catch (Exception e) {
       e.printStackTrace();
       return responseSimpleError();
