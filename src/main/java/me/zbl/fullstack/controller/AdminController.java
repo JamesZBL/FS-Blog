@@ -174,7 +174,7 @@ public class AdminController extends BaseController {
    */
   @GetMapping("/admin_user_pwd_modify.f")
   @ResponseBody
-  public Object fAdminUserPwdModify(@Valid AdminUserPwdModifyForm form, BindingResult result, HttpServletRequest request) {
+  public Object fAdminUserPwdModify(@Valid @RequestBody AdminUserPwdModifyForm form, BindingResult result, HttpServletRequest request) {
     if (result.hasErrors()) {
       return responseSimpleError();
     }
