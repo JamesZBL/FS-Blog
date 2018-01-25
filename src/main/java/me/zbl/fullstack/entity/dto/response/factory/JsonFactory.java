@@ -1,7 +1,7 @@
-package me.zbl.fullstack.entity.response.factory;
+package me.zbl.fullstack.entity.dto.response.factory;
 
-import me.zbl.fullstack.entity.response.RedirectResponse;
-import me.zbl.fullstack.entity.response.SimpleResponse;
+import me.zbl.fullstack.entity.dto.response.RedirectResponse;
+import me.zbl.fullstack.entity.dto.response.SimpleResponse;
 
 
 /**
@@ -16,14 +16,14 @@ public interface JsonFactory {
    *
    * @return 响应实体
    */
-  SimpleResponse getSimpleResponse();
+  SimpleResponse createSimpleResponse();
 
   /**
    * 获取简单错误实体
    *
    * @return 响应实体
    */
-  SimpleResponse getSimpleErrorResponse();
+  SimpleResponse createtSimpleErrorResponse();
 
   /**
    * 获取简单响应实体
@@ -33,7 +33,7 @@ public interface JsonFactory {
    *
    * @return 响应实体
    */
-  SimpleResponse getSimpleResponse(int resultCode, boolean hasError);
+  SimpleResponse createSimpleResponse(int resultCode, boolean hasError);
 
   /**
    * 获取重定向响应实体
@@ -44,5 +44,5 @@ public interface JsonFactory {
    *
    * @return
    */
-  RedirectResponse getRedirectResponse(int resultCode, boolean hasError, String redirectURL);
+  RedirectResponse createRedirectResponse(int resultCode, boolean hasError, String redirectURL);
 }

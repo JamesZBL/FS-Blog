@@ -1,8 +1,9 @@
 package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.AdminUser;
-import me.zbl.fullstack.entity.dto.TableKeyModel;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.AdminUserPwdModifyForm;
+import me.zbl.fullstack.entity.dto.request.TableKeyModel;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -51,4 +52,11 @@ public interface IAdminUserService {
    * @param model 待删除用户主键
    */
   void deleteAdminUser(TableKeyModel model);
+
+  /**
+   * 后台用户密码修改
+   *
+   * @param form 修改密码表单
+   */
+  void modifyUserPwd(AdminUserPwdModifyForm form);
 }

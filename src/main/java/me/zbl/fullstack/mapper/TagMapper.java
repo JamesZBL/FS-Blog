@@ -2,7 +2,7 @@ package me.zbl.fullstack.mapper;
 
 import me.zbl.fullstack.entity.Article;
 import me.zbl.fullstack.entity.Tag;
-import me.zbl.fullstack.entity.dto.TagView;
+import me.zbl.fullstack.entity.vo.TagView;
 import me.zbl.fullstack.framework.mapper.IMyMapper;
 import org.apache.ibatis.annotations.Select;
 

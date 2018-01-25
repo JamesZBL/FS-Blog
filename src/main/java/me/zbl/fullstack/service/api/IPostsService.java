@@ -1,7 +1,7 @@
 package me.zbl.fullstack.service.api;
 
-import me.zbl.fullstack.entity.dto.PostView;
-import me.zbl.fullstack.entity.vo.ArticleSearchForm;
+import me.zbl.fullstack.entity.vo.PostView;
+import me.zbl.fullstack.entity.dto.form.ArticleSearchForm;
 
 import java.util.Date;
 import java.util.List;

@@ -2,8 +2,8 @@ package me.zbl.fullstack.controller;
 
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.User;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
-import me.zbl.fullstack.entity.vo.UserRegisterForm;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.UserRegisterForm;
 import me.zbl.fullstack.service.api.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

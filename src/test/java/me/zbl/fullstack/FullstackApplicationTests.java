@@ -1,8 +1,8 @@
 package me.zbl.fullstack;
 
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.dto.PostView;
-import me.zbl.fullstack.entity.dto.TagView;
+import me.zbl.fullstack.entity.vo.PostView;
+import me.zbl.fullstack.entity.vo.TagView;
 import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.IPostsService;
 import org.junit.Test;

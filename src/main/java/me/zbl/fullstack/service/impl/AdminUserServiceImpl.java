@@ -2,8 +2,9 @@ package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.entity.AdminUser;
-import me.zbl.fullstack.entity.dto.TableKeyModel;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.AdminUserPwdModifyForm;
+import me.zbl.fullstack.entity.dto.request.TableKeyModel;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
 import me.zbl.fullstack.mapper.AdminUserMapper;
 import me.zbl.fullstack.service.api.IAdminUserService;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -16,10 +17,8 @@ import java.util.List;
 
 /**
  * 后台用户服务实现类
- *
- * @author James
- *         <p>
- *         Created by James on 17-12-2.
+ * <p>
+ * Created by James on 17-12-2.
  */
 @Service
 public class AdminUserServiceImpl implements IAdminUserService {
@@ -61,5 +60,10 @@ public class AdminUserServiceImpl implements IAdminUserService {
     for (Integer id : model.getIds()) {
       mAdminUserMapper.deleteByPrimaryKey(id);
     }
+  }
+
+  @Override
+  public void modifyUserPwd(AdminUserPwdModifyForm form) {
+
   }
 }

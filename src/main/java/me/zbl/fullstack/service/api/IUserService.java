@@ -2,8 +2,8 @@ package me.zbl.fullstack.service.api;
 
 
 import me.zbl.fullstack.entity.User;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
-import me.zbl.fullstack.entity.vo.UserRegisterForm;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.UserRegisterForm;
 
 import javax.servlet.http.HttpServletRequest;
 

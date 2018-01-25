@@ -1,4 +1,4 @@
-package me.zbl.fullstack.entity.response;
+package me.zbl.fullstack.entity.dto.response;
 
 /**
  * 简单 Json 响应类

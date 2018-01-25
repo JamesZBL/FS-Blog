@@ -2,8 +2,8 @@ package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.consts.SessionConstants;
 import me.zbl.fullstack.entity.User;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
-import me.zbl.fullstack.entity.vo.UserRegisterForm;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.UserRegisterForm;
 import me.zbl.fullstack.mapper.UserMapper;
 import me.zbl.fullstack.service.api.IUserService;
 import org.apache.commons.codec.digest.DigestUtils;

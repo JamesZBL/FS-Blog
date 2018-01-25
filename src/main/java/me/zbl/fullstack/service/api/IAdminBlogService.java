@@ -1,10 +1,10 @@
 package me.zbl.fullstack.service.api;
 
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.dto.ArticleDataGridView;
-import me.zbl.fullstack.entity.dto.TableKeyModel;
-import me.zbl.fullstack.entity.vo.BlogAddForm;
-import me.zbl.fullstack.entity.vo.BlogModifyForm;
+import me.zbl.fullstack.entity.vo.ArticleDataGridView;
+import me.zbl.fullstack.entity.dto.request.TableKeyModel;
+import me.zbl.fullstack.entity.dto.form.BlogAddForm;
+import me.zbl.fullstack.entity.dto.form.BlogModifyForm;
 
 import java.util.List;
 

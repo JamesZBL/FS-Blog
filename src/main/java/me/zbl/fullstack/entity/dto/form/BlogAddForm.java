@@ -1,4 +1,4 @@
-package me.zbl.fullstack.entity.vo;
+package me.zbl.fullstack.entity.dto.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * 修改博客表单
+ * 发布博客表单
  *
  * @author James
  */
@@ -15,27 +15,24 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BlogModifyForm {
-
-  /**
-   * 所修改博客的 id
-   */
-  @NotEmpty
-  private Integer id;
+public class BlogAddForm {
 
   /**
    * 文章标题
    */
   @NotEmpty
   private String title;
+
   /**
    * markdown 内容
    */
   private String mdMaterial;
+
   /**
    * markdown 转 html 后的内容
    */
   private String htmlMaterial;
+
   /**
    * 文章内容描述
    */

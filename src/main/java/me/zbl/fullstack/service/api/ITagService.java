@@ -1,6 +1,6 @@
 package me.zbl.fullstack.service.api;
 
-import me.zbl.fullstack.entity.dto.TagView;
+import me.zbl.fullstack.entity.vo.TagView;
 
 import java.util.List;
 

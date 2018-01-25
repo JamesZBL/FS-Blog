@@ -1,4 +1,4 @@
-package me.zbl.fullstack.entity.vo;
+package me.zbl.fullstack.entity.dto.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

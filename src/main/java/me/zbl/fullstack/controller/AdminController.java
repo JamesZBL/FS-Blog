@@ -1,21 +1,23 @@
 package me.zbl.fullstack.controller;
 
-import javafx.beans.binding.ObjectExpression;
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.dto.TableKeyModel;
-import me.zbl.fullstack.entity.dto.BlogModifyModel;
-import me.zbl.fullstack.entity.vo.BlogAddForm;
-import me.zbl.fullstack.entity.vo.BlogModifyForm;
-import me.zbl.fullstack.entity.vo.UserLoginForm;
+import me.zbl.fullstack.entity.dto.form.AdminUserPwdModifyForm;
+import me.zbl.fullstack.entity.dto.request.TableKeyModel;
+import me.zbl.fullstack.entity.vo.BlogModifyModel;
+import me.zbl.fullstack.entity.dto.form.BlogAddForm;
+import me.zbl.fullstack.entity.dto.form.BlogModifyForm;
+import me.zbl.fullstack.entity.dto.form.UserLoginForm;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import me.zbl.fullstack.service.api.IAdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import static me.zbl.fullstack.consts.ViewConsts.*;
 
@@ -129,7 +131,7 @@ public class AdminController extends BaseController {
   @ResponseBody
   public Object jAdminBlogDelete(@RequestBody TableKeyModel model) {
     mBlogService.blogDelete(model);
-    return mJsonFactory.getSimpleResponse();
+    return responseSimpleOK();
   }
 
   /**
@@ -156,7 +158,7 @@ public class AdminController extends BaseController {
   @ResponseBody
   public Object jAdminUserDelete(@RequestBody TableKeyModel model) {
     mAdminUserService.deleteAdminUser(model);
-    return mJsonFactory.getSimpleResponse();
+    return responseSimpleOK();
   }
 
   /**
@@ -165,5 +167,23 @@ public class AdminController extends BaseController {
   @GetMapping("/admin_user_pwd_modify")
   public String pAdminUserPwdModify() {
     return "admin/admin_user_pwd_modify";
+  }
+
+  /**
+   * 后台用户密码修改
+   */
+  @GetMapping("/admin_user_pwd_modify.f")
+  @ResponseBody
+  public Object fAdminUserPwdModify(@Valid AdminUserPwdModifyForm form, BindingResult result, HttpServletRequest request) {
+    if (result.hasErrors()) {
+      return responseSimpleError();
+    }
+    try {
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      return responseSimpleError();
+    }
+    return responseSimpleOK();
   }
 }

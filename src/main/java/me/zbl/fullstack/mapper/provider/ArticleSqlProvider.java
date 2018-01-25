@@ -1,6 +1,6 @@
 package me.zbl.fullstack.mapper.provider;
 
-import me.zbl.fullstack.entity.vo.ArticleSearchForm;
+import me.zbl.fullstack.entity.dto.form.ArticleSearchForm;
 import org.apache.ibatis.jdbc.SQL;
 
 /**

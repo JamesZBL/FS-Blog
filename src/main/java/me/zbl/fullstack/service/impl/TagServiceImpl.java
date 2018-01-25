@@ -1,7 +1,7 @@
 package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.entity.Tag;
-import me.zbl.fullstack.entity.dto.TagView;
+import me.zbl.fullstack.entity.vo.TagView;
 import me.zbl.fullstack.mapper.TagMapper;
 import me.zbl.fullstack.service.api.ITagService;
 import me.zbl.fullstack.service.base.BaseViewTransableService;

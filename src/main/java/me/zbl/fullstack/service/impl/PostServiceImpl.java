@@ -1,8 +1,8 @@
 package me.zbl.fullstack.service.impl;
 
 import me.zbl.fullstack.entity.Article;
-import me.zbl.fullstack.entity.dto.PostView;
-import me.zbl.fullstack.entity.vo.ArticleSearchForm;
+import me.zbl.fullstack.entity.vo.PostView;
+import me.zbl.fullstack.entity.dto.form.ArticleSearchForm;
 import me.zbl.fullstack.mapper.ArticleMapper;
 import me.zbl.fullstack.service.api.IPostsService;
 import me.zbl.fullstack.service.base.BaseViewTransableService;
