@@ -1,6 +1,6 @@
 spring:
   application:
-    name: FullStack
+    name: FS-Blog
   cache:
     cache-names: ehcache
     ehcache:
