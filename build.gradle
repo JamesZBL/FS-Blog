@@ -71,6 +71,9 @@ dependencies {
     //aop
     compile("org.springframework.boot:spring-boot-starter-aop:${springBootVersion}")
 
+    //jdbc
+    compile("org.springframework.boot:spring-boot-starter-jdbc:${springBootVersion}")
+
     //模板引擎
     compile("org.springframework.boot:spring-boot-starter-freemarker:${springBootVersion}")
 

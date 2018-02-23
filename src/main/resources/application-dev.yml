@@ -13,7 +13,7 @@ spring:
     cache: false
     suffix: .ftl
     charset: utf-8
-    ######## todo 发布版本时修改 ########
+    ######## todo 发布版本时同步更新 ***-prod.yml ########
     view-names: index,
                 error,
                 userlogin,
@@ -59,7 +59,12 @@ spring:
       connection-timeout: 30000
       maximum-pool-size: 50
       minimum-idle: 5
-
+    schema: schema.sql
+    data: data.sql
+    initialize: true
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 server:
   port: 8083
