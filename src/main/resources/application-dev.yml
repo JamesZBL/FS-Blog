@@ -62,6 +62,7 @@ spring:
     schema: schema.sql
     data: data.sql
     initialize: true
+    continue-on-error: true
   jpa:
     hibernate:
       ddl-auto: update
