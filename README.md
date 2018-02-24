@@ -1,5 +1,5 @@
 # FS-Blog 基于 SpringBoot 的个人博客系统
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](blob/develop/LICENSE)
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](./LICENSE)
 
 ### 用到的技术
 - SpringBoot
