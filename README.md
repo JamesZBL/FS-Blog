@@ -1,9 +1,5 @@
 # FS-Blog 基于 SpringBoot 的个人博客系统
-<<<<<<< HEAD
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](blob/develop/LICENSE)
-=======
 
->>>>>>> 063593496bef1e339d6381fc7abd14453c6c40af
 
 ### 用到的技术
 - SpringBoot
