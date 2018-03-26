@@ -1,7 +1,11 @@
+CREATE DATABASE IF NOT EXISTS `fsblog`;
+USE `fsblog`;
+
 -- ----------------------------
 -- Table structure for admin_user
 -- ----------------------------
-CREATE TABLE IF NOT EXISTS `admin_user` (
+DROP TABLE IF EXISTS `admin_user`;
+CREATE TABLE `admin_user` (
   `id` int(12) unsigned NOT NULL AUTO_INCREMENT COMMENT 'PrimaryKey',
   `username` varchar(20) NOT NULL COMMENT '用户名',
   `password` varchar(40) NOT NULL,
@@ -18,12 +22,14 @@ CREATE TABLE IF NOT EXISTS `admin_user` (
   `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Table structure for article
 -- ----------------------------
-CREATE TABLE IF NOT EXISTS `article` (
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE `article` (
   `id` int(12) unsigned NOT NULL AUTO_INCREMENT COMMENT 'PrimaryKey',
   `title` varchar(50) DEFAULT NULL,
   `introduction` text,
@@ -34,35 +40,25 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for article_copy
--- ----------------------------
-CREATE TABLE IF NOT EXISTS `article_copy` (
-  `id` int(12) unsigned NOT NULL AUTO_INCREMENT COMMENT 'PrimaryKey',
-  `title` varchar(50) DEFAULT NULL,
-  `introduction` text,
-  `html_material` text COMMENT '文章 html 内容',
-  `md_material` text COMMENT '文章内容',
-  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for tag
 -- ----------------------------
-CREATE TABLE IF NOT EXISTS `tag` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+DROP TABLE IF EXISTS `tag`;
+CREATE TABLE `tag` (
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for tag_article
 -- ----------------------------
-CREATE TABLE IF NOT EXISTS `tag_article` (
+DROP TABLE IF EXISTS `tag_article`;
+CREATE TABLE `tag_article` (
   `id` int(12) NOT NULL AUTO_INCREMENT,
   `tag_id` int(12) NOT NULL COMMENT 'Tag_ID',
   `article_id` int(12) NOT NULL COMMENT 'Article_ID',
@@ -71,10 +67,12 @@ CREATE TABLE IF NOT EXISTS `tag_article` (
   PRIMARY KEY (`id`,`tag_id`,`article_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
+
 -- ----------------------------
 -- Table structure for user
 -- ----------------------------
-CREATE TABLE IF NOT EXISTS `user` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
   `id` int(12) unsigned NOT NULL AUTO_INCREMENT COMMENT 'PrimaryKey',
   `username` varchar(20) NOT NULL COMMENT '用户名',
   `password` varchar(50) NOT NULL,

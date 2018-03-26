@@ -52,15 +52,15 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     username: root
     password: root
-    url: jdbc:mysql://127.0.0.1:3306/fullstack?useUnicode:true&amp;characterEncoding:UTF-8
+    url: jdbc:mysql://127.0.0.1:3306?useUnicode:true&amp;characterEncoding:UTF-8
     driverClassName: com.mysql.jdbc.Driver
     sql-script-encoding: UTF-8
     hikari:
       connection-timeout: 30000
       maximum-pool-size: 50
       minimum-idle: 5
-    schema: schema.sql
-    data: data.sql
+    schema: classpath:schema.sql
+    data: classpath:data.sql
     initialize: true
     continue-on-error: true
   jpa:
