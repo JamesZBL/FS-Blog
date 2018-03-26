@@ -5,7 +5,7 @@
 
 ## 基于 Spring Boot 的个人博客
 
-[在线 Demo](htpp://fsblog.letec.top)
+[在线 Demo](http://fsblog.letec.top)
 
 ### 1. 涉及技术及工具
 
