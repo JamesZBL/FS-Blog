@@ -35,7 +35,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'docker' // end::plugin[] // This is used as the docker image prefix (org) group = 'gregturn'
 
 group = 'me.zbl'
-version = '1.10.18-SNAPSHOT'
+version = '1.0-Release'
 sourceCompatibility = 1.8
 
 bootRun {
