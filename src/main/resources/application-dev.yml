@@ -63,9 +63,6 @@ spring:
     data: classpath:data.sql
     initialize: true
     continue-on-error: true
-  jpa:
-    hibernate:
-      ddl-auto: update
 
 server:
   port: 8083
