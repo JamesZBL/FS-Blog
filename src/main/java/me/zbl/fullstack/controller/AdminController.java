@@ -41,7 +41,7 @@ public class AdminController extends BaseController {
    */
   @GetMapping("")
   public String pAdminIndex(HttpServletRequest request, Model model) {
-    return "admin/index";
+    return "admin/blog_manage";
   }
 
   /**
@@ -49,7 +49,7 @@ public class AdminController extends BaseController {
    */
   @GetMapping("/index")
   public String pAdminIndex2(HttpServletRequest request, Model model) {
-    return "admin/index";
+    return "admin/blog_manage";
   }
 
   /**
@@ -92,7 +92,7 @@ public class AdminController extends BaseController {
    */
   @PostMapping("/login.f")
   public String fAdminLogin(UserLoginForm userLoginForm) {
-    return "redirect:/admin/index";
+    return "redirect:/admin/blog_manage";
   }
 
   /**
