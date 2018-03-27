@@ -22,10 +22,15 @@
 ### 2. 效果图
 
 #### 2.1 首页
+![首页](screenshots/home.png)
 
 #### 2.2 博客列表页
+![首页](screenshots/posts.png)
+
 
 #### 2.3 博客阅读页
+![首页](screenshots/blog.png)
+
 
 ### 3. 构建及运行
 
