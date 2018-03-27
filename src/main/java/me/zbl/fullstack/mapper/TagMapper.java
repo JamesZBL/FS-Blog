@@ -47,4 +47,10 @@ public interface TagMapper extends IMyMapper<Tag> {
                   "GROUP BY tag_article.tag_id"
           })
   List<TagView> selectAllTagView();
+
+  @Select({
+                  "SELECT id,",
+                  "`name` FROM tag WHERE `name` = #{tagName}"
+          })
+  Tag selectTagByName(String tagName);
 }

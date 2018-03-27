@@ -44,19 +44,24 @@ public class AdminBlogServiceImpl implements IAdminBlogService {
     Integer articleId = article.getId();
     // 处理 tags
     String[] tags = form.getRawTags().split(",");
-    List<Integer> tagIds = new ArrayList<>();
-    for (int i = 0; i < tags.length; i++) {
-      Tag tag = new Tag();
-      tag.setName(tags[i]);
-      mTagMapper.insertSelective(tag);
-      Integer tagId = tag.getId();
-      tagIds.add(tagId);
-    }
-    for (Integer tagId : tagIds) {
-      TagArticle tagArticle = new TagArticle();
-      tagArticle.setTagId(tagId);
-      tagArticle.setArticleId(articleId);
-      mTagArticleMapper.insertSelective(tagArticle);
+    for (String item : tags) {
+      Tag expected = mTagMapper.selectTagByName(item);
+      if (null != expected) {
+        Integer id = expected.getId();
+        TagArticle tagArticle = new TagArticle();
+        tagArticle.setTagId(id);
+        tagArticle.setArticleId(articleId);
+        mTagArticleMapper.insertSelective(tagArticle);
+      } else {
+        Tag tag = new Tag();
+        tag.setName(item);
+        mTagMapper.insertSelective(tag);
+        Integer tagId = tag.getId();
+        TagArticle tagArticle = new TagArticle();
+        tagArticle.setTagId(tagId);
+        tagArticle.setArticleId(articleId);
+        mTagArticleMapper.insertSelective(tagArticle);
+      }
     }
   }
 
