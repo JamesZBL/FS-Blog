@@ -1,11 +1,19 @@
+<p align="center">
+    <a href="http://fsblog.letec.top">
+        <img width="200" src="screenshots/logo.png">
+    </a>
+</p>
+
 # FS-Blog
+
+
+
 [![LICENSE](https://img.shields.io/hexpm/l/plug.svg)](./LICENSE)
 [![Build Status](https://www.travis-ci.org/JamesZBL/FS-Blog.svg?branch=master)](https://www.travis-ci.org/JamesZBL/FS-Blog)
 
 
 ## 基于 Spring Boot 的个人博客
 
-[在线 Demo](http://fsblog.letec.top)
 
 ### 1. 涉及技术及工具
 
@@ -18,6 +26,7 @@
 - CSS 框架：BootStrap 4.0
 - Markdown 编辑器：Editor.md
 - 数据库：MySQL
+
 
 ### 2. 效果图
 
@@ -53,6 +62,14 @@ QQ：1146556298
 Email：zhengbaole_1996@163.com
 
 
+### 5. 相关链接
 
+- FS-Blog [在线 Demo](http://fsblog.letec.top)
 
-欢迎访问我的个人博客 [James' Blog](http://jameszbl.github.io) 
+- 我的个人博客 [James' Blog](http://jameszbl.github.io)
+
+### 6. 开源协议
+
+[Apache License 2.0](http://apache.org/licenses/LICENSE-2.0.html)
+
+Copyright (c) 2017-present, JamesZBL

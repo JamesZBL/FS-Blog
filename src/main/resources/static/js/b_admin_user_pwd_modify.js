@@ -6,10 +6,12 @@ $(function () {
             url: "/admin/admin_user_pwd_modify.f",
             data: $('#id_form').serialize(),
             success: function (result) {
-                if (result.hasError != true) {
-                    msg("成功");
+                if (!(result.hasError)) {
+                    msg("修改成功");
+                    // 返回博客批量管理页
+                    c_location("/admin/blogmanage");
                 } else {
-                    msg("失败");
+                    msg("修改失败");
                 }
             },
             error: function () {

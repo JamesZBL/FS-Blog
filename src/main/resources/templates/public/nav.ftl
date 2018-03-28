@@ -25,10 +25,7 @@
                     <a class="nav-link" href="/post">博客</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">干货</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">关于</a>
+                    <a class="nav-link" href="/resume">关于</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>

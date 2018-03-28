@@ -2,15 +2,18 @@ package me.zbl.fullstack.controller;
 
 import me.zbl.fullstack.controller.base.BaseController;
 import me.zbl.fullstack.entity.Article;
+import me.zbl.fullstack.entity.Resume;
 import me.zbl.fullstack.entity.dto.form.AdminUserPwdModifyForm;
 import me.zbl.fullstack.entity.dto.request.TableKeyModel;
 import me.zbl.fullstack.entity.vo.BlogModifyModel;
 import me.zbl.fullstack.entity.dto.form.BlogAddForm;
 import me.zbl.fullstack.entity.dto.form.BlogModifyForm;
 import me.zbl.fullstack.entity.dto.form.UserLoginForm;
+import me.zbl.fullstack.entity.vo.ResumeModifyModel;
 import me.zbl.fullstack.service.api.IAdminBlogService;
 import me.zbl.fullstack.service.api.IAdminUserService;
 import me.zbl.fullstack.service.api.IAdminUserService.ModifyPwdResult;
+import me.zbl.fullstack.service.api.IResumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,6 +38,8 @@ public class AdminController extends BaseController {
   IAdminBlogService mBlogService;
   @Autowired
   IAdminUserService mAdminUserService;
+  @Autowired
+  IResumeService mResumeService;
 
   /**
    * 后台首页
@@ -191,5 +196,13 @@ public class AdminController extends BaseController {
     } else {
       return responseSimpleError();
     }
+  }
+
+  @GetMapping("/resume_modify")
+  public String pUpdateResume(Model model) throws Exception {
+    Resume article = mResumeService.getResume();
+    ResumeModifyModel modifyModel = new ResumeModifyModel(article);
+    addModelAtt(model, VIEW_ARTICLE, modifyModel);
+    return "admin/resume_modify";
   }
 }

@@ -92,3 +92,19 @@ CREATE TABLE `user` (
   `gmt_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------
+-- Table structure for resume
+-- ----------------------------
+DROP TABLE IF EXISTS `resume`;
+CREATE TABLE `resume` (
+  `id` int(12) unsigned NOT NULL AUTO_INCREMENT COMMENT 'PrimaryKey',
+  `title` varchar(50) DEFAULT NULL,
+  `introduction` text,
+  `html_material` text COMMENT '文章 html 内容',
+  `md_material` text COMMENT '文章内容',
+  `gmt_create` datetime DEFAULT CURRENT_TIMESTAMP,
+  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
