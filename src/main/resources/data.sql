@@ -1,9 +1,7 @@
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
-INSERT INTO `admin_user` VALUES ('1', 'admin', '24f251cb9569d43975c1feebb0a61c02', '1996-11-20', '摆码王子', 'zhengbaole_1996@163.com', 'http://github.com/JamesZBL', '1146556298', null, 'Programming', null, null, '', '2017-12-04 13:07:32', '2017-12-04 13:07:32');
-INSERT INTO `admin_user` VALUES ('2', 'aaa', '3', null, null, null, null, null, null, '3', '333', null, null, '2017-12-16 15:41:29', '2017-12-16 15:42:19');
-
+INSERT INTO `admin_user` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1996-11-20', '摆码王子', 'zhengbaole_1996@163.com', 'http://github.com/JamesZBL', '1146556298', null, 'Programming', null, null, '', '2017-12-04 13:07:32', '2017-12-04 13:07:32');
 
 -- ----------------------------
 -- Records of article
