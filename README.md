@@ -1,10 +1,8 @@
 <p align="center">
     <a href="http://fsblog.letec.top">
-        <img width="200" src="screenshots/logo.svg">
+        <img width="200" src="https://github.com/JamesZBL/FS-Blog/raw/develop/screenshots/logo.png">
     </a>
 </p>
-
-![a](screenshots/logo.png)
 
 # FS-Blog
 
