@@ -10,7 +10,7 @@
 [![Build Status](https://www.travis-ci.org/JamesZBL/FS-Blog.svg?branch=master)](https://www.travis-ci.org/JamesZBL/FS-Blog)
 
 
-### 基于 Spring Boot 的个人博客
+## 基于 Spring Boot 的个人博客
 
 
 ### 1. 涉及技术及工具
