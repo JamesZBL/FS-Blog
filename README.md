@@ -34,11 +34,15 @@
 ![首页](screenshots/home.png)
 
 #### 2.2 博客列表页
-![首页](screenshots/posts.png)
+![文章列表](screenshots/posts.png)
 
 
 #### 2.3 博客阅读页
-![首页](screenshots/blog.png)
+![文章阅读](screenshots/blog.png)
+
+
+#### 2.4 个人简历页
+![个人简历](screenshots/resume.png)
 
 
 ### 3. 构建及运行
