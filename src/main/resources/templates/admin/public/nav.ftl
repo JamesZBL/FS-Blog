@@ -50,9 +50,9 @@
                     </ul>
                     <!-nav.ftl.nav-second-level -->
                 </li>
-                <!-- <li>
-                    <a href="tables.html"><i class="fa fa-table fa-fw"></i> 版块管理</a>
-                </li> -->
+                <li>
+                    <a href="/admin/resume_modify"><i class="fa fa-table fa-fw"></i> 简历管理</a>
+                </li>
                 <li>
                     <a href="/admin/admin_user_manage"><i class="fa fa-edit fa-fw"></i> 用户管理</a>
                 </li>
