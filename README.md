@@ -75,7 +75,7 @@ Email：zhengbaole_1996@163.com
 
 - FS-Blog [在线 Demo](http://fsblog.letec.top)
 
-- 我的个人博客 [James' Blog](http://jameszbl.github.io)
+- 我的个人博客 [James' Blog](http://james.letec.top)
 
 ### 6. 开源协议
 
