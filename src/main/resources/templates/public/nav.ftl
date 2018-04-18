@@ -40,8 +40,7 @@
                     <img class="img-circle"
                          src="/img/logo.png"
                          alt="头像"
-                         style="border-radius: 50%"
-                    />
+                         style="max-width: 30px;"/>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"

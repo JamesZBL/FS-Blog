@@ -32,5 +32,5 @@ public class UserLoginForm {
   /**
    * 记住登录
    */
-  private Integer rememberme;
+  private String rememberme;
 }
