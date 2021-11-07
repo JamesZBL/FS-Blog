@@ -192,3 +192,10 @@ task buildDocker(type: Docker, dependsOn: build) {
     }
 }
 // end::task[]
+
+allprojects {
+    tasks.withType(Test).configureEach {
+        forkEvery = 100
+    }
+
+}
